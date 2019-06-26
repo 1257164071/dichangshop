@@ -1,0 +1,143 @@
+<!DOCTYPE>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="no-cache,must-revalidate" http-equiv="Cache-Control">
+    <meta content="no-cache" http-equiv="pragma">
+    <meta content="0" http-equiv="expires">
+    <meta content="telephone=no, address=no" name="format-detection">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="viewport"
+          content="user-scalable=no, width=device-width,initial-scale=0.5, minimum-scale=1.0, maximum-scale=1.0">
+    <meta content="no" name="apple-mobile-web-app-capable"/>
+    <meta content="false" id="twcClient" name="twcClient"/>
+
+    <title>一元夺宝</title>
+
+    <link href="__PUBLIC__/duobao/css/common.css" rel="stylesheet" type="text/css">
+    <link href="__PUBLIC__/duobao/css/index.css" rel="stylesheet" type="text/css">
+
+    <script type="text/javascript" src="__PUBLIC__/duobao/js/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript" src="__PUBLIC__/Mobile/layui/layui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Mobile/layui/css/layui.css">
+    <script tabindex="text/javascript" src="__PUBLIC__/Mobile/layui/layui.all.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            $('.chestBtn').click(function () {
+
+
+                $.ajax({
+                    url:"{:U('index/rand_money')}",
+                    type:'get',
+                    data:{
+                        'user_id':"{$user_id}"
+                    },
+                    success:function (res) {
+                        res = JSON.parse(res);
+    layer.confirm(res.msg, {
+      btn: ['确定'] //按钮
+    }, function(){
+
+    window.location.href=window.location.href+"?uncache="+123*Math.random();
+    });
+                    },fail:function (res) {
+                        layer.alert('网络链接失败。');
+                    }
+                })
+                return;
+                // 弹出框
+                $('.prize-overlay').show();
+
+
+                // 中奖概率
+                var arr = ['一等奖<br/>', '二等奖', '三等奖', '四等奖'];
+                var rand = Math.random();
+                if (rand < 0.004) {
+                    $('#result').html(arr[0]);
+                } else if (rand < 0.024) {
+                    $('#result').html(arr[1]);
+                } else if (rand < 0.124) {
+                    $('#result').html(arr[2]);
+                } else {
+                    $('#result').html(arr[3]);
+                }
+
+
+            });
+
+
+        })
+    </script>
+    <style>
+        * {
+            padding: 0px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+<div class="container">
+
+
+    <div class="top-box" style="height: 54%">
+    </div>
+
+    <div class="chest-tip">
+        <p>挑选一个宝箱，点击开启奖品吧</p>
+        <p>当前余额为：{$user_data['user_money']}元 && 可抽奖 {$user_data['user_money']} 次</p>
+    </div>
+
+    <div class="chest-box">
+        <ul class="chest-list">
+            <li class="chestBtn chest1">
+                <img src="__PUBLIC__/duobao/picture/chest.png">
+            </li>
+            <li class="chestBtn chest2" style="margin: 0 5%;">
+                <img src="__PUBLIC__/duobao/picture/chest.png">
+            </li>
+            <li class="chestBtn chest3">
+                <img src="__PUBLIC__/duobao/picture/chest.png">
+            </li>
+            <div class="clear"></div>
+        </ul>
+        <ul class="chest-list">
+            <li class="chestBtn chest4" style="margin: 0 5% 0 17.5%;">
+                <img src="__PUBLIC__/duobao/picture/chest.png">
+            </li>
+            <li class="chestBtn chest5">
+                <img src="__PUBLIC__/duobao/picture/chest.png">
+            </li>
+            <div class="clear"></div>
+        </ul>
+    </div>
+
+    <div class="prize-overlay" id="prize-overlay">
+        <div class="overlay-title">
+            <img src="__PUBLIC__/duobao/picture/overlay-title.png">
+        </div>
+        <div class="outFrame">
+            <div class="prize-txt">
+                <p class="resultTip">
+                    <img src="__PUBLIC__/duobao/picture/congratulation.png">
+                </p>
+                <br/>
+                <p id="result" class="result"></p>
+                <br/>
+                <p class="resultTip">提示：抽奖获奖品会立即发送到您的余额。</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</body>
+</html>

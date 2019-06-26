@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>新手必看</title>
+		<link rel="stylesheet" type="text/css" href="__STATIC__/distribut/css/main.css"/>
+		<script src="__STATIC__/js/mobile-util.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div class="greenhand_question">
+			<a href="">
+				<p>1、99创客商城分销制度是怎样的？</p>
+				<i class="icon-arrow_r"></i>
+			</a>
+		</div>
+		<div class="greenhand_answer">
+			商城微分销是一款一体化微信分销交易平台，基于朋友圈传
+			播。
+		</div>
+		<div class="greenhand_question">
+			<a href="">
+				<p>2、如何申请成为会员？</p>
+				<i class="icon-arrow_r"></i>
+			</a>
+		</div>
+        <div class="greenhand_answer">
+            注册就是会员
+        </div>
+        <div class="greenhand_question">
+            <a href="">
+                <p>2、会员制度有哪些？</p>
+                <i class="icon-arrow_r"></i>
+            </a>
+        </div>
+        <div class="greenhand_answer">
+            一级会员：fdsfds
+            <br>
+            二级会员:dsfjsdl
+            <br>
+            三级会员:dfskjfdsjkl
+            <br>
+        </div>
+        <foreach name="article" item="v" key="k">
+            <div class="greenhand_question">
+                <a>
+                    <p>{$k+1}、{$v['title']}</p>
+                    <!--<i class="icon-arrow_r"></i>-->
+                </a>
+            </div>
+            <div class="greenhand_answer">
+                {$v['content']|htmlspecialchars_decode}
+            </div>
+        </foreach>
+	</body>
+</html>

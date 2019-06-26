@@ -1,0 +1,173 @@
+﻿﻿.goldEggsDiv {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.centerPage_Img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.chest-box{
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+.chest-box ul{
+	width: 100%;
+	height: auto;
+	margin: 0 0 20px 0;
+}
+.chest-box ul li img{
+	width: 100%;
+	height:auto;
+}
+.chest-list li{
+	width: 30%;
+	height: auto;
+	float: left;
+}
+
+
+
+.chest1{
+	-webkit-animation: tada 4.1s infinite;
+	-moz-animation: tada 4.1s infinite;
+	animation: tada 4.1s infinite;
+}
+.chest2{
+	-webkit-animation: tada 5.9s infinite;
+	-moz-animation: tada 5.9s infinite;
+	animation: tada 5.9s infinite;
+}
+.chest3{
+	-webkit-animation: tada 3.3s infinite;
+	-moz-animation: tada 3.3s infinite;
+	animation: tada 3.3s infinite;
+}
+
+.chest4{
+	-webkit-animation: tada4.7s infinite;
+	-moz-animation: tada 4.7s infinite;
+	animation: tada 4.7s infinite;
+}
+.chest5{
+	-webkit-animation: tada 5.3s infinite;
+	-moz-animation: tada 5.3s infinite;
+	animation: tada 5.3s infinite;
+}
+@keyframes tada {
+    0% {transform: scale(1);}    
+    2.5%, 5% {transform: scale(0.9) rotate(-3deg);}
+    7.5%, 12.5%, 17.5%, 22.5% {transform: scale(1.1) rotate(3deg);}
+    10%, 15%, 20% {transform: scale(1.1) rotate(-3deg);}
+    26% {transform: scale(1) rotate(0);}
+}
+@-webkit-keyframes tada {
+    0% {-webkit-transform: scale(1);}    
+    2.5%, 5% {-webkit-transform: scale(0.9) rotate(-3deg);}
+    7.5%, 12.5%, 17.5%, 22.5% {-webkit-transform: scale(1.1) rotate(3deg);}
+    10%, 15%, 20% {-webkit-transform: scale(1.1) rotate(-3deg);}
+    26% {-webkit-transform: scale(1) rotate(0);}
+}
+
+.chest-tip{
+	width: 90%;
+	height: auto;
+	font-size: 12px;
+	color: #fff;
+	line-height: 20px;
+	text-align: center;
+	margin:0 auto 20px auto;
+}
+
+
+
+/*奖品弹出层*/
+.prize-overlay{
+	width: 100%;
+	height: 100%;
+	position:fixed;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,1);
+	overflow:hidden;
+	z-index: 100;
+	display: none;
+}
+.overlay-title{
+	width: 100%;
+	height: auto;
+	position: absolute;
+	top: 15%;
+	left: 0;
+	z-index: 200;
+}
+.overlay-title img{
+	width: 100%;
+}
+.outFrame{
+	width: 60%;
+	height: auto;
+	/*border-radius: 5px;
+	border:3px solid #ffbe04;*/
+	background: url(../images/overlay.png) no-repeat;
+	background-size: 100% 100%;
+	padding: 15% 10% 10% 10%;
+	position: absolute;
+	top: 20%;
+	left: 10%;
+}
+.prize-box{
+	width: 90%;
+	height: auto;
+	margin: 15px auto 0;
+	font-size: 14px;
+	line-height: 26px;
+}
+
+.prize-txt{
+	font-size: 14px;
+	text-align: center;
+	line-height: 26px;
+}
+.receivePrize-btn{
+	display: block;
+	width: 60%;
+	height: 35px;
+	border-radius: 5px;
+	background: #fe4f19;
+	box-shadow: 0 4px 0 #e44210;
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+	line-height: 35px;
+	text-decoration: none;
+	margin: 20px auto 0;
+	letter-spacing: 2px;
+}
+
+.prize-name{
+	font-size: 16px;
+	color: #fe4f19;
+	font-weight: bold;
+}
+
+.resultTip img{
+	width: 80%;
+	height: auto;
+	margin: 0 auto;
+}
+.resultTip2 img{
+	width: 60%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.result{
+	font-size:20px;
+	color: #bf1f11;
+	font-weight: bold;
+}

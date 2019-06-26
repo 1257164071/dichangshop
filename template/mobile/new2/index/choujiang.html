@@ -1,0 +1,496 @@
+
+
+<!--</body>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <title>手机抽奖ass</title>
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Mobile/css/index.css">
+    <script src="__PUBLIC__/Mobile/js/jquery.min.js"></script>
+    <script src="__PUBLIC__/Mobile/js/turntable.js"></script>
+
+
+    <script type="text/javascript" src="__PUBLIC__/Mobile/layui/layui.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Mobile/layui/css/layui.css">
+    <script tabindex="text/javascript" src="__PUBLIC__/Mobile/layui/layui.all.js"></script>
+
+    <title>抽奖</title>
+    <style>
+        .lottery {
+            position: relative;
+            display: inline-block;
+        }
+
+        .lottery img {
+            position: absolute;
+            top: 160px;
+            left: 160px;
+            cursor: pointer;
+            width: 76px;
+            height: 81.5px;
+        }
+
+        #message {
+            position: absolute;
+            top: 0px;
+            left: 10%;
+        }
+
+        body{
+
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="zp-box">
+    <!-- 	<div class="dp-box">
+            <img src="img/dipan.png" class="g-lottery-img">
+        </div>
+        <div class="zhizhen">
+            <img src="img/zhizhen.png">
+            <div id="cishu-text">点击开始<br><span id="cishu">0</span>次</div>
+        </div>
+     -->
+
+
+    <div class="lottery">
+        <canvas id="myCanvas" width="600" height="600" style="">
+            当前浏览器版本过低，请使用其他浏览器尝试
+        </canvas>
+
+        <p id="message"></p>
+        <!-- <img src="./images/start.png" id="start"> -->
+    </div>
+
+    <script>
+
+        start_url = "__PUBLIC__/Mobile/images/start.png"
+
+
+
+
+
+
+
+        var sessions = [];
+        function creat_code(){
+            var clientID = '';
+            var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            var numPossible = possible.length;
+            do{
+                for (var i = 0; i < 8; i++) {
+                    clientID += possible.charAt((Math.random() * numPossible) | 0);
+                }
+            }while(sessions['clientID'] != null);
+            return clientID;
+        }
+
+
+        // alert(document.body.clientWidth);
+        var canvas=document.querySelector('canvas');
+        var ctx=canvas.getContext('2d');
+        var imgObj = new Image();
+        imgObj.src="__PUBLIC__/Mobile/images/start.png";
+        imgObj.onload = function(){
+            ctx.drawImage(this, -77, -80);//this即是imgObj,保持图片的原始大小：470*480
+            //ctx.drawImage(this, 0, 0,1024,768);//改变图片的大小到1024*768
+        }
+        ctx.scale(document.body.clientWidth/600,document.body.clientWidth/600);
+        canvas.addEventListener('click', function(e){
+            p = getEventPosition(e);
+            console.log(e);
+            console.log(p);
+            //判断在这范围内
+            var fy = [{x:100,y:100},{x:320,y:100},{x:100,y:234},{x:320,y:234}];
+            res = PointInPoly(p,fy)
+            // console.log(fy);
+            // console.log(p);
+            console.log(res);
+            if(res){
+                start_1()
+            }
+
+        }, false);
+
+        function getEventPosition(ev){
+            var x, y;
+            if (ev.layerX || ev.layerX == 0) {
+                x = ev.layerX;
+                y = ev.layerY;
+            } else if (ev.offsetX || ev.offsetX == 0) { // Opera
+                x = ev.offsetX;
+                y = ev.offsetY;
+            }
+            return {x: x, y: y};
+        }
+        function PointInPoly(pt, poly) {
+            for (var c = false, i = -1, l = poly.length, j = l - 1; ++i < l; j = i)
+                ((poly[i].y <= pt.y && pt.y < poly[j].y) || (poly[j].y <= pt.y && pt.y < poly[i].y))
+                && (pt.x < (poly[j].x - poly[i].x) * (pt.y - poly[i].y) / (poly[j].y - poly[i].y) + poly[i].x)
+                && (c = !c);
+            return c;
+        }
+        var wheelSurf
+        // 初始化装盘数据 正常情况下应该由后台返回
+        //"id": 103, 奖品序号、"name": "50元话费",奖品名称、 "image": "./images/4.png",奖品图片、 "rank":4,奖品布局位置顺序、 "percent":49 ,中奖率
+        var initData;
+        var flag = "{$flag}";
+
+        if(flag == 1){
+            initData = {
+                "success": true,
+                "list": [{
+                    "id": 100,
+                    "name": "0.3元返现",
+                    "image": "__PUBLIC__/Mobile/images/2.png",
+                    "rank":1,
+                    "percent":30,
+                    'total':0.3,
+
+                },
+                    {
+                        "id": 101,
+                        "name": "0.5元返现",
+                        "image": "__PUBLIC__/Mobile/images/2.png",
+                        "rank":2,
+                        "percent":30,
+                        'total':0.5,
+                    },
+                    {
+                        "id": 102,
+                        "name": "1元返现",
+
+                        "image": "__PUBLIC__/Mobile/images/3.png",
+                        "rank":3,
+                        "percent":20,
+                        'total':1,
+
+                    },
+                    {
+                        "id": 103,
+                        "name": "3元返现",
+                        "image": "__PUBLIC__/Mobile/images/2.png",
+                        "rank":4,
+                        "percent":10,
+                        'total':3,
+
+                    },
+                    {
+                        "id": 104,
+                        "name": "5元返现",
+                        "image": "__PUBLIC__/Mobile/images/3.png",
+                        "rank":5,
+                        "percent":9,
+                        'total':5,
+
+                    },
+                    {
+                        "id": 105,
+                        "name": "8元返现",
+                        "image": "__PUBLIC__/Mobile/images/6.png",
+                        "rank":6,
+                        "percent":1,
+                        'total':8,
+
+                    }
+                ]
+            };
+        }else {
+            initData = {
+                "success": true,
+                "list": [{
+                    "id": 100,
+                    "name": "3元返现",
+                    "image": "__PUBLIC__/Mobile/images/2.png",
+                    "rank":1,
+                    "percent":30,
+                    'total':3,
+
+                },
+                    {
+                        "id": 101,
+                        "name": "5元返现",
+                        "image": "__PUBLIC__/Mobile/images/2.png",
+                        "rank":2,
+                        "percent":30,
+                        'total':5,
+
+                    },
+                    {
+                        "id": 102,
+                        "name": "5元返现",
+                        "image": "__PUBLIC__/Mobile/images/3.png",
+                        "rank":3,
+                        "percent":20,
+                        'total':5,
+
+                    },
+                    {
+                        "id": 103,
+                        "name": "6元返现",
+                        "image": "__PUBLIC__/Mobile/images/2.png",
+                        "rank":4,
+                        "percent":10,
+                        'total':6,
+
+                    },
+                    {
+                        "id": 104,
+                        "name": "7元返现",
+                        "image": "__PUBLIC__/Mobile/images/3.png",
+                        "rank":5,
+                        "percent":9,
+                        'total':7,
+
+                    },
+                    {
+                        "id": 105,
+                        "name": "10元返现",
+                        "image": "__PUBLIC__/Mobile/images/6.png",
+                        "rank":6,
+                        "percent":1,
+                        'total':10,
+                    }
+                ]
+            }
+        }
+
+        // 计算分配获奖概率(前提所有奖品概率相加100%)
+        function getGift(){
+            var percent = Math.random()*100
+            var totalPercent = 0
+            for(var i = 0 ,l = initData.list.length;i<l;i++){
+                totalPercent += initData.list[i].percent
+                if(percent<=totalPercent){
+                    return initData.list[i]
+                }
+            }
+        }
+
+        var list = {}
+
+        var angel = 360 / initData.list.length
+        // 格式化成插件需要的奖品列表格式
+        for (var i = 0, l = initData.list.length; i < l; i++) {
+            list[initData.list[i].rank] = {
+                id:initData.list[i].id,
+                name: initData.list[i].name,
+                image: initData.list[i].image
+            }
+        }
+        // 查看奖品列表格式
+
+        // 定义转盘奖品
+        wheelSurf = $('#myCanvas').WheelSurf({
+            list: list, // 奖品 列表，(必填)
+            outerCircle: {
+                color: '#df1e15' // 外圈颜色(可选)
+            },
+            innerCircle: {
+                color: '#f4ad26' // 里圈颜色(可选)
+            },
+            dots: ['#fbf0a9', '#fbb936'], // 装饰点颜色(可选)
+            disk: ['#ffb933', '#ffe8b5', '#ffb933', '#ffd57c', '#ffb933', '#ffe8b5', '#ffd57c'], //中心奖盘的颜色，默认7彩(可选)
+            title: {
+                color: '#5c1e08',
+                font: '19px Arial'
+            } // 奖品标题样式(可选)
+        })
+
+        // 初始化转盘
+        wheelSurf.init()
+        // 抽奖
+
+        var throttle = true;
+        var code = null;
+        function start_1(){
+            start_2();
+
+            // layer.prompt({
+            //     title: '请输抽奖码',
+            // },function(value, index, elem){
+            //     //ajax
+            //     code = value;
+
+            //     $.ajax({
+            //         url:"{:url('Index/check_code')}",
+            //         type:'POST',
+            //         data:{'code':value},
+            //         success:function (res) {
+            //             if(res == 0){
+            //                 layer.msg('抽奖码无效');
+            //             }else {
+            //                 start_2();
+            //             }
+            //         },
+            //         fail:function (res) {
+            //             layer.msg('网络异常');
+
+            //         }
+            //     })
+            //     layer.close(index);
+            // });
+        }
+
+
+        // $("#start").on('click', function () {
+        function start_2(){
+
+            var winData = getGift() // 正常情况下获奖信息应该由后台返回
+
+            $("#message").html('')
+            if(!throttle){
+                return false;
+            }
+            throttle = false;
+            var count = 0
+            // 计算奖品角度
+
+            for (const key in list) {
+                if (list.hasOwnProperty(key)) {
+                    if (winData.id == list[key].id) {
+                        break;
+                    }
+                    count++
+                }
+            }
+
+            // 转盘抽奖，
+            wheelSurf.lottery((count * angel + angel / 2), function () {
+                // $("#message").html(winData.name)
+                var code_succe = creat_code();
+
+                $(".texts").html("恭喜您，已获得" + winData.name + "<br>成功汇入您的余额");
+                // console.log(text)
+                $(".zz").show();
+                $(".jl-tk").show();
+                $(".cjgz-c").on('click', function() {
+                    $(".zz").hide();
+                    $(".jl-tk").hide();
+                });
+                $(".ok-img").on('click', function() {
+                    $(".zz").hide();
+                    $(".jl-tk").hide();
+                });
+                console.log(winData);
+                console.log("ffffffffffffffffff");
+                $.ajax({
+                    url:"{:url('Index/success_choujiang')}",
+                    type:"POST",
+                    data:{'succe_name':winData.name,'code':code,'code_succe':code_succe,'total':winData.total,'order_sn':"{$order_sn}"},
+                    success:function (val) {
+                        console.log(val);
+                    }
+                })
+                throttle = true;
+            })
+
+        }
+
+        // })a
+
+
+    </script>
+
+
+
+</div>
+<div class="jl" style="position: fixed;top: 480px;width: 80%;height: 70px;margin-left: 10% ">
+    <p style="position: relative;font-size: 17px">
+        <span id="zjjl">中奖纪录</span>|<span id="look-gz">查看规则</span>
+    </p>
+</div>
+<!-- <div class="gdbox">
+	<strong>中奖用户</strong>
+	<p id="tit">
+		<span>手机号</span>
+		<span>获得奖励</span>
+	</p>
+	<div class="zhongj-bbk">
+		<div class="zhongj-bb">
+			<div class="zhongj-bbl" id="colee" style="overflow:hidden;">
+				<div id="colee1"></div>
+				<div id="colee2"></div>
+			</div>
+			<div class="zhongj-bbr" id="coleer" style="overflow:hidden;">
+				<div id="coleer1" ></div>
+				<div id="coleer2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+ -->
+<!--遮罩&弹框-->
+<div class="zz"></div>
+<!--超级返现规则-->
+<div class="cjfx">
+    <img src="__PUBLIC__/Mobile/img/close.png" class="cjgz-c">
+    <img src="__PUBLIC__/Mobile/img/cjgz.png" id="cjgz-img">
+</div>
+<!--转盘规则-->
+<div class="zpgz">
+    <img src="__PUBLIC__/Mobile/img/close.png" class="cjgz-c">
+    <img src="__PUBLIC__/Mobile/img/zjjl-img2.png" id="cjgz-img">
+    <div class="zj-content">
+
+        <ul>
+            <li>     转盘规则</li>
+            <li>   根据购买额度分配奖池</li>
+            <li>   抽中的奖金会自动发放到余额</li>
+        </ul>
+    </div>
+</div>
+<!--中奖纪录-->
+<div class="zj">
+    <img src="__PUBLIC__/Mobile/img/close.png" class="cjgz-c">
+    <img src="__PUBLIC__/Mobile/img/zjjl-img.png" id="cjgz-img">
+    <div class="zj-content">
+        <p>
+            <span id="myjl">获得奖励</span>
+        </p>
+        <ul>
+            <!--<li><span>2017.10.31</span><span>0.3%己烯醛</span></li>-->
+        </ul>
+    </div>
+</div>
+
+
+
+
+<!-- 无次数提示弹框 -->
+<div class="wcs">
+    <img src="__PUBLIC__/Mobile/img/close.png" class="cjgz-c">
+    <img src="__PUBLIC__/Mobile/img/wcs-tk.png" class="wcs-img">
+    <img src="__PUBLIC__/Mobile/img/ok-img.png" class="ok-img">
+</div>
+<!-- 当日是否投资弹框 -->
+<div class="today">
+    <img src="Mobile/img/close.png" class="cjgz-c">
+    <img src="Mobile/img/tz-tk.png" class="tz-img">
+    <img src="Mobile/img/ok-img.png" class="ok-img">
+</div>
+<!-- 抽到奖励弹框 -->
+<div class="jl-tk">
+    <img src="__PUBLIC__/Mobile/img/close.png" class="cjgz-c">
+    <img src="__PUBLIC__/Mobile/img/zj-tk.png" class="zj-img">
+    <img src="__PUBLIC__/Mobile/img/ok-img.png" class="ok-img">
+    <p class="texts">恭喜您已获得<br>双季丰满减红包满1000可用50元</p>
+</div>
+
+
+<script type="text/javascript" src="__PUBLIC__/Mobile/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Mobile/js/jquery.rotate.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Mobile/js/jquery.easing.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Mobile/js/jquery.jsonp.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Mobile/js/index.js"></script>
+<script type="text/javascript">
+
+</script>
+</html>

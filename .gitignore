@@ -1,0 +1,8 @@
+.idea
+composer.lock
+composer.phar
+vendor/
+cache.properties
+phpunit.xml
+runtime
+.svn
