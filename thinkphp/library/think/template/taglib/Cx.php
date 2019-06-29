@@ -145,7 +145,7 @@ foreach($result as $'.$key.'=>$'.$item.'):
     if(I("get.edit_ad") && $'.$item.'['."'not_adv'".'] == 0 )
     {
         $'.$item.'['."'style'".'] = "filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5"; // 广告半透明的样式
-        $'.$item.'['."'ad_link'".'] = "/index.php?m=Admin&c=Ad&a=ad&act=edit&ad_id=$'.$item.'['."'ad_id'".']";        
+        $'.$item.'['."'ad_link'".'] = "/index.php?m=Admin&c=Ad&a=ad&act=edit&ad_id=$".$item[\'ad_id\'];        
         $'.$item.'['."'title'".'] = $ad_position[$'.$item.'['."'pid'".']]['."'position_name'".']."===".$'.$item.'['."'ad_name'".'];
         $'.$item.'['."'target'".'] = 0;
     }
