@@ -103,7 +103,7 @@ $(function() {
     	<div class="bs-ri">
         	<div class="ris-adve"><!--公告上方广告位-->
                 <adv  limit="1" item="v" pid="7">
-                    <a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
+                    <a href="{$v['ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
 	            		<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
                     </a>
 				</adv>
@@ -131,7 +131,7 @@ $(function() {
              <!--公告下方广告位-->
         	 <div class="ris-as"> 
                 <adv  limit="1" item="v" pid="8">
-                     <p><a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v[ad_code]}" width="278" height="132" title="{$v[title]}" style="{$v[style]}"></a></p>                
+                     <p><a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v[ad_code]}" width="278" height="132" title="{$v[title]}" style="{$v[style]}"></a></p>
                 </adv>
             </div>
         	</div>	

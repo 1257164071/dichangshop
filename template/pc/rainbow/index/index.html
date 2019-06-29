@@ -240,7 +240,7 @@
                                                 <ul>                                                
                                                     <adv pid="14" item="v3" limit="1">
                                                         <li>
-                                                            <a href="{$v3[ad_link]}" <if condition="$v3['target'] eq 1">target="_blank"</if>>
+                                                            <a href="{$v3['ad_link']}" <if condition="$v3['target'] eq 1">target="_blank"</if>>
                                                                 <img src="{$v3[ad_code]}" title="{$v3[title]}" style="{$v3[style]}" width="129" height="45"/>
                                                             </a>
                                                         </li>
@@ -253,7 +253,7 @@
                                     <!--商品分类右侧广告-s-->
                                     <div class="cata-nav-rigth">
                                         <adv item="v" pid="51" limit="1">
-                                            <a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
+                                            <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
                                                 <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
                                             </a>
                                         </adv>
@@ -295,7 +295,7 @@
         	<assign name="adk" value="1" />
             <adv pid="2" item="v1" limit="5">
                 <div class="item <if condition='$adk++ eq 1'>active</if>" style="background:{$v.bgcolor};">
-                    <a href="{$v1[ad_link]}"  <if condition="$v1['target'] eq 1">target="_blank"</if>>
+                    <a href="{$v1['ad_link']}"  <if condition="$v1['target'] eq 1">target="_blank"</if>>
                         <img  src="{$v1[ad_code]}" title="{$v1[title]}" style="{$v1[style]}">
                     </a>
                 </div>
@@ -309,7 +309,7 @@
                 <ul>
                     <adv pid="52" item="v" limit="2">
                         <li>
-                            <a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
+                            <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
                             <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
                             </a>
                         </li>
@@ -326,7 +326,7 @@
             <ul>
                 <adv pid="53" item="v" limit="3">
                     <li>
-                        <a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
+                        <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
                             <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
                         </a>
                     </li>
