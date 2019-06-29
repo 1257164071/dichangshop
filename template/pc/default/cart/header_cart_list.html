@@ -9,13 +9,13 @@
     <li class="goods">
         <div>
             <div class="p-img">
-                <a href="{:U('Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                <a href="{:U('Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                     <img src="{$v.goods_id|goods_thum_images=80,80}" alt="">
                 </a>
              </div>
              <div class="p-name">
-                <a href="{:U('Goods/goodsInfo',array('id'=>$v[goods_id]))}">
-                    <span class="p-slogan">{$v[goods_name]}</span>
+                <a href="{:U('Goods/goodsInfo',array('id'=>$v['goods_id']))}">
+                    <span class="p-slogan">{$v['goods_name']}</span>
                     <span class="p-promotions hide"></span>
                 </a>
              </div>

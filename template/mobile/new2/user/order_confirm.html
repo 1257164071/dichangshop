@@ -10,9 +10,9 @@
         <div class="maleri30">
             <foreach name="order_goods.result" item="good">
                 <div class="shopprice p">
-                    <div class="img_or fl"><img src="{$good[goods_id]|goods_thum_images=100,100}"></div>
+                    <div class="img_or fl"><img src="{$good['goods_id']|goods_thum_images=100,100}"></div>
                     <div class="fon_or fl">
-                        <h2 class="similar-product-text"><a href="{:U('Mobile/Goods.goodsInfo',array('id'=>$good[goods_id]))}">{$good[goods_name]}</a></h2>
+                        <h2 class="similar-product-text"><a href="{:U('Mobile/Goods.goodsInfo',array('id'=>$good['goods_id']))}">{$good['goods_name']}</a></h2>
                         <if condition="$good['is_send'] eq 1">
                             <a class="compj" href="{:U('Mobile/User/add_comment',['rec_id'=>$good[rec_id]])}">去评价</a>
                         </if>

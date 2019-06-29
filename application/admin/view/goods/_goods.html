@@ -314,7 +314,7 @@
                                 <tr>
                                     <td>库存数量:</td>
                                     <td>
-                                        <if condition="$goodsInfo[goods_id] gt 0">
+                                        <if condition="$goodsInfo['goods_id'] gt 0">
                                             <input type="text" value="{$goodsInfo.store_count}" class="form-control" style="width:150px;" name="store_count" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
                                         <else />
                                             <input type="text" value="{$tpshop_config[basic_default_storage]}" class="form-control" style="width:150px;" name="store_count" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />                                         

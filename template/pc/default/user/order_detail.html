@@ -253,12 +253,12 @@
                             <tr>
                                 <td class="col-pro-img">
                                     <p>
-                                        <a href="{:U('Goods/goodsInfo',array('id'=>$good[goods_id]))}" target="_blank">
+                                        <a href="{:U('Goods/goodsInfo',array('id'=>$good['goods_id']))}" target="_blank">
                                             <img alt="{$good.goods_name}" src="{$good.goods_id|goods_thum_images=78,78}">
                                         </a>
                                     </p>
                                 </td>
-                                <td class="col-pro-info te-al-le"><p class="p-name"><a title="" target="_blank" href="{:U('Goods/goodsInfo',array('id'=>$good[goods_id]))}">{$good.goods_name}</a></p></td>
+                                <td class="col-pro-info te-al-le"><p class="p-name"><a title="" target="_blank" href="{:U('Goods/goodsInfo',array('id'=>$good['goods_id']))}">{$good.goods_name}</a></p></td>
                                 <td class="col-price"><em>¥</em><span>{$good.goods_price}</span></td>
                                 <td class="col-price"><em>¥</em><span>{$good.member_goods_price}</span></td>                                
                                 <td class="col-quty">{$good.goods_num}</td>

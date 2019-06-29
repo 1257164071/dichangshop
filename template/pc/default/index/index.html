@@ -69,10 +69,10 @@ $(function() {
                     	<div class="best">
                         	<div class="best-about">
                             	<div class="best_img" style="margin-top:50px; height:220px;">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><img src="{$v.goods_id|goods_thum_images=180,180}" style="width:180px; height:180px;"/></a>
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><img src="{$v.goods_id|goods_thum_images=180,180}" style="width:180px; height:180px;"/></a>
                                 </div>
                                 <div class="best_name">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                                     <span>{$v.goods_name|getSubstr=0,12}</span>
                                     </a>
                                 </div>
@@ -84,7 +84,7 @@ $(function() {
                                 	<span>¥</span><em>{$v['shop_price']}</em>
                                 </div>
                                 <div class="imm-button">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><span>立即抢购</span></a>
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><span>立即抢购</span></a>
                                 </div>
                                 <div class="tag">
                                 <if condition="$v['is_new'] eq '1'">
@@ -180,10 +180,10 @@ $(function() {
                         <tpshop sql="select * from `__PREFIX__goods` where cat_id in($cat_id_str) and is_on_sale = 1 order by sort desc limit 1" key="k" item='v'>
                         	<div class="best-about">
                             	<div class="best_img best_img2">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><img src="{$v.goods_id|goods_thum_images=222,222}" /></a>
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><img src="{$v.goods_id|goods_thum_images=222,222}" /></a>
                                 </div>
                                 <div class="best_name">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><span>{$v.goods_name|getSubstr=0,18}</span></a>
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><span>{$v.goods_name|getSubstr=0,18}</span></a>
                                 </div>
                                 <div class="best_Introduction">
                                 	<div class="intr-t">{$v.keywords}</div>
@@ -193,7 +193,7 @@ $(function() {
                                 	<span>¥</span><em>{$v.shop_price}</em>
                                 </div>
                                 <div class="imm-button">
-                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><span>立即抢购</span></a>
+                                	<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><span>立即抢购</span></a>
                                 </div>
                                 <div class="tag">
                                 	<img src="__STATIC__/images/1382542488099.png" alt="热卖" />
@@ -207,7 +207,7 @@ $(function() {
                             <div class="best">
                                 <div class="best-about">
                                     <div class="best_img best_img2 best_img3">
-	                                    <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><img src="{$v.goods_id|goods_thum_images=222,222}" /></a>
+	                                    <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><img src="{$v.goods_id|goods_thum_images=222,222}" /></a>
                                     </div>
                                         <div class="intr-t intr-t3">{$v.goods_name|getSubstr=0,18}</div>
                                     <div class="price prices">

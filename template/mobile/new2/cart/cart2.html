@@ -29,9 +29,9 @@
                 <foreach name="cartList" item="good">
                     <if condition="$good[selected] eq '1'">
                     <div class="shopprice">
-                        <div class="img_or fl"><img src="{$good[goods_id]|goods_thum_images=100,100}"/></div>
+                        <div class="img_or fl"><img src="{$good['goods_id']|goods_thum_images=100,100}"/></div>
                         <div class="fon_or fl">
-                            <h2 class="similar-product-text">{$good[goods_name]}</h2>
+                            <h2 class="similar-product-text">{$good['goods_name']}</h2>
                             <div>{$good[spec_key_name]}</div>
                         </div>
                         <div class="price_or fr">

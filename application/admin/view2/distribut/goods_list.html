@@ -133,7 +133,7 @@
                             <div style="text-align: center; width: 170px; max-width:170px;">
                                 <a href="{:U('Home/Goods/goodsInfo',array('id'=>$list['goods_id']))}" target="_blank" class="btn blue"><i class="fa fa-search"></i>查看</a>
                                 <a href="{:U('Admin/Goods/addEditGoods',array('id'=>$list['goods_id'],'is_distribut'=>1))}" class="btn blue"><i class="fa fa-pencil-square-o"></i>编辑</a>
-                                <a class="btn red"  href="javascript:void(0)" onclick="del('{$list[goods_id]}')"><i class="fa fa-trash-o"></i>删除</a>
+                                <a class="btn red"  href="javascript:void(0)" onclick="del('{$list['goods_id']}')"><i class="fa fa-trash-o"></i>删除</a>
                             </div>
                         </td>
                         <td align="" class="" style="width: 100%;">

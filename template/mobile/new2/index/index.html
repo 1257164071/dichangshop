@@ -136,9 +136,9 @@
                     <div style="text-align: center;">暂无抢购商品。。。。</div>
                 </if>
                 <foreach name="flash_sale_list" item="v">
-                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                         <div class="timerBox shopnum">
-                            <img src="{$v[goods_id]|goods_thum_images=200,200}"/>
+                            <img src="{$v['goods_id']|goods_thum_images=200,200}"/>
                             <p>￥<span>{$v[price]}</span>元</p>
                         </div>
                     </a>

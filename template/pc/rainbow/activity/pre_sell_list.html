@@ -30,13 +30,13 @@
 				//var text = GetRTime('2016/02/27 17:34:00');
 			<foreach name="pre_sell_list" item="v" key="k" >
 						<if condition="$v['end_time'] lt time()">
-					var text{$v[goods_id]} = "活动已结束";
+					var text{$v['goods_id']} = "活动已结束";
 			<elseif condition="($v['end_time'] gt time()) AND ($v['start_time'] lt time())" />
-				var text{$v[goods_id]} = "预售中 剩余" + GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
+				var text{$v['goods_id']} = "预售中 剩余" + GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
 			<else />
-				var text{$v[goods_id]} = "预热中 剩余" + GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
+				var text{$v['goods_id']} = "预热中 剩余" + GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
 			</if>
-				$("#surplus_text{$v[goods_id]}").text(text{$v[goods_id]});
+				$("#surplus_text{$v['goods_id']}").text(text{$v['goods_id']});
 			</foreach>
 			}
 			setInterval(GetRTime2,1000);
@@ -63,7 +63,7 @@
 											<span class="now"><em class="li_xfo">￥</em><em>{$vo.price}</em></span>
 											<span class="pre-per">已有<em>{$vo.act_count}</em>人参与活动</span>
 											<div class="sjs-olde p">
-												<p class="djs-cctime" ><span id="surplus_text{$vo[goods_id]}"></span></p>
+												<p class="djs-cctime" ><span id="surplus_text{$vo['goods_id']}"></span></p>
 											</div>
 										</div>
 									</div>

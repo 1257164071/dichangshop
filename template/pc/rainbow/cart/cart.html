@@ -71,11 +71,11 @@
                             <ul ng-repeat="list in itemList" ng-show="index == $index" class="ng-scope">
                                 <tpshop sql="select * from `__PREFIX__goods` where  is_recommend = 1 limit 10" item="v" key="k">
                                     <li ng-repeat="item in list" class="ng-scope">
-                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><img ng-src="{$v.goods_id|goods_thum_images=80,80}" alt="{$v[goods_name]}" src="{$v.goods_id|goods_thum_images=80,80}"></a>
-                                        <p><a class="ng-binding" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">{$v[goods_name]}</a></p>
+                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><img ng-src="{$v.goods_id|goods_thum_images=80,80}" alt="{$v['goods_name']}" src="{$v.goods_id|goods_thum_images=80,80}"></a>
+                                        <p><a class="ng-binding" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">{$v['goods_name']}</a></p>
                                         <div class="div-01">
                                             <em>¥</em>
-                                            <span  class="ng-binding">{$v[shop_price]}</span>
+                                            <span  class="ng-binding">{$v['shop_price']}</span>
                                         </div>
                                         <button class="btn add2cart" ng-click="addGood(item)" type="button" onclick="javascript:AjaxAddCart({$v.goods_id},1,0);">加入购物车</button>
                                     </li>

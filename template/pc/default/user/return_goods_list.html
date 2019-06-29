@@ -57,7 +57,7 @@
               <tr>
                 <td align="center"><a target="_blank" href="">{$item.id}</a></td>
                 <td><a target="_blank" href="{:U('Home/User/order_detail',array('id'=>$item['order_id']))}">{$item.order_sn}</a></td>
-                <td><div><a href="{:U('Home/Goods/goodsInfo',array('id'=>$item[goods_id]))}" target="_blank">{$goodsList[$item[goods_id]]}</a> </div></td>
+                <td><div><a href="{:U('Home/Goods/goodsInfo',array('id'=>$item['goods_id']))}" target="_blank">{$goodsList[$item['goods_id']]}</a> </div></td>
                 <td>{$item.addtime|date="Y-m-d",###}</td>
                 <td>
                     <if condition="$item['status'] eq 0">待客服处理</if>

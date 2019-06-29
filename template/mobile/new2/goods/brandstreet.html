@@ -19,8 +19,8 @@
                         <if condition="count($v) gt 0">
                             <li>
                                 <foreach name="$v" key="kk" item="good">
-                                <a href="{:U('Goods/goodsInfo',array('id'=>$good[goods_id]))}">
-                                    <img src="{$good[goods_id]|goods_thum_images=200,200}" alt="">
+                                <a href="{:U('Goods/goodsInfo',array('id'=>$good['goods_id']))}">
+                                    <img src="{$good['goods_id']|goods_thum_images=200,200}" alt="">
                                     <p class="red">￥{$good['shop_price']}</p>
                                     <p class="lineu">￥{$good['market_price']}</p>
                                 </a>

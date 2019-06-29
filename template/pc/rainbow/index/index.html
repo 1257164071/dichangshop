@@ -373,14 +373,14 @@
                 </div>
                 <div class="hoste_ri">
                     <ul>
-                        <foreach name="v[hot_goods]" item="g" key="gk">
+                        <foreach name="v['hot_goods']" item="g" key="gk">
                             <if condition="$gk lt 8">
                                 <li>
-                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$g[goods_id]))}">
-                                        <img class="picture_main" src="{$g[goods_id]|goods_thum_images=200,200}"/>
-                                        <span class="name_main">{$g[goods_name]|getSubstr=0,15}</span>
+                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$g['goods_id']))}">
+                                        <img class="picture_main" src="{$g['goods_id']|goods_thum_images=200,200}"/>
+                                        <span class="name_main">{$g['goods_name']|getSubstr=0,15}</span>
                                         <!--<span class="intro_main">{$g['name']}</span>-->
-                                        <span class="price_main"><i>￥</i>{$g[shop_price]}</span>
+                                        <span class="price_main"><i>￥</i>{$g['shop_price']}</span>
                                     </a>
                                 </li>
                             </if>

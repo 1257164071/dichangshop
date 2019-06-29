@@ -372,7 +372,7 @@
                     <label for="record_no">总库存</label>
                 </dt>
                 <dd class="opt">                
-                    <if condition="$goodsInfo[goods_id] gt 0">
+                    <if condition="$goodsInfo['goods_id'] gt 0">
                         <input type="text" value="{$goodsInfo.store_count}" class="t_mane" name="store_count" onKeyUp="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
                     <else />
                         <input type="text" value="{$tpshop_config[basic_default_storage]}" class="t_mane" name="store_count" onKeyUp="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />                                         

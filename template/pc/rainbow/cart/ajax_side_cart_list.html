@@ -21,11 +21,11 @@
                             <a href="javascript:void(0);" class="del js_delete" onclick="header_cart_del({$v.id});"></a>
 
                             <p class="i fl mr5">
-                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"> <img src="{$v.goods_id|goods_thum_images=50,50}" height="50" width="50" alt="" title=""></a>
+                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"> <img src="{$v.goods_id|goods_thum_images=50,50}" height="50" width="50" alt="" title=""></a>
                             </p>
 
                             <p class="n fl">
-                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">{$v[goods_name]}</a>
+                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">{$v['goods_name']}</a>
                             </p>
 
                             <!--数额加减-->

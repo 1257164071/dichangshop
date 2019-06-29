@@ -36,10 +36,10 @@
         <div class="maleri30">
             <foreach name="comment_list" item="v1">
                 <div class="shopprice dapco p">
-                    <div class="img_or fl"><img src="{$v1[goods_id]|goods_thum_images=200,200}"></div>
+                    <div class="img_or fl"><img src="{$v1['goods_id']|goods_thum_images=200,200}"></div>
                     <div class="fon_or fl">
                         <h2 class="similar-product-text">
-                            <a href="{:U('Goods/goodsInfo',array('id'=>$v1[goods_id]))}">{$v1[goods_name]}</a>
+                            <a href="{:U('Goods/goodsInfo',array('id'=>$v1['goods_id']))}">{$v1['goods_name']}</a>
                         </h2>
                         <p class="pall0">购买时间：{$v1.add_time|date='Y-m-d H:i',###}</p>
                     </div>

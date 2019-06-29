@@ -24,12 +24,12 @@
                         <img src="{$good.goods_id|goods_thum_images=400,400}">
                     </div>
                     <div class="deleshow fr">
-                        <a href="{:U('Mobile/Goods/goodsInfo', array('id'=>$good[goods_id]))}">
+                        <a href="{:U('Mobile/Goods/goodsInfo', array('id'=>$good['goods_id']))}">
                             <div class="deletes">
-                                <span class="similar-product-text">{$good[goods_name]}</span>
+                                <span class="similar-product-text">{$good['goods_name']}</span>
                             </div>
                             <div class="prices">
-                                <p class="sc_pri"><span>{$good[shop_price]-$good[exchange_integral]/$point_rate}</span><span class="cobl">+{$good[exchange_integral]}积分</span></p>
+                                <p class="sc_pri"><span>{$good['shop_price']-$good[exchange_integral]/$point_rate}</span><span class="cobl">+{$good[exchange_integral]}积分</span></p>
                             </div>
                         </a>
                         <div class="qxatten">

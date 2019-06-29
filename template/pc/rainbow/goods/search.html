@@ -295,7 +295,7 @@
 						<li>
 							<div class="s_xsall">
 								<div class="xs_img">
-									<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+									<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
 										<img class="lazy-list" data-original="{$v.goods_id|goods_thum_images=236,236}"/>
 									</a>
 								</div>
@@ -303,7 +303,7 @@
 									<div class="small-xs-shop">
 										<ul>
 											<foreach name="goods_images" item="v2" key="k2">
-												<if condition="$v2[goods_id] eq $v[goods_id]">
+												<if condition="$v2['goods_id'] eq $v['goods_id']">
 													<li>
 														<a href="javascript:void(0);">
 															<img class="lazy-list" data-original="{$v2[image_url]}"/>
@@ -315,12 +315,12 @@
 									</div>
 								</div>
 								<div class="price-tag">
-									<span class="now"><em class="li_xfo">￥</em><em>{$v[shop_price]}</em></span>
+									<span class="now"><em class="li_xfo">￥</em><em>{$v['shop_price']}</em></span>
 									<span class="old"><em>￥</em><em>{$v[market_price]}</em></span>
 								</div>
 								<div class="shop_name2">
-									<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
-										{$v[goods_name]}
+									<a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
+										{$v['goods_name']}
 									</a>
 								</div>
 								<div class="shop_name2">
@@ -337,7 +337,7 @@
 										</p>
 									</div>
 									<div class="p-btn">
-										<a href="javascript:void(0);" onclick="AjaxAddCart({$v[goods_id]},$('#number_'+{$v.goods_id}).val(),0);">加入购物车</a>
+										<a href="javascript:void(0);" onclick="AjaxAddCart({$v['goods_id']},$('#number_'+{$v.goods_id}).val(),0);">加入购物车</a>
 									</div>
 								</div>
 							</div>

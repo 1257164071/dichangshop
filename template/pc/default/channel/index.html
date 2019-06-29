@@ -126,10 +126,10 @@
 	                  <li class="good good-big">
 	                    <div class="info"> 
 	                    	<span class="num">NO.{$k2+1}</span> 
-	                    	<a href="{:U('Home/Goods/goodsInfo',array('id'=>$vg[goods_id]))}" class="title" target="_blank">{$vg.goods_name}</a> 
+	                    	<a href="{:U('Home/Goods/goodsInfo',array('id'=>$vg['goods_id']))}" class="title" target="_blank">{$vg.goods_name}</a>
 	                    	<span class="price">￥<font id="" class="">{$vg.shop_price}</font></span> 
 	                    </div>
-	                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$vg[goods_id]))}" target="_blank"> 
+	                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$vg['goods_id']))}" target="_blank">
 	                    	<img class="good-big-img img100" src="{$vg.goods_id|goods_thum_images=400,400}" data-images="{$vg.goods_id|goods_thum_images=400,400}" alt=""> 
 	                    </a> 
 	                  </li>

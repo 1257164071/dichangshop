@@ -50,9 +50,9 @@
                 <div class="fukcuid">
                     <div class="maleri30">
                         <div class="shopprice">
-                            <div class="img_or fl"><img src="{$good[goods_id]|goods_thum_images=200,200}"></div>
+                            <div class="img_or fl"><img src="{$good['goods_id']|goods_thum_images=200,200}"></div>
                             <div class="fon_or fl">
-                                <h2 class="similar-product-text"><a href="{:U('Goods/goodsInfo',array('id'=>$good[goods_id]))}">{$good[goods_name]}</a></h2>
+                                <h2 class="similar-product-text"><a href="{:U('Goods/goodsInfo',array('id'=>$good['goods_id']))}">{$good['goods_name']}</a></h2>
                             </div>
                             <div class="buttondde inherflo">
                                 <if condition="($order[return_btn] eq 1) and ($good[is_send] lt 2)">

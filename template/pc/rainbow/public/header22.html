@@ -273,7 +273,7 @@
                                         <div class="item-promotions">
                                             <!--<//tpshop sql="select * from __PREFIX__goods g inner join __PREFIX__flash_sale as f on g.goods_id = f.goods_id where start_time lt UNIX_TIMESTAMP(NOW()) and end_time gt UNIX_TIMESTAMP(NOW()) and status = 1 and cat_id = $vo['id'] limit 2"-->
                                             <!--item="promote" key="promote_key">-->
-                                            <!--<a href="{:U('Home/Goods/goodsInfo',array('id'=>$promote[goods_id]))}" target="_blank">-->
+                                            <!--<a href="{:U('Home/Goods/goodsInfo',array('id'=>$promote['goods_id']))}" target="_blank">-->
                                             <!--<img width="181" height="120" src="{$promote.goods_id|goods_thum_images=181,120}">-->
                                             <!--</a>-->
                                             <!--<///tpshop>-->

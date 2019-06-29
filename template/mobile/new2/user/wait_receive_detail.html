@@ -67,16 +67,16 @@
         <div class="fukcuid oversetimh">
             <div class="maleri30">
                 <div class="shopprice">
-                    <div class="img_or fl"><img src="{$good[goods_id]|goods_thum_images=100,100}"></div>
+                    <div class="img_or fl"><img src="{$good['goods_id']|goods_thum_images=100,100}"></div>
                     <div class="fon_or fl">
-                        <h2 class="similar-product-text"><a href="">{$good[goods_name]}</a></h2>
+                        <h2 class="similar-product-text"><a href="">{$good['goods_name']}</a></h2>
                         <p><span>数量：</span><span>{$good[goods_num]}</span></p>
                     </div>
                     <div class="pricangec">
                         <p><span>￥</span><span>{$good[member_goods_price]}</span></p>
                         <p class="buttondde">
                             <if condition="($order_info[return_btn] eq 1) and ($good[is_send] eq 1)">
-                                <a href="{:U('Mobile/User/return_goods',array('order_id'=>$order_info[order_id],'order_sn'=>$order_info[order_sn],'goods_id'=>$good[goods_id],'spec_key'=>$good['spec_key']))}">申请售后</a>
+                                <a href="{:U('Mobile/User/return_goods',array('order_id'=>$order_info[order_id],'order_sn'=>$order_info[order_sn],'goods_id'=>$good['goods_id'],'spec_key'=>$good['spec_key']))}">申请售后</a>
                             </if>
                         </p>
                         <input type="hidden" value="{$good[spec_key]}" ><!--订单商品规格-->

@@ -35,13 +35,13 @@
 <div class="ord_list p">
     <div class="maleri30">
         <volist name="order_info.goods_list" id="good">
-            <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$good[goods_id]))}">
+            <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$good['goods_id']))}">
                 <div class="shopprice">
                     <div class="img_or fl">
-                        <img src="{$good[goods_id]|goods_thum_images=100,100}"/>
+                        <img src="{$good['goods_id']|goods_thum_images=100,100}"/>
                     </div>
                     <div class="fon_or fl">
-                        <h2 class="similar-product-text">{$good[goods_name]} {$good[goods_id]}</h2>
+                        <h2 class="similar-product-text">{$good['goods_name']} {$good['goods_id']}</h2>
                         <div><span class="bac">{$good['spec_key_name']}</span></div>
                     </div>
                     <div class="price_or fr">

@@ -97,7 +97,7 @@
                     <tbody>
                     <volist name="orderGoods" id="good">
                         <tr> 
-                            <td class="text-left"><a href="{:U('Goods/addEditGoods',array('id'=>$good[goods_id]))}">{$good.goods_name}</a>
+                            <td class="text-left"><a href="{:U('Goods/addEditGoods',array('id'=>$good['goods_id']))}">{$good.goods_name}</a>
                             </td>
                             <td class="text-left">{$good.spec_key_name}</td>
                             <td class="text-left">{$good.goods_num}</td>

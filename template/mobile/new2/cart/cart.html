@@ -26,12 +26,12 @@
             <ul>
                 <foreach name="hot_goods" item="good">
                     <li>
-                        <a href="{:U('Mobile/goods/goodsInfo',array('id'=>$good[goods_id]))}">
+                        <a href="{:U('Mobile/goods/goodsInfo',array('id'=>$good['goods_id']))}">
                             <div class="similer-product">
-                                <img src="{$good[goods_id]|goods_thum_images=200,200}"/>
-                                <span class="similar-product-text">{$good[goods_name]|getsubstr=0,20}</span>
+                                <img src="{$good['goods_id']|goods_thum_images=200,200}"/>
+                                <span class="similar-product-text">{$good['goods_name']|getsubstr=0,20}</span>
                                 <span class="similar-product-price">
-                                    ¥<span class="big-price">{$good[shop_price]}</span>
+                                    ¥<span class="big-price">{$good['shop_price']}</span>
                                     <!--<span class="small-price">.00</span>-->
                                 </span>
                             </div>

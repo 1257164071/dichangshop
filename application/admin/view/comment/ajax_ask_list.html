@@ -36,7 +36,7 @@
                 </td>
                 <td class="text-center">{$list.username}</td>
                 <td class="text-left">{$list.content}</td>
-                <td class="text-left"><a target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list[goods_id]))}">{$goods_list[$list[goods_id]]}</a></td>
+                <td class="text-left"><a target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list['goods_id']))}">{$goods_list[$list['goods_id']]}</a></td>
                 <td class="text-center">
                     <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list[is_show] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('goods_consult','id','{$list.id}','is_show',this)"/>
                 </td>
