@@ -164,9 +164,9 @@ $(function() {
 	<div class="layout layer">
     	<div class="ground-flool">
         	<div class="flool-t">
-            	<h2><a href="">{$val[name]}</a></h2>                
+            	<h2><a href="">{$val['name']}</a></h2>
                 <tpshop sql="select * from `__PREFIX__goods_category` where is_show = 1 and parent_id = $val['id']" key="key2" item='val2'>
-	                <em>{$val2[name]}</em>
+	                <em>{$val2['name']}</em>
                 </tpshop>                
                 <ul><!--
 					<li><a href="{:U('/Home/Goods/goodsList',array('brand_id'=>1))}">诺基亚</a></li>

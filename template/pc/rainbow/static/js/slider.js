@@ -13,14 +13,14 @@
             {
                 name = 'backgroundPosition';
             }
-            if (name !== 'backgroundPosition' || !elem.currentStyle || elem.currentStyle[name])
+            if (name !== 'backgroundPosition' || !elem.currentStyle || elem.currentStyle['name'])
             {
                 return oldCurCSS.apply(this, arguments);
             }
             var style = elem.style;
-            if (!force && style && style[name])
+            if (!force && style && style['name'])
             {
-                return style[name];
+                return style['name'];
             }
             return oldCurCSS(elem, 'backgroundPositionX', force) + ' ' + oldCurCSS(elem, 'backgroundPositionY', force);
         };

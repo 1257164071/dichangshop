@@ -171,13 +171,13 @@
 
             <!--规格-s-->
             <foreach name="filter_spec" item="spec" >
-                <if condition="!empty($spec[name])">
+                <if condition="!empty($spec['name'])">
                     <div class="myorder p " onclick="filtercriteria('spec',{$spec['spec_id']})" id="spec[{$spec['spec_id']}]">
                         <div class="content30" >
                             <a href="javascript:void(0)">
                                 <div class="order" >
                                     <div class="fl">
-                                        <span>{$spec[name]}</span>
+                                        <span>{$spec['name']}</span>
                                     </div>
                                     <div class="fr">
                                         <i class="Mright"></i>
@@ -240,7 +240,7 @@
                             <a href="{:U('Mobile/Goods/goodsList',array('id'=>$cate['id']))}">
                                 <div class="order">
                                     <div class="fl">
-                                        <span>{$cate[name]}</span>
+                                        <span>{$cate['name']}</span>
                                     </div>
                                     <div class="fr">
                                         <i class=""></i>
@@ -255,7 +255,7 @@
                             <a href="{:U('Mobile/Goods/goodsList',array('id'=>$cate2['id']))}">
                                 <div class="order">
                                     <div class="fl">
-                                        <span>{:str_repeat("&nbsp;",$cate2[level])}{$cate2[name]}</span>
+                                        <span>{:str_repeat("&nbsp;",$cate2[level])}{$cate2['name']}</span>
                                     </div>
                                     <div class="fr">
                                         <i class=""></i>

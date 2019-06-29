@@ -164,7 +164,7 @@
 
     FormValidator.prototype.registerCallback = function(name, handler) {
         if (name && typeof name === 'string' && handler && typeof handler === 'function') {
-            this.handlers[name] = handler;
+            this.handlers['name'] = handler;
         }
 
         // return this for chaining
@@ -178,7 +178,7 @@
 
     FormValidator.prototype.registerConditional = function(name, conditional) {
         if (name && typeof name === 'string' && conditional && typeof conditional === 'function') {
-            this.conditionals[name] = conditional;
+            this.conditionals['name'] = conditional;
         }
 
         // return this for chaining

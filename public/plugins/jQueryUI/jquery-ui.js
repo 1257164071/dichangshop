@@ -4258,7 +4258,7 @@ $.extend(Datepicker.prototype, {
 		settings = name || {};
 		if (typeof name === "string") {
 			settings = {};
-			settings[name] = value;
+			settings['name'] = value;
 		}
 
 		if (inst) {
@@ -5203,8 +5203,8 @@ $.extend(Datepicker.prototype, {
 
 	/* Get a setting value, defaulting if necessary. */
 	_get: function(inst, name) {
-		return inst.settings[name] !== undefined ?
-			inst.settings[name] : this._defaults[name];
+		return inst.settings['name'] !== undefined ?
+			inst.settings['name'] : this._defaults['name'];
 	},
 
 	/* Parse existing date and initialise date picker. */
@@ -5782,8 +5782,8 @@ function datepicker_handleMouseover() {
 function datepicker_extendRemove(target, props) {
 	$.extend(target, props);
 	for (var name in props) {
-		if (props[name] == null) {
-			target[name] = props[name];
+		if (props['name'] == null) {
+			target['name'] = props['name'];
 		}
 	}
 	return target;

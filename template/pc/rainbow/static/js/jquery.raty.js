@@ -317,7 +317,7 @@
       for (var i = 1; i <= this.opt.number; i++) {
         var
           name  = methods._nameForIndex.call(this, i),
-          attrs = { alt: i, src: this.opt.path + this.opt[name] };
+          attrs = { alt: i, src: this.opt.path + this.opt['name'] };
 
         if (this.opt.starType !== 'img') {
           attrs = { 'data-alt': i, 'class': attrs.src }; // TODO: use $.data.
@@ -497,7 +497,7 @@
 
       if (name) {
         var
-          icon = this.opt[name],
+          icon = this.opt['name'],
           star = this.stars[Math.ceil(score) - 1];
 
         methods._setIcon.call(this, star, icon);

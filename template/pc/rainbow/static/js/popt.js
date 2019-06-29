@@ -237,11 +237,11 @@ var Iput = {
     gData: function (name, value) {
         var top = window.top, cache = top['_CACHE'] || {};
         top['_CACHE'] = cache;
-        return value ? cache[name] = value : cache[name];
+        return value ? cache['name'] = value : cache['name'];
     },
     rData: function (name) {
         var cache = window.top['_CACHE'];
-        if (cache && cache[name]) delete cache[name];
+        if (cache && cache['name']) delete cache['name'];
     }
 }
 

@@ -41,7 +41,7 @@ if (typeof(SWFUpload) === "function") {
             if (eqIndex > 0) {
                 name = c.substring(0, eqIndex);
                 value = c.substring(eqIndex + 1);
-                postParams[name] = value;
+                postParams['name'] = value;
             }
         }
 

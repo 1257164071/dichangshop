@@ -5112,8 +5112,8 @@
 			mappedName = name;
 		}
 	
-		if ( src[name] !== undefined ) {
-			ret[mappedName] = src[name];
+		if ( src['name'] !== undefined ) {
+			ret[mappedName] = src['name'];
 		}
 	}
 	

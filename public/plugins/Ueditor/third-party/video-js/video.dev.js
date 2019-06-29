@@ -220,7 +220,7 @@ vjs.CoreObject.extend = function(props){
   // Extend subObj's prototype with functions and other properties from props
   for (var name in props) {
     if (props.hasOwnProperty(name)) {
-      subObj.prototype[name] = props[name];
+      subObj.prototype['name'] = props['name'];
     }
   }
 
@@ -1600,7 +1600,7 @@ vjs.Component.prototype.childNameIndex_;
  * @return {vjs.Component}
  */
 vjs.Component.prototype.getChild = function(name){
-  return this.childNameIndex_[name];
+  return this.childNameIndex_['name'];
 };
 
 /**
@@ -1742,7 +1742,7 @@ vjs.Component.prototype.initChildren = function(){
       // Allow waiting to add components until a specific event is called
       var tempAdd = function(){
         // Set property name on player. Could cause conflicts with other prop names, but it's worth making refs easy.
-        self[name] = self.addChild(name, opts);
+        self['name'] = self.addChild(name, opts);
       };
 
       if (opts['loadEvent']) {
@@ -7104,5 +7104,5 @@ vjs.autoSetupTimeout(1);
  * @param  {Function} init The function that is run when the player inits
  */
 vjs.plugin = function(name, init){
-  vjs.Player.prototype[name] = init;
+  vjs.Player.prototype['name'] = init;
 };

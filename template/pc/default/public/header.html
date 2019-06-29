@@ -135,7 +135,7 @@
                                 <li class="list-li">
                                     <div class="list_a">
                                         <h3><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}"><span>{$v['name']}</span></a></h3>
-                                        <p> <!--$v['id'][name] 数组中括号 里面的 id name 不能有 引号 sql 参数 必须双引号-->
+                                        <p> <!--$v['id']['name'] 数组中括号 里面的 id name 不能有 引号 sql 参数 必须双引号-->
 	                                       <assign name="index" value="1" />
                                            <foreach name="v[tmenu]" item="v2" key="k2" >
                                              <if condition="$v2['parent_id'] eq $v['id']">

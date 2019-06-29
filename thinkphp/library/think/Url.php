@@ -32,7 +32,7 @@ class Url
         }
         // 解析URL
         if (0 === strpos($url, '[') && $pos = strpos($url, ']')) {
-            // [name] 表示使用路由命名标识生成URL
+            // ['name'] 表示使用路由命名标识生成URL
             $name = substr($url, 1, $pos - 1);
             $url  = 'name' . substr($url, $pos + 1);
         }

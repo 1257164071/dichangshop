@@ -99,7 +99,7 @@
 			<!--如果当前分类是三级分类 则二级也要显示-->
 			<if condition="$goodsCate[level] eq 3">
 				<div class="havedox">
-					<div class="disenk"><span>{$goods_category[$goodsCate['parent_id']][name]}</span><i class="litt-xxd"></i></div>
+					<div class="disenk"><span>{$goods_category[$goodsCate['parent_id']]['name']}</span><i class="litt-xxd"></i></div>
 					<div class="hovshz">
 						<ul>
 							<foreach name="goods_category" item="v" key="k">

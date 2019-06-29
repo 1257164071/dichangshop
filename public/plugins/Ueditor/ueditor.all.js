@@ -575,11 +575,11 @@
                     switch (key) {
                         case 'padding':
                             !padding && (padding = {});
-                            padding[name] = val;
+                            padding['name'] = val;
                             return '';
                         case 'margin':
                             !margin && (margin = {});
-                            margin[name] = val;
+                            margin['name'] = val;
                             return '';
                         case 'border':
                             return val == 'initial' ? '' : str;
@@ -2111,7 +2111,7 @@
         setStyles: function (element, styles) {
             for (var name in styles) {
                 if (styles.hasOwnProperty(name)) {
-                    domUtils.setStyle(element, name, styles[name]);
+                    domUtils.setStyle(element, name, styles['name']);
                 }
             }
         },
@@ -6787,7 +6787,7 @@
             };
             for (var name in bgObj) {
                 if (bgObj.hasOwnProperty(name)) {
-                    html += name + ":" + bgObj[name] + ";";
+                    html += name + ":" + bgObj['name'] + ";";
                 }
             }
             html += '}</style> ';
@@ -21191,7 +21191,7 @@
                     },
                     _onImgEditButtonClick: function (name) {
                         this.hide();
-                        editor.ui._dialogs[name] && editor.ui._dialogs[name].open();
+                        editor.ui._dialogs['name'] && editor.ui._dialogs['name'].open();
 
                     },
                     _onImgSetFloat: function (value) {

@@ -88,7 +88,7 @@ var Zepto = (function() {
 
   function classRE(name) {
     return name in classCache ?
-        classCache[name] : (classCache[name] = new RegExp('(^|\\s)' + name + '(\\s|$)'))
+        classCache['name'] : (classCache['name'] = new RegExp('(^|\\s)' + name + '(\\s|$)'))
   }
 
   function maybeAddPx(name, value) {
@@ -130,7 +130,7 @@ var Zepto = (function() {
       if (name === undefined) name = fragmentRE.test(html) && RegExp.$1
       if (!(name in containers)) name = '*'
 
-      container = containers[name]
+      container = containers['name']
       container.innerHTML = '' + html
       dom = $.each(slice.call(container.childNodes), function(){
         container.removeChild(this)
@@ -607,7 +607,7 @@ var Zepto = (function() {
       var result
       return (typeof name == 'string' && !(1 in arguments)) ?
           (!this.length || this[0].nodeType !== 1 ? undefined :
-                  (!(result = this[0].getAttribute(name)) && name in this[0]) ? this[0][name] : result
+                  (!(result = this[0].getAttribute(name)) && name in this[0]) ? this[0]['name'] : result
           ) :
           this.each(function(idx){
             if (this.nodeType !== 1) return
@@ -621,12 +621,12 @@ var Zepto = (function() {
       }, this)})
     },
     prop: function(name, value){
-      name = propMap[name] || name
+      name = propMap['name'] || name
       return (1 in arguments) ?
           this.each(function(idx){
-            this[name] = funcArg(this, value, idx, this[name])
+            this['name'] = funcArg(this, value, idx, this['name'])
           }) :
-          (this[0] && this[0][name])
+          (this[0] && this[0]['name'])
     },
     data: function(name, value){
       var attrName = 'data-' + name.replace(capitalRE, '-$1').toLowerCase()
@@ -1013,8 +1013,8 @@ window.$ === undefined && (window.$ = Zepto)
       source || (source = event)
 
       $.each(eventMethods, function(name, predicate) {
-        var sourceMethod = source[name]
-        event[name] = function(){
+        var sourceMethod = source['name']
+        event['name'] = function(){
           this[predicate] = returnTrue
           return sourceMethod && sourceMethod.apply(source, arguments)
         }
@@ -1147,7 +1147,7 @@ window.$ === undefined && (window.$ = Zepto)
   $.Event = function(type, props) {
     if (!isString(type)) props = type, type = props.type
     var event = document.createEvent(specialEvents[type] || 'Events'), bubbles = true
-    if (props) for (var name in props) (name == 'bubbles') ? (bubbles = !!props[name]) : (event[name] = props[name])
+    if (props) for (var name in props) (name == 'bubbles') ? (bubbles = !!props['name']) : (event['name'] = props['name'])
     event.initEvent(type, bubbles, true)
     return compatible(event)
   }
@@ -1390,7 +1390,7 @@ window.$ === undefined && (window.$ = Zepto)
     if (settings.contentType || (settings.contentType !== false && settings.data && settings.type.toUpperCase() != 'GET'))
       setHeader('Content-Type', settings.contentType || 'application/x-www-form-urlencoded')
 
-    if (settings.headers) for (name in settings.headers) setHeader(name, settings.headers[name])
+    if (settings.headers) for (name in settings.headers) setHeader(name, settings.headers['name'])
     xhr.setRequestHeader = setHeader
 
     xhr.onreadystatechange = function(){
@@ -1423,12 +1423,12 @@ window.$ === undefined && (window.$ = Zepto)
       return xhr
     }
 
-    if (settings.xhrFields) for (name in settings.xhrFields) xhr[name] = settings.xhrFields[name]
+    if (settings.xhrFields) for (name in settings.xhrFields) xhr['name'] = settings.xhrFields['name']
 
     var async = 'async' in settings ? settings.async : true
     xhr.open(settings.type, settings.url, async, settings.username, settings.password)
 
-    for (name in headers) nativeSetHeader.apply(xhr, headers[name])
+    for (name in headers) nativeSetHeader.apply(xhr, headers['name'])
 
     if (settings.timeout > 0) abortTimeout = setTimeout(function(){
       xhr.onreadystatechange = empty
