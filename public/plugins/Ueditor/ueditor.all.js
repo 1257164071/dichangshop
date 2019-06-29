@@ -10584,7 +10584,7 @@
         }
 
         function setListStyle(list, style) {
-            if (customStyle[style]) {
+            if (customStyle['style']) {
                 list.className = 'custom_' + style;
             }
             try {
@@ -17074,7 +17074,7 @@
                         return getObj(this, tagNames) ? 1 : 0;
                     }
                 };
-            })(style, basestyles[style]);
+            })(style, basestyles['style']);
         }
     };
 
