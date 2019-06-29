@@ -67,7 +67,7 @@
                     <label><em>*</em>限购数量</label>
                 </dt>
                 <dd class="opt">
-                    <input type="text" <if condition="$info[id] gt 0">readonly="readonly"</if> id="buy_limit" name="buy_limit" value="{$info.buy_limit}" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')"  class="input-txt">
+                    <input type="text" <if condition="$info['id'] gt 0">readonly="readonly"</if> id="buy_limit" name="buy_limit" value="{$info.buy_limit}" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')"  class="input-txt">
                     <span class="err" id="err_buy_limit"></span>
                     <p class="notic">限时抢购每个人能购买的数量</p>
                 </dd>

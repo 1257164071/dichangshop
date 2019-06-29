@@ -70,8 +70,8 @@
                                         <td class="text-center">{$list.ip_address}</td>
 
                                         <td class="text-center">
-                                            <a href="{:U('Comment/consult_info',array('id'=>$list[id]))}" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-eye"></i></a>
-                                            <a href="javascript:void(0);" data-href="{:U('Comment/ask_handle',array('id'=>$list[id]))}" onclick="del('{$list[id]}',this)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>
+                                            <a href="{:U('Comment/consult_info',array('id'=>$list['id']))}" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-eye"></i></a>
+                                            <a href="javascript:void(0);" data-href="{:U('Comment/ask_handle',array('id'=>$list['id']))}" onclick="del('{$list['id']}',this)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>
                                         </td>
                                     </tr>
                                 </volist>

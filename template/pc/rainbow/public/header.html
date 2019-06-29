@@ -204,12 +204,12 @@
                                                 <if condition="$v2['parent_id'] eq $v['id']">
                                                 <dl><!-- 2级循环点-->
                                                     <dt>
-                                                        <a href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}" target="_blank">{$v2[name]}<i>&gt;</i></a>
+                                                        <a href="{:U('Home/Goods/goodsList',array('id'=>$v2['id']))}" target="_blank">{$v2[name]}<i>&gt;</i></a>
                                                     </dt>
                                                     <dd>
                                                         <foreach name="v2['sub_menu']" key="k3" item='v3'>
                                                             <if condition="$v3['parent_id'] eq $v2['id']">
-                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3[id]))}" target="_blank">{$v3[name]}</a></if>
+                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3['id']))}" target="_blank">{$v3[name]}</a></if>
                                                         </foreach>
                                                     </dd>
                                                 </dl>

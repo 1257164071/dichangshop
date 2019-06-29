@@ -64,7 +64,7 @@
                     <if condition="$item['status'] eq 1">客服处理中</if>
                     <if condition="$item['status'] eq 2">已完成</if>
                 </td>
-                <td><a href="{:U('Home/User/return_goods_info',array('id'=>$item[id]))}">查看</a></td>
+                <td><a href="{:U('Home/User/return_goods_info',array('id'=>$item['id']))}">查看</a></td>
               </tr>
              </volist>
             </tbody>

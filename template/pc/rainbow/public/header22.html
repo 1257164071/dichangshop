@@ -221,7 +221,7 @@
                                 <div class="item-left">
                                     <div class="cata-nav-name">
                                         <h3>
-                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$vo[id]))}" title="{$vo.name}">{$vo.name}</a>
+                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$vo['id']))}" title="{$vo.name}">{$vo.name}</a>
                                         </h3>
                                     </div>
                                     <b>&gt;</b>
@@ -241,10 +241,10 @@
                                         <div class="subitems">
                                             <dl>
                                                 <foreach name="vo.tmenu" item="v2" key="k2">
-                                                    <dt><a href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}" target="_blank">{$v2.name}<i>&gt;</i></a></dt>
+                                                    <dt><a href="{:U('Home/Goods/goodsList',array('id'=>$v2['id']))}" target="_blank">{$v2.name}<i>&gt;</i></a></dt>
                                                     <dd>
                                                         <foreach name="v2.sub_menu" item="v3">
-                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3[id]))}" target="_blank">{$v3.name}</a>
+                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3['id']))}" target="_blank">{$v3.name}</a>
                                                         </foreach>
                                                     </dd>
                                                 </foreach>
@@ -261,9 +261,9 @@
                                         <div class="item-brands">
                                             <ul>
                                                 <volist name="brand_list" id="v2" mod="2">
-                                                    <if condition="($v2[cat_id] eq $vo[id]) AND ($v2[is_hot] eq 1)">
+                                                    <if condition="($v2[cat_id] eq $vo['id']) AND ($v2[is_hot] eq 1)">
                                                         <li>
-                                                            <a href="{:U('Home/Goods/goodsList',array('brand_id'=>$v2[id]))}" target="_blank" title="{$v2.name}"> <img
+                                                            <a href="{:U('Home/Goods/goodsList',array('brand_id'=>$v2['id']))}" target="_blank" title="{$v2.name}"> <img
                                                                     src="{$v2.logo}" width="91" height="40"></a>
                                                         </li>
                                                     </if>
@@ -271,7 +271,7 @@
                                             </ul>
                                         </div>
                                         <div class="item-promotions">
-                                            <!--<//tpshop sql="select * from __PREFIX__goods g inner join __PREFIX__flash_sale as f on g.goods_id = f.goods_id where start_time lt UNIX_TIMESTAMP(NOW()) and end_time gt UNIX_TIMESTAMP(NOW()) and status = 1 and cat_id = $vo[id] limit 2"-->
+                                            <!--<//tpshop sql="select * from __PREFIX__goods g inner join __PREFIX__flash_sale as f on g.goods_id = f.goods_id where start_time lt UNIX_TIMESTAMP(NOW()) and end_time gt UNIX_TIMESTAMP(NOW()) and status = 1 and cat_id = $vo['id'] limit 2"-->
                                             <!--item="promote" key="promote_key">-->
                                             <!--<a href="{:U('Home/Goods/goodsInfo',array('id'=>$promote[goods_id]))}" target="_blank">-->
                                             <!--<img width="181" height="120" src="{$promote.goods_id|goods_thum_images=181,120}">-->

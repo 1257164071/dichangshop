@@ -16419,7 +16419,7 @@ var tooltip = $.widget( "ui.tooltip", {
 		this.liveRegion.children().hide();
 		if ( content.clone ) {
 			a11yContent = content.clone();
-			a11yContent.removeAttr( "id" ).find( "[id]" ).removeAttr( "id" );
+			a11yContent.removeAttr( "id" ).find( "['id']" ).removeAttr( "id" );
 		} else {
 			a11yContent = content;
 		}

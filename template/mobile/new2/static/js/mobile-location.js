@@ -930,7 +930,7 @@ window.$ === undefined && (window.$ = Zepto)
   }
 
   function add(element, events, fn, data, selector, delegator, capture){
-    var id = zid(element), set = (handlers[id] || (handlers[id] = []))
+    var id = zid(element), set = (handlers['id'] || (handlers['id'] = []))
     events.split(/\s/).forEach(function(event){
       if (event == 'ready') return $(document).ready(fn)
       var handler   = parse(event)
@@ -962,7 +962,7 @@ window.$ === undefined && (window.$ = Zepto)
     var id = zid(element)
         ;(events || '').split(/\s/).forEach(function(event){
       findHandlers(element, event, fn, selector).forEach(function(handler){
-        delete handlers[id][handler.i]
+        delete handlers['id'][handler.i]
         if ('removeEventListener' in element)
           element.removeEventListener(realEvent(handler.e), handler.proxy, eventCapture(handler, capture))
       })

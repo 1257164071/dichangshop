@@ -40,7 +40,7 @@
 										</a>
                                         <volist name="goods_category" id="gc">
                                             <a href="{:U('Home/Goods/integralMall',array('id'=>$gc['id']))}">
-                                                <span <if condition="$Request.param.id eq $gc[id]">class="red"</if>>{$gc['name']}</span>
+                                                <span <if condition="$Request.param.id eq $gc['id']">class="red"</if>>{$gc['name']}</span>
                                             </a>
                                         </volist>
 									</div>

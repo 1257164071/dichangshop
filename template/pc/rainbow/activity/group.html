@@ -71,7 +71,7 @@
 							</div>
 							<script>
 								var jiathis_config = {
-									url:"http://{$_SERVER[HTTP_HOST]}/index.php?m=Home&c=Goods&a=goodsInfo&id={$_GET[id]}",
+									url:"http://{$_SERVER[HTTP_HOST]}/index.php?m=Home&c=Goods&a=goodsInfo&id={$_GET['id']}",
 									pic:"http://{$_SERVER[HTTP_HOST]}{$goods[goods_id]|goods_thum_images=400,400}",
 								}
 								var is_distribut = getCookie('is_distribut');

@@ -195,14 +195,14 @@
         <div class="list-se-all ma-to-20 two-related">
             <!--商品品牌筛选-s-->
             <foreach name="filter_brand" item="brand" key="brandk">
-                <div class="myorder p filter brnda" data-val='{$brand[id]}'>
+                <div class="myorder p filter brnda" data-val='{$brand['id']}'>
                     <div class="content30">
                         <div class="order">
                             <div class="fl">
                                 <span>{$brand[name]}</span>
                             </div>
                             <div class="fr">
-                                <i class=""><input type="checkbox" style="display: none;"  value="{$brand[id]}"/></i>
+                                <i class=""><input type="checkbox" style="display: none;"  value="{$brand['id']}"/></i>
                             </div>
                         </div>
                     </div>

@@ -86,7 +86,7 @@
 								</td>
 								<td class="handle" align="center">
 									<div style="text-align: center; width: 150px;">
-										<a class="btn red" data-url="{:U('Tools/regionHandle',array('id'=>$vo[id]))}"  onclick="delRegion(this);"><i class="fa fa-trash-o"></i>删除</a>
+										<a class="btn red" data-url="{:U('Tools/regionHandle',array('id'=>$vo['id']))}"  onclick="delRegion(this);"><i class="fa fa-trash-o"></i>删除</a>
 										<span class="btn"><em><i class="fa fa-cog"></i>设置 <i class="arrow"></i></em><ul>
 										<li><a href="{:U('Admin/Tools/region',array('op'=>'add','parent_id'=>$vo['id']))}">新增下级</a></li>
 										<li><a href="{:U('Admin/Tools/region',array('parent_id'=>$vo['id']))}">查看下级</a></li>

@@ -18083,11 +18083,11 @@
                 return offset;
             },
             setGlobal: function (id, obj) {
-                root[id] = obj;
+                root['id'] = obj;
                 return magic + '["' + id + '"]';
             },
             unsetGlobal: function (id) {
-                delete root[id];
+                delete root['id'];
             },
             copyAttributes: function (tgt, src) {
                 var attributes = src.attributes;
@@ -21802,9 +21802,9 @@
          *
          */
         UE.getEditor = function (id, opt) {
-            var editor = instances[id];
+            var editor = instances['id'];
             if (!editor) {
-                editor = instances[id] = new UE.ui.Editor(opt);
+                editor = instances['id'] = new UE.ui.Editor(opt);
                 editor.render(id);
             }
             return editor;
@@ -21813,9 +21813,9 @@
 
         UE.delEditor = function (id) {
             var editor;
-            if (editor = instances[id]) {
+            if (editor = instances['id']) {
                 editor.key && editor.destroy();
-                delete instances[id]
+                delete instances['id']
             }
         }
     })();

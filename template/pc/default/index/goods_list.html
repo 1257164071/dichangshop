@@ -47,8 +47,8 @@
                     	<ul class="ov-hi">
                             <foreach name="v[spec_item]" item="v2" key="k2">
 	                    		<li>
-	                                <a href="{$v2[id]}">{$v2[item]}</a>
-	                                <input type="checkbox" name="spec_item_id[{$v['id']}][]" value="{$v2[id]}" onClick="ajax_sourch_submit();"/>
+	                                <a href="{$v2['id']}">{$v2[item]}</a>
+	                                <input type="checkbox" name="spec_item_id[{$v['id']}][]" value="{$v2['id']}" onClick="ajax_sourch_submit();"/>
 	                            </li>
                     	    </foreach>	
                     	</ul>

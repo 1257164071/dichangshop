@@ -157,7 +157,7 @@ $(function() {
 <!--------楼层-开始-------------->
 <tpshop sql="select * from `__PREFIX__goods_category` where is_show = 1 and `level` = 1  limit 7" key="key" item='val'>
 <?php 
-    $cat_id_arr = getCatGrandson($val[id]); // 找到某个大类下面的所有子分类id
+    $cat_id_arr = getCatGrandson($val['id']); // 找到某个大类下面的所有子分类id
     $cat_id_str = implode(',',$cat_id_arr);
 ?>
 
@@ -165,7 +165,7 @@ $(function() {
     	<div class="ground-flool">
         	<div class="flool-t">
             	<h2><a href="">{$val[name]}</a></h2>                
-                <tpshop sql="select * from `__PREFIX__goods_category` where is_show = 1 and parent_id = $val[id]" key="key2" item='val2'>
+                <tpshop sql="select * from `__PREFIX__goods_category` where is_show = 1 and parent_id = $val['id']" key="key2" item='val2'>
 	                <em>{$val2[name]}</em>
                 </tpshop>                
                 <ul><!--

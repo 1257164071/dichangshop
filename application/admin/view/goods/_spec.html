@@ -37,7 +37,7 @@
                                         <select name="type_id" id="type_id">
                                              <option value="">请选择</option>
                                             <volist name="goodsTypeList" id="vo">
-                                             <option value="{$vo[id]}" <if condition="$vo[id] eq $spec[type_id]">selected="selected"</if>>{$vo[name]}</option>
+                                             <option value="{$vo['id']}" <if condition="$vo['id'] eq $spec[type_id]">selected="selected"</if>>{$vo[name]}</option>
                                             </volist>                                        
                                         </select>
                                         <span id="err_type_id" style="color:#F00; display:none;"></span>                                        

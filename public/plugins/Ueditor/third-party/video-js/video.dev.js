@@ -36,8 +36,8 @@ var vjs = function(id, options, ready){
     }
 
     // If a player instance has already been created for this ID return it.
-    if (vjs.players[id]) {
-      return vjs.players[id];
+    if (vjs.players['id']) {
+      return vjs.players['id'];
 
     // Otherwise get element for ID
     } else {
@@ -814,9 +814,9 @@ vjs.getData = function(el){
   var id = el[vjs.expando];
   if (!id) {
     id = el[vjs.expando] = vjs.guid++;
-    vjs.cache[id] = {};
+    vjs.cache['id'] = {};
   }
-  return vjs.cache[id];
+  return vjs.cache['id'];
 };
 
 /**
@@ -827,7 +827,7 @@ vjs.getData = function(el){
  */
 vjs.hasData = function(el){
   var id = el[vjs.expando];
-  return !(!id || vjs.isEmpty(vjs.cache[id]));
+  return !(!id || vjs.isEmpty(vjs.cache['id']));
 };
 
 /**
@@ -841,8 +841,8 @@ vjs.removeData = function(el){
   // Remove all stored data
   // Changed to = null
   // http://coding.smashingmagazine.com/2012/11/05/writing-fast-memory-efficient-javascript/
-  // vjs.cache[id] = null;
-  delete vjs.cache[id];
+  // vjs.cache['id'] = null;
+  delete vjs.cache['id'];
 
   // Remove the expando property from the DOM node
   try {
@@ -1583,7 +1583,7 @@ vjs.Component.prototype.childIndex_;
  * @return {vjs.Component}
  */
 vjs.Component.prototype.getChildById = function(id){
-  return this.childIndex_[id];
+  return this.childIndex_['id'];
 };
 
 /**

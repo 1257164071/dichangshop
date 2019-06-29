@@ -57,7 +57,7 @@
                                             <if condition="$list[type] eq 4">
                                                 <a href="{:U('Admin/Coupon/make_coupon',array('id'=>$list['id'],'type'=>$list['type']))}" data-toggle="tooltip" title="" class="btn btn-info" data-original-title="发放"><i class="fa fa-send"></i></a>
                                             <elseif condition="$list[type] eq 1"/>
-                                            	<a href="javascript:void(0)" data-toggle="tooltip" title="发放" class="btn btn-info send_user" data-url="{:U('Coupon/send_coupon',array('cid'=>$list[id]))}"><i class="fa fa-send-o"></i></a>
+                                            	<a href="javascript:void(0)" data-toggle="tooltip" title="发放" class="btn btn-info send_user" data-url="{:U('Coupon/send_coupon',array('cid'=>$list['id']))}"><i class="fa fa-send-o"></i></a>
                                             <else/>
                                             	<a href="javascript:void(0)" data-toggle="tooltip" title="" class="btn btn-default disabled" data-original-title="查看"><i class="fa fa-send-o"></i></a>
                                             </if>

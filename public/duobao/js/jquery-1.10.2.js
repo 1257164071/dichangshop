@@ -3587,7 +3587,7 @@ function internalData( elem, name, data, pvt /* Internal Use Only */ ){
 
 	// Avoid doing any more work than we need to when trying to get data on an
 	// object that has no data at all
-	if ( (!id || !cache[id] || (!pvt && !cache[id].data)) && data === undefined && typeof name === "string" ) {
+	if ( (!id || !cache['id'] || (!pvt && !cache['id'].data)) && data === undefined && typeof name === "string" ) {
 		return;
 	}
 

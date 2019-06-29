@@ -76,7 +76,7 @@ var ZeroClipboard_TableTools = {
 
 	dispatch: function(id, eventName, args) {
 		// receive event from flash movie, send to client
-		var client = this.clients[id];
+		var client = this.clients['id'];
 		if (client) {
 			client.receiveEvent(eventName, args);
 		}
@@ -84,7 +84,7 @@ var ZeroClipboard_TableTools = {
 
 	register: function(id, client) {
 		// register new client to receive events
-		this.clients[id] = client;
+		this.clients['id'] = client;
 	},
 
 	getDOMObjectPosition: function(obj) {
