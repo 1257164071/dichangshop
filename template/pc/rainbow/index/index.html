@@ -354,7 +354,7 @@
                 <div class="part-title">{$v['name']}</div>
                 <div class="part-hot">
                     <ul>
-                        <foreach name="v[tmenu]" item="v2" key="k2">
+                        <foreach name="v['tmenu']" item="v2" key="k2">
                             <li>
                                 <a href="{:U('Home/Goods/goodsList',array('id'=>$v2['id']))}">{$v2['name']}</a>
                             </li>
