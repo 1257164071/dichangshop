@@ -131,7 +131,7 @@
             	<div class="list" <?php if(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME == 'home/Index/index') echo 'style="display:block;"'; ?> >
                    <ul class="list_ul"> 
                        <foreach name="goods_category_tree" key="k" item='v'>
-                           <if condition="$v[level] eq 1">                       
+                           <if condition="$v['level'] eq 1">
                                 <li class="list-li">
                                     <div class="list_a">
                                         <h3><a href="{:U('Home/Goods/goodsList',array('id'=>$v[id]))}"><span>{$v['name']}</span></a></h3>

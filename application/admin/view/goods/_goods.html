@@ -221,7 +221,7 @@
                                         <option value="">所有分类</option>
                                              <foreach name="cat_list" item="v" key="k" >                                                                                          
                                                <option value="{$v['id']}" <if condition="$v['id'] eq $goodsInfo['cat_id'] ">selected="selected"</if> >
-                                               		<?php echo  str_pad('',($v[level] * 5),'-',STR_PAD_LEFT);  ?> {$v['name']}
+                                               		<?php echo  str_pad('',($v['level'] * 5),'-',STR_PAD_LEFT);  ?> {$v['name']}
                                                </option>
                                              </foreach>
                                       </select>                                    

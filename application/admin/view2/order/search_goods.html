@@ -18,7 +18,7 @@
         	<select name="cat_id" id="cat_id" class="select">
                  <option value="">所有分类</option>
                  <foreach name="categoryList" item="v" key="k" >
-					<option value="{$v['id']}" <if condition="$v[id] eq $cat_id">selected</if> ><?php echo  str_pad('',($v[level] * 5),'-',STR_PAD_LEFT);  ?> {$v['name']}</option>
+					<option value="{$v['id']}" <if condition="$v[id] eq $cat_id">selected</if> ><?php echo  str_pad('',($v['level'] * 5),'-',STR_PAD_LEFT);  ?> {$v['name']}</option>
 				</foreach>
              </select>
         </div>
