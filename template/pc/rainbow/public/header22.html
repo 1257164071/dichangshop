@@ -291,7 +291,7 @@
                     <li><a  href="{:U('Home/Index/index')}">首页</a></li>
                     <tpshop sql="SELECT * FROM `__PREFIX__navigation` where is_show = 1 ORDER BY `sort` DESC" key="k" item='v'>
                         <li <?php  if($_SERVER['REQUEST_URI']==str_replace('&amp;','&',$v[url])){ echo "class='index_modify'";}?>>
-                        <a href="{$v[url]}" <?php  if($_SERVER['REQUEST_URI']==str_replace('&amp;','&',$v[url])){ echo "class='selected '";} ?> >{$v[name]}</a>
+                        <a href="{$v[url]}" <?php  if($_SERVER['REQUEST_URI']==str_replace('&amp;','&',$v[url])){ echo "class='selected '";} ?> >{$v['name']}</a>
                         </li>
                     </tpshop>
                 </ul>

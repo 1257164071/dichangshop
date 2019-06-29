@@ -185,7 +185,7 @@
             	<ul class="navlist">
             		<li class="homepage"><a href="/"><span>首页</span></a></li>
                     <tpshop sql="SELECT * FROM `__PREFIX__navigation` where is_show = 1 ORDER BY `sort` DESC" key="k" item='v'>
-            			<li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v[name]}</span></a></li>
+            			<li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v['name']}</span></a></li>
 					</tpshop> 
             	</ul>
             </div>

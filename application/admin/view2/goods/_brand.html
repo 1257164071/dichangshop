@@ -41,7 +41,7 @@
            <select name="parent_cat_id" id="parent_id_1" onchange="get_category(this.value,'parent_id_2','0');" class="form-control" >
                 <option value="0">请选择分类</option> 
                 <foreach name="cat_list" item="v" >	                                                                                    
-                    <option value="{$v['id']}"  <if condition="$v['id'] eq $brand[parent_cat_id]"> selected="selected" </if>>{$v[name]}</option>
+                    <option value="{$v['id']}"  <if condition="$v['id'] eq $brand[parent_cat_id]"> selected="selected" </if>>{$v['name']}</option>
                 </foreach>                                            
             </select>
           <select name="cat_id" id="parent_id_2"  class="form-control" style="width:250px;">

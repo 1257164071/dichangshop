@@ -191,7 +191,7 @@
                                     <div class="cata-nav-name">
                                         <h3>
                                             <div class="contiw-cer"><span class="share-icon-{$k}"></span></div>
-                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}" title="{$v[name]}">{$v[name]}</a>
+                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}" title="{$v['name']}">{$v['name']}</a>
                                         </h3>
                                     </div>
                                     <b>&gt;</b>
@@ -253,7 +253,7 @@
                             <a href="{:U('Index/index')}" class="selected">首页</a>
                         </li>
                         <tpshop sql="SELECT * FROM `__PREFIX__navigation` where is_show = 1 ORDER BY `sort` DESC" key="k" item='v'>
-                            <li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v[name]}</span></a></li>
+                            <li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v['name']}</span></a></li>
                         </tpshop>
                     </ul>
                     <!-- <div class="wrap-line" style="width: 72px; left: 20px;">
