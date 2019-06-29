@@ -21,7 +21,7 @@
                     </td>
                     <td class="text-right">{$list.id}</td>
                     <td class="text-left">{$list.name}</td>
-                    <td class="text-left">{$goodsTypeList[$list[type_id]][name]}</td>
+                    <td class="text-left">{$goodsTypeList[$list[type_id]]['name']}</td>
                     <td class="text-left">{$list.spec_item}</td>
                     <td class="text-center">
                         <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list[search_index] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('spec','id','{$list.id}','search_index',this)"/>

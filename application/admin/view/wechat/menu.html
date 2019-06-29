@@ -85,7 +85,7 @@
 
 										<tr  role="row" class="odd  pmenu{$list.id} menu{$list.id}" >
 											<td>
-												<input type="text" name="menu[{$list.id}][name]" class="topmenu" value="{$list.name}" placeholder="菜单名称">
+												<input type="text" name="menu[{$list.id}]['name']" class="topmenu" value="{$list.name}" placeholder="菜单名称">
 												<a onclick="addcmenu({$list.id});" class="btn btn-primary"><i class="fa fa-plus"></i></a><a onclick="delmenu({$list.id});" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
 											<td class="sorting_1">
 												<select name="menu[{$list.id}][type]" style="width: 50%">
@@ -110,7 +110,7 @@
 											<if condition="$clist['pid'] eq $list['id']">
 												<tr  role="row" class="odd  pmenu{$list.id} menu{$clist.id}" >
 													<td <if condition="$clist['pid'] gt 0">style="padding-left: 5em"</if>>
-													<input type="text" name="menu[{$clist.id}][name]" value="{$clist.name}" placeholder="菜单名称">
+													<input type="text" name="menu[{$clist.id}]['name']" value="{$clist.name}" placeholder="菜单名称">
 													<a onclick="delmenu({$clist.id});" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
 													<td class="sorting_1">
 														<select name="menu[{$clist.id}][type]" style="width: 50%">
@@ -158,7 +158,7 @@
 	<!--
 	<tr  role="row" class="odd  pmenu__id__ menu__id__">
   <td>
-    <input type="text" name="menu[__id__][name]" value="" placeholder="菜单名称">
+    <input type="text" name="menu[__id__]['name']" value="" placeholder="菜单名称">
     <a onclick="addcmenu(__id__);" class="btn btn-primary"><i class="fa fa-plus"></i></a><a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
   <td class="sorting_1">
     <select name="menu[__id__][type]" style="width: 50%">
@@ -186,7 +186,7 @@
 	<!--
 	<tr role="row" class="odd pmenu__pid__ menu__id__" >
   <td class="" style="padding-left: 5em">
-    <input type="text" name="menu[__id__][name]" value="" placeholder="菜单名称">
+    <input type="text" name="menu[__id__]['name']" value="" placeholder="菜单名称">
     <a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td>
   <td class="sorting_1">
     <select  name="menu[__id__][type]" style="width: 50%">
@@ -221,7 +221,7 @@
 		}
 		i++;
 		var id = i;
-		var tpl = '<tr  role="row" class="odd  pmenu__id__ menu__id__"><td><input type="text" name="menu[__id__][name]" value="" placeholder="菜单名称"><a onclick="addcmenu(__id__);" class="btn btn-primary"><i class="fa fa-plus"></i></a><a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td><td class="sorting_1"><select name="menu[__id__][type]" style="width: 50%"><option value="view">链接</option><option value="click">触发关键字</option><option value="scancode_push">扫码</option><option value="scancode_waitmsg"> 扫码（等待信息）</option><option value="pic_sysphoto">系统拍照发图</option><option value="pic_photo_or_album">拍照或者相册发图</option><option value="pic_weixin">微信相册发图</option><option value="location_select">地理位置</option></select></td><td><input style="width: 100%" type="text" value="" name="menu[__id__][value]" placeholder="菜单值"></td><input style="width: 100%" name="menu[__id__][pid]" type="hidden" value="0"></tr>';
+		var tpl = '<tr  role="row" class="odd  pmenu__id__ menu__id__"><td><input type="text" name="menu[__id__]['name']" value="" placeholder="菜单名称"><a onclick="addcmenu(__id__);" class="btn btn-primary"><i class="fa fa-plus"></i></a><a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td><td class="sorting_1"><select name="menu[__id__][type]" style="width: 50%"><option value="view">链接</option><option value="click">触发关键字</option><option value="scancode_push">扫码</option><option value="scancode_waitmsg"> 扫码（等待信息）</option><option value="pic_sysphoto">系统拍照发图</option><option value="pic_photo_or_album">拍照或者相册发图</option><option value="pic_weixin">微信相册发图</option><option value="location_select">地理位置</option></select></td><td><input style="width: 100%" type="text" value="" name="menu[__id__][value]" placeholder="菜单值"></td><input style="width: 100%" name="menu[__id__][pid]" type="hidden" value="0"></tr>';
 		tpl = tpl.replace(/__id__/g,id);
 		$('#tbody').append(tpl);
 	}
@@ -234,7 +234,7 @@
 		}
 		i++;
 		var id = i;
-		var tpl = '<tr role="row" class="odd pmenu__pid__ menu__id__" ><td class="" style="padding-left: 5em"><input type="text" name="menu[__id__][name]" value="" placeholder="菜单名称"><a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td><td class="sorting_1"><select  name="menu[__id__][type]" style="width: 50%"><option value="view">链接</option><option value="click">触发关键字</option><option value="scancode_push">扫码</option><option value="scancode_waitmsg"> 扫码（等待信息）</option><option value="pic_sysphoto">系统拍照发图</option><option value="pic_photo_or_album">拍照或者相册发图</option><option value="pic_weixin">微信相册发图</option><option value="location_select">地理位置</option></select></td><td><input style="width: 100%" type="text" value="" name="menu[__id__][value]" placeholder="菜单值"></td><input style="width: 100%" name="menu[__id__][pid]" type="hidden" value="__pid__"></tr>';
+		var tpl = '<tr role="row" class="odd pmenu__pid__ menu__id__" ><td class="" style="padding-left: 5em"><input type="text" name="menu[__id__]['name']" value="" placeholder="菜单名称"><a onclick="delmenu(__id__);" class="btn btn-danger"><i class="fa fa-trash-o"></i></a></td><td class="sorting_1"><select  name="menu[__id__][type]" style="width: 50%"><option value="view">链接</option><option value="click">触发关键字</option><option value="scancode_push">扫码</option><option value="scancode_waitmsg"> 扫码（等待信息）</option><option value="pic_sysphoto">系统拍照发图</option><option value="pic_photo_or_album">拍照或者相册发图</option><option value="pic_weixin">微信相册发图</option><option value="location_select">地理位置</option></select></td><td><input style="width: 100%" type="text" value="" name="menu[__id__][value]" placeholder="菜单值"></td><input style="width: 100%" name="menu[__id__][pid]" type="hidden" value="__pid__"></tr>';
 		tpl = tpl.replace(/__id__/g,id);
 		tpl = tpl.replace(/__pid__/g,pid);
 		$(cmenu.last()).after(tpl);

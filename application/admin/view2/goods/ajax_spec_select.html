@@ -4,7 +4,7 @@
     </tr>
     <foreach name="specList" item="vo" key="k" >
     <tr>
-        <td>{$vo[name]}:</td>
+        <td>{$vo['name']}:</td>
         <td>                            
             <foreach name="vo[spec_item]" item="vo2" key="k2" >                            
                 <button type="button" data-spec_id='{$vo['id']}' data-item_id='{$k2}' class="btn <?php

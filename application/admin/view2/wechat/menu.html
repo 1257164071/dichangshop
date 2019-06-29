@@ -71,7 +71,7 @@
 			        </td>
 			        <td align="left" abbr="username" axis="col3" class="">
 			          <div style="text-align: left; width: 320px;" class="">
-			          <input type="text" name="menu[{$list.id}][name]" value="{$list.name}" class="input-txt topmenu">
+			          <input type="text" name="menu[{$list.id}]['name']" value="{$list.name}" class="input-txt topmenu">
 			          <a class="btn green" onclick="addcmenu({$list.id});"><i class="fa fa-plus"></i>添加</a>
 			          <a class="btn red" onclick="delmenu({$list.id}, false);"><i class="fa fa-trash-o"></i>删除</a>
 			          </div>
@@ -107,7 +107,7 @@
 							        </td>
 			       					<td align="left" abbr="username" axis="col3" class="" <if condition="$clist['pid'] gt 0">style="padding-left: 5em"</if>>
 							          <div style="text-align: left; width: 320px;" class="">
-							          <input type="text" name="menu[{$clist.id}][name]" value="{$clist.name}" class="input-txt"> 
+							          <input type="text" name="menu[{$clist.id}]['name']" value="{$clist.name}" class="input-txt">
 							          <a class="btn red" onclick="delmenu({$clist.id} , false);"><i class="fa fa-trash-o"></i>删除</a>
 							          </div>
 							        </td>
@@ -259,7 +259,7 @@
 				        </td>
        					<td align="left" abbr="username" axis="col3" class="" style="padding-left: 5em">
 				          <div style="text-align: left; width: 320px;" class="">
-				          <input type="text" name="menu[__id__][name]" value="" class="input-txt"> 
+				          <input type="text" name="menu[__id__]['name']" value="" class="input-txt">
 				          <a class="btn red" onclick="delmenu(__id__ , true);"><i class="fa fa-trash-o"></i>删除</a>
 				          </div>
 				        </td>
@@ -294,7 +294,7 @@
 			        </td>
 			        <td align="left" abbr="username" axis="col3" class="">
 			          <div style="text-align: left; width: 320px;" class="">
-			          <input type="text" name="menu[__id__][name]" value="" class="input-txt topmenu">
+			          <input type="text" name="menu[__id__]['name']" value="" class="input-txt topmenu">
 			          <a class="btn green" onclick="addcmenu(__id__);"><i class="fa fa-plus"></i>添加</a>
 			          <a class="btn red" onclick="delmenu(__id__ , true);"><i class="fa fa-trash-o"></i>删除</a>
 			          </div>
