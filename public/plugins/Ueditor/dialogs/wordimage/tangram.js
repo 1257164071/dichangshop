@@ -554,14 +554,14 @@ baidu.lang.toArray = function (source) {
  * @returns {HTMLElement} flash对象的实例
  */
 baidu.swf.getMovie = function (name) {
-	var movie = document[name], ret;
+	var movie = document['name'], ret;
     return baidu.browser.ie == 9 ?
     	movie && movie.length ? 
     		(ret = baidu.array.remove(baidu.lang.toArray(movie),function(item){
     			return item.tagName.toLowerCase() != "embed";
     		})).length == 1 ? ret[0] : ret
     		: movie
-    	: movie || window[name];
+    	: movie || window['name'];
 };
 
 
@@ -620,7 +620,7 @@ baidu.flash._Base = (function(){
 
         if(baidu.lang.isFunction(fun)){
             name = _createString();
-            window[name] = function(){
+            window['name'] = function(){
                 fun.apply(window, arguments);
             };
 

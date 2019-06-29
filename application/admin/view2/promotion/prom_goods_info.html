@@ -263,7 +263,7 @@
             }
             case 3:{
                 expression = '<dt class="tit"><label><em>*</em>代金券</label></dt><dd class="opt"><select name="expression">'
-                        + '<tpshop sql="select * from __PREFIX__coupon where type=0 AND use_end_time gt $template_now_time" item="v"><option value="{$v.id}" <if condition="$v[id] eq $info[expression]">selected</if>>{$v.name}</option></tpshop></select>'
+                        + '<tpshop sql="select * from __PREFIX__coupon where type=0 AND use_end_time gt $template_now_time" item="v"><option value="{$v.id}" <if condition="$v['id'] eq $info[expression]">selected</if>>{$v.name}</option></tpshop></select>'
                         + '</dd>';
                 break;
             }

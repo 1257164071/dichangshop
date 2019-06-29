@@ -16,7 +16,7 @@
                     <div class="content30">
                         <div class="order">
                             <div class="fl">
-                                <span>服务单号：<em>{$item[id]}</em></span>
+                                <span>服务单号：<em>{$item['id']}</em></span>
                             </div>
                             <div class="fr">
                                 <span class="red">
@@ -28,7 +28,7 @@
                 </div>
                 <div class="myorder p">
                     <div class="content30">
-                        <a href="{:U('Mobile/User/return_goods_info',array('id'=>$item[id]))}">
+                        <a href="{:U('Mobile/User/return_goods_info',array('id'=>$item['id']))}">
                             <div class="order">
                                 <div class="fl">
                                     <span>
@@ -55,7 +55,7 @@
                                 </div>
                                 <div class="deleshow fr">
                                     <div class="deletes">
-                                        <a class="daaloe">{$goodsList[$item[goods_id]]}</a>
+                                        <a class="daaloe">{$goodsList[$item['goods_id']]}</a>
                                     </div>
                                     <div class="qxatten">
                                         <p class="weight"><span>申请时间：</span><span>{:date('Y-m-d H:i:s',$item[addtime])}</span></p>
@@ -66,16 +66,16 @@
                     <!--商品信息-e-->
                 <div class="xomjdche">
                     <div class="maleri30">
-                        <a href="{:U('Mobile/User/return_goods_info',array('id'=>$item[id]))}">进度查询</a>
+                        <a href="{:U('Mobile/User/return_goods_info',array('id'=>$item['id']))}">进度查询</a>
                     </div>
                     <if condition="$item[status] eq 2 and $item.type eq 1">
                         <div class="maleri30">
-                            <a href="{:U('Mobile/User/receiveConfirm',array('id'=>$item[id]))}">确认收货</a>
+                            <a href="{:U('Mobile/User/receiveConfirm',array('id'=>$item['id']))}">确认收货</a>
                         </div>
                     </if>
                     <if condition="$item[status] neq -2 and $item[status] lt 1">
                         <div class="maleri30">
-                            <a href="{:U('Mobile/User/return_goods_cancel',array('id'=>$item[id]))}">取消申请</a>
+                            <a href="{:U('Mobile/User/return_goods_cancel',array('id'=>$item['id']))}">取消申请</a>
                         </div>
                     </if>
                 </div>

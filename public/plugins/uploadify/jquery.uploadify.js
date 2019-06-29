@@ -428,7 +428,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 					}
 				}
 				if (args.length === 1) {
-					returnValue =  settings[name];
+					returnValue =  settings['name'];
 				} else {
 					switch (name) {
 						case 'uploader':
@@ -492,7 +492,7 @@ Released under the MIT License <http://www.opensource.org/licenses/mit-license.p
 							}
 							break;
 					}
-					settings[name] = value;
+					settings['name'] = value;
 				}
 			});
 			

@@ -3,13 +3,13 @@
     <!--促销列表-s-->
         <div id="goods_list">
             <foreach name="promote" item="list">
-                <a href="{:U('Activity/discount_list',array('id'=>$list[id]))}">
+                <a href="{:U('Activity/discount_list',array('id'=>$list['id']))}">
                 <div class="banner">
                     <img src="{$list[prom_img]}"/>
                 </div>
                 <div class="cbaudience">
                     <div class="maleri30">
-                        <p>{$list[name]}</p>
+                        <p>{$list['name']}</p>
                         <p>{:date('Y.m.d',$list[start_time])}——{:date('Y.m.d',$list[end_time])}</p>
                     </div>
                 </div>

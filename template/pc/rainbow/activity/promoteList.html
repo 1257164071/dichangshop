@@ -30,8 +30,8 @@
 			function GetRTime2(){
 				//var text = GetRTime('2016/02/27 17:34:00');
 			<foreach name="goodsList" item="v" key="k" >
-				var text{$v[goods_id]} = GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
-				$("#surplus_text{$v[goods_id]}").text(text{$v[goods_id]});
+				var text{$v['goods_id']} = GetRTime('{$v.end_time|date="Y/m/d H:i:s",###}');
+				$("#surplus_text{$v['goods_id']}").text(text{$v['goods_id']});
 			</foreach>
 			}
 			setInterval(GetRTime2,1000);
@@ -45,21 +45,21 @@
 								<li>
 									<div class="s_xsall">
 										<div class="xs_img">
-											<a href="{:U('Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+											<a href="{:U('Goods/goodsInfo',array('id'=>$v['goods_id']))}">
 												<img class="lazy-list" data-original="{$v.goods_id|goods_thum_images=262,262}" />
 											</a>
 										</div>
 										<div class="shop_name2">
-											<a href="{:U('Goods/goodsInfo',array('id'=>$v[goods_id]))}">
-												{$v[goods_name]}
+											<a href="{:U('Goods/goodsInfo',array('id'=>$v['goods_id']))}">
+												{$v['goods_name']}
 											</a>
 										</div>
 										<div class="price-tag">
-											<span class="now"><em class="li_xfo">￥</em><em>{$v[shop_price]}</em></span>
+											<span class="now"><em class="li_xfo">￥</em><em>{$v['shop_price']}</em></span>
 											<span class="pre-per"><em>{$v[click_count]}</em>人已浏览</span>
 											<div class="sjs-olde p">
 												<p class="old ma0"><em>￥</em><em>{$v[market_price]}</em></p>
-												<p class="djs-cctime" >倒计时<span id="surplus_text{$v[goods_id]}"></span></p>
+												<p class="djs-cctime" >倒计时<span id="surplus_text{$v['goods_id']}"></span></p>
 											</div>
 										</div>
 									</div>

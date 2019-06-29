@@ -37,7 +37,7 @@
                                         <select name="parent_id_1" id="parent_id_1" onchange="get_category(this.value,'parent_id_2','0');" class="small form-control">
 	                                        <option value="0">顶级分类</option>
                                             <foreach name="cat_list" item="v" >                                            
-                                                <option value="{$v[id]}">{$v[name]}</option>
+                                                <option value="{$v['id']}">{$v['name']}</option>
                                             </foreach>                                            
 										</select>
                                     </div>                                    

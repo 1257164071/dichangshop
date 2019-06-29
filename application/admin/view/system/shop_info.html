@@ -91,7 +91,7 @@
                                         <select onchange="get_city(this)" id="province" name="province" class="form-control" style="margin-left:-15px;">
                                             <option  value="0">选择省份</option>
                                             <volist name="province" id="vo">
-                                                <option value="{$vo.id}" <if condition="$config[province] eq $vo[id]">selected</if>>{$vo.name}</option>
+                                                <option value="{$vo.id}" <if condition="$config[province] eq $vo['id']">selected</if>>{$vo.name}</option>
                                             </volist>
                                         </select>
                                         </div>   
@@ -99,7 +99,7 @@
                                         <select onchange="get_area(this)" id="city" name="city" class="form-control">
                                             <option value="0">选择城市</option>
                                             <volist name="city" id="vo">
-                                                <option value="{$vo.id}" <if condition="$config[city] eq $vo[id]">selected</if>>{$vo.name}</option>
+                                                <option value="{$vo.id}" <if condition="$config[city] eq $vo['id']">selected</if>>{$vo.name}</option>
                                             </volist>
                                         </select>
                                         </div>   
@@ -107,7 +107,7 @@
                                         <select id="district" name="district" class="form-control">
                                             <option value="0">选择区域</option>
                                             <volist name="area" id="vo">
-                                                <option value="{$vo.id}" <if condition="$config[district] eq $vo[id]">selected</if>>{$vo.name}</option>
+                                                <option value="{$vo.id}" <if condition="$config[district] eq $vo['id']">selected</if>>{$vo.name}</option>
                                             </volist>
                                         </select>
                                         </div> 

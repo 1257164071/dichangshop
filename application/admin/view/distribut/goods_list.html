@@ -77,7 +77,7 @@
 			                    <td class="text-right">{$list.goods_id}</td>
 			                    <td class="text-left">{$list.goods_name|getSubstr=0,33}</td>
 			                    <td class="text-left">{$list.sales_sum}</td>
-			                    <td class="text-left">{$catList[$list[cat_id]][name]}</td>
+			                    <td class="text-left">{$catList[$list[cat_id]]['name']}</td>
 			                    <td class="text-left">{$list.shop_price}</td>
 								<td class="text-left">{$list.store_count}</td>
 								<td class="text-left">{$list.commission}</td>
@@ -85,7 +85,7 @@
 			                    <td class="text-right">
 			                        <a  target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list['goods_id']))}" class="btn btn-info" title="查看详情"><i class="fa fa-eye"></i></a>
 			                        <a href="{:U('Admin/Goods/addEditGoods',array('id'=>$list['goods_id']))}" class="btn btn-primary" title="编辑"><i class="fa fa-pencil"></i></a>
-			                        <a href="javascript:void(0);" onclick="del('{$list[goods_id]}')" class="btn btn-danger" title="删除"><i class="fa fa-trash-o"></i></a>
+			                        <a href="javascript:void(0);" onclick="del('{$list['goods_id']}')" class="btn btn-danger" title="删除"><i class="fa fa-trash-o"></i></a>
 			                    </td>                        
 			                </tr>
 			            </volist>

@@ -70,24 +70,24 @@
                                 <div class="radio fl">
                                     <!--商品勾选按钮-->
                                 <span onClick="checkgood(this)" class="che " >
-                                    <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}[goods_id]"  value="{$vo.goods_id}" >
+                                    <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}['goods_id']"  value="{$vo.goods_id}" >
                                     <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}[cat_id]" value="{$vo.cat_id}" >
                                     <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}[brand_id]"  value="{$vo.brand_id}" >
-                                    <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}[goods_name]"  value="{$vo.goods_name}" >
+                                    <input type="checkbox" style="display: none" autocomplete="off" name="{$vo.goods_id}['goods_name']"  value="{$vo.goods_name}" >
                                     <i></i>
                                 </span>
                                 </div>
                                 <div class="shopimg fl">
-                                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo[goods_id]))}">
+                                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo['goods_id']))}">
                                         <!--商品图片-->
-                                        <img src="{$vo[goods_id]|goods_thum_images=200,200}">
+                                        <img src="{$vo['goods_id']|goods_thum_images=200,200}">
                                     </a>
                                 </div>
                                 <div class="deleshow fr">
                                     <div class="deletes">
                                         <!--商品名-->
                                     <span class="similar-product-text fl">
-                                        <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo[goods_id]))}">{$vo[goods_name]|getSubstr=0,20}</a>
+                                        <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo['goods_id']))}">{$vo['goods_name']|getSubstr=0,20}</a>
                                     </span>
                                         <a href="javascript:void(0);" onclick="confirm_submit({$vo.goods_id})" class="delescj" title="添加到分销商品">
                                             <!--<img src="__STATIC__/distribut/images/add.jpg"/>-->
@@ -98,7 +98,7 @@
                                     <div class="prices">
                                         <p class="sc_pri fl">
                                             <!--商品单价-->
-                                            <span>￥</span><span>{$vo[shop_price]}</span>
+                                            <span>￥</span><span>{$vo['shop_price']}</span>
                                         </p>
                                         <div class="plus fr get_mp">
                                         </div>
@@ -251,15 +251,15 @@
 
         <!--所有品牌筛选-s-->
         <foreach name="brandList" item="v">
-            <div class="myorder p brind" data-id="{$v[id]}" >
+            <div class="myorder p brind" data-id="{$v['id']}" >
                 <div class="content30" >
                     <a href="{:U('Mobile/Distribut/goods_list',array('brind_id'=>$v['id']))}">
                         <div class="order">
                             <div class="fl">
-                                <span>{$v[name]}</span>
+                                <span>{$v['name']}</span>
                             </div>
                             <div class="fr">
-                                <i class=""><input type="checkbox" style="display: none;"  value="{$v[name]}"/></i>
+                                <i class=""><input type="checkbox" style="display: none;"  value="{$v['name']}"/></i>
                             </div>
                         </div>
                     </a>

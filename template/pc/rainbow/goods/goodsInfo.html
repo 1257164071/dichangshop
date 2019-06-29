@@ -47,7 +47,7 @@
                                     <foreach name="goods_images_list" item="v" key="k" >
                                         <li class="small-pic-li <if condition="$k eq 0">active</if>">
                                         <a href="javascript:;">
-                                            <img src="{$v|get_sub_images=$v[goods_id],60,60}" data-img="{$v|get_sub_images=$v[goods_id],400,400}" data-big="{$v|get_sub_images=$v[goods_id],800,800}">
+                                            <img src="{$v|get_sub_images=$v['goods_id'],60,60}" data-img="{$v|get_sub_images=$v['goods_id'],400,400}" data-big="{$v|get_sub_images=$v['goods_id'],800,800}">
                                             <i></i>
                                         </a>
                                         </li>
@@ -71,8 +71,8 @@
                         </div>
                         <script>
                             var jiathis_config = {
-                                url:"http://{$_SERVER[HTTP_HOST]}/index.php?m=Home&c=Goods&a=goodsInfo&id={$_GET[id]}",
-                                pic:"http://{$_SERVER[HTTP_HOST]}{$goods[goods_id]|goods_thum_images=400,400}",
+                                url:"http://{$_SERVER[HTTP_HOST]}/index.php?m=Home&c=Goods&a=goodsInfo&id={$_GET['id']}",
+                                pic:"http://{$_SERVER[HTTP_HOST]}{$goods['goods_id']|goods_thum_images=400,400}",
                             }
                             var is_distribut = getCookie('is_distribut');
                             var user_id = getCookie('user_id');
@@ -265,8 +265,8 @@
                     <div class="tjhot-shoplist type-bot">
                         <tpshop sql="select goods_id,goods_name,shop_price from __PREFIX__goods where is_recommend=1 and is_on_sale = 1 order by goods_id desc limit 10" item="vo" key="k">
                             <div class="alone-shop">
-                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$vo[goods_id]))}"><img src="{$vo.goods_id|goods_thum_images=206,206}" style="display: inline;"></a>
-                                <p class="line-two-hidd"><a href="{:U('Home/Goods/goodsInfo',array('id'=>$vo[goods_id]))}">{$vo.goods_name|getSubstr=0,30}</a></p>
+                                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$vo['goods_id']))}"><img src="{$vo.goods_id|goods_thum_images=206,206}" style="display: inline;"></a>
+                                <p class="line-two-hidd"><a href="{:U('Home/Goods/goodsInfo',array('id'=>$vo['goods_id']))}">{$vo.goods_name|getSubstr=0,30}</a></p>
                                 <p class="price-tag"><span class="li_xfo">￥</span><span>{$vo.shop_price}</span></p>
                                 <!--<p class="store-alone"><a href="">恒要达食品专享店</a></p>-->
                             </div>
@@ -473,9 +473,9 @@
     <foreach name="look_see" item="look" key="k">
     <div class="tjhot-shoplist type-bot">
         <div class="alone-shop">
-            <a href="{:U('Home/Goods/goodsInfo',array('id'=>$look[goods_id]))}"><img class="wiahides" src="{$look.goods_id|goods_thum_images=206,206}" style="display: inline;"></a>
+            <a href="{:U('Home/Goods/goodsInfo',array('id'=>$look['goods_id']))}"><img class="wiahides" src="{$look.goods_id|goods_thum_images=206,206}" style="display: inline;"></a>
             <p class="shop_name2">
-                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$look[goods_id]))}">{$look.goods_name}</a>
+                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$look['goods_id']))}">{$look.goods_name}</a>
             </p>
             <p class="price-tag">
                 <span class="li_xfo">￥</span><span>{$look.shop_price}</span>

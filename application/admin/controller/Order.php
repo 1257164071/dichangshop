@@ -678,7 +678,7 @@ class Order extends Base {
             exit;
         }
         $user = M('users')->where("user_id = {$return_goods[user_id]}")->find();
-        $goods = M('goods')->where("goods_id = {$return_goods[goods_id]}")->find();
+        $goods = M('goods')->where("goods_id = {$return_goods['goods_id']}")->find();
         $type_msg = array('仅退款','退货退款','换货');
         $status_msg = C('REFUND_STATUS');
         if(IS_POST)

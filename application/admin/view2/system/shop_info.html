@@ -130,19 +130,19 @@
                     <select onchange="get_city(this)" id="province" name="province">
                         <option  value="0">选择省份</option>
                         <volist name="province" id="vo">
-                            <option value="{$vo.id}" <if condition="$config[province] eq $vo[id]">selected</if>>{$vo.name}</option>
+                            <option value="{$vo.id}" <if condition="$config[province] eq $vo['id']">selected</if>>{$vo.name}</option>
                         </volist>
                     </select>
                     <select onchange="get_area2(this);" id="city" name="city">
                         <option value="0">选择城市</option>
                         <volist name="city" id="vo">
-                            <option value="{$vo.id}" <if condition="$config[city] eq $vo[id]">selected</if>>{$vo.name}</option>
+                            <option value="{$vo.id}" <if condition="$config[city] eq $vo['id']">selected</if>>{$vo.name}</option>
                         </volist>
                     </select>
                     <select id="district" name="district">
                         <option value="0">选择区域</option>
                         <volist name="area" id="vo">
-                            <option value="{$vo.id}" <if condition="$config[district] eq $vo[id]">selected</if>>{$vo.name}</option>
+                            <option value="{$vo.id}" <if condition="$config[district] eq $vo['id']">selected</if>>{$vo.name}</option>
                         </volist>
                     </select>
                     <input id="address" name="address" value="{$config.address}" class="input-txt" type="text" />

@@ -291,7 +291,7 @@ if (XRegExp) {
                 for (var i = 1; i < match.length; i++) {
                     name = this._xregexp.captureNames[i - 1];
                     if (name)
-                        match[name] = match[i];
+                        match['name'] = match[i];
                 }
             }
             // Fix browsers that increment `lastIndex` after zero-length matches
@@ -800,7 +800,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
 
                 function defaultGetHtml(highlighter, name)
                 {
-                    return sh.toolbar.getButtonHtml(highlighter, name, sh.config.strings[name]);
+                    return sh.toolbar.getButtonHtml(highlighter, name, sh.config.strings['name']);
                 };
 
                 for (var i = 0; i < list.length; i++)
@@ -1210,10 +1210,10 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
         var result = {}, name;
 
         for (name in obj1)
-            result[name] = obj1[name];
+            result['name'] = obj1['name'];
 
         for (name in obj2)
-            result[name] = obj2[name];
+            result['name'] = obj2['name'];
 
         return result;
     };
@@ -1861,9 +1861,9 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
             (function() {
                 var name = methodsToExpose[i];
 
-                ref[name] = function()
+                ref['name'] = function()
                 {
-                    return xmlBrush[name].apply(xmlBrush, arguments);
+                    return xmlBrush['name'].apply(xmlBrush, arguments);
                 };
             })();
 
@@ -1942,7 +1942,7 @@ if (typeof(SyntaxHighlighter) == 'undefined') var SyntaxHighlighter = function()
          */
         getParam: function(name, defaultValue)
         {
-            var result = this.params[name];
+            var result = this.params['name'];
             return toBoolean(result == null ? defaultValue : result);
         },
 

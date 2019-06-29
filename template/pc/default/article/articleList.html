@@ -27,7 +27,7 @@
                 <ul class="subside-list">
                     <tpshop sql="select * from `__PREFIX__article` where cat_id = $v[cat_id]" key="k2" item='v2'>
                         <li data-parent-name="购物指南" data-parent-id="21" data-name="交易条款" data-id="28" class="list-item">
-                            <a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2[title]}</a>
+                            <a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2['title']}</a>
                         </li>
                     </tpshop>
                 </ul>

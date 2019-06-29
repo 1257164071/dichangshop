@@ -41,7 +41,7 @@
                                 <tr>
                                     <td>商品名称：</td>
                                     <td >
-                         				<a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods[goods_id]))}" target="_blank">{$goods[goods_name]}</a>                      
+                         				<a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods['goods_id']))}" target="_blank">{$goods['goods_name']}</a>
                                     </td>
                                 </tr>  
                                 <tr>
@@ -53,7 +53,7 @@
                                              <option value="1" <if condition="$return_goods['type'] eq 1">selected="selected"</if>>换货</option>
                                         </select>
                                       </div>
-                                          <a href="{:U('Admin/user/account_edit',array('id'=>$return_goods[user_id],'user_money'=>$goods[shop_price],'desc'=>'退货退款到余额'))}">                                          
+                                          <a href="{:U('Admin/user/account_edit',array('id'=>$return_goods[user_id],'user_money'=>$goods['shop_price'],'desc'=>'退货退款到余额'))}">
                                           <input class="btn btn-primary" type="button"  value="退款到用户余额">
                                           </a>
                                       

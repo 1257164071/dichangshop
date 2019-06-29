@@ -75,7 +75,7 @@
                                         <div class="parentmenu" id="menu_0">
                                             <input type="hidden" name="menu[0][type]" value="{$list.type}">
                                             <input type="hidden" name="menu[0][value]" value="{$list.value}">
-                                            <input type="text" name="menu[0][name]" value="{$list.name}" style="display:inline-block;width:300px;" class="form-control ng-pristine ng-valid ng-touched">
+                                            <input type="text" name="menu[0]['name']" value="{$list.name}" style="display:inline-block;width:300px;" class="form-control ng-pristine ng-valid ng-touched">
                                             <a title="设置此菜单动作" onclick="setAction(this);" href="javascript:;"><i class="fa fa-pencil"></i> 设置此菜单动作</a>
                                         </div>
                                         <div class="designer sonmenu ui-sortable" id="menu_0_sub">
@@ -84,7 +84,7 @@
                                                 <div id="menu_0_sub_div" style="margin-top:20px;padding-left:80px;background:url('/public/images/bg_repno.gif') no-repeat -245px -545px;" ng-repeat="sub in menu.subMenus" class="ng-scope">
                                                     <input type="hidden" name="menu[0][sub][0][type]" value="{$sub.type}">
                                                     <input type="hidden" name="menu[0][sub][0][value]" value="{$sub.value}">
-                                                    <input type="text" name="menu[0][sub][0][name]"  value="{$sub.name}" style="display:inline-block;width:220px;" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched">
+                                                    <input type="text" name="menu[0][sub][0]['name']"  value="{$sub.name}" style="display:inline-block;width:220px;" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched">
                                                     <a title="设置此菜单动作" onclick="setAction(this);" href="javascript:;" style=""><i class="fa fa-pencil"></i> 设置此菜单动作</a>
                                                 </div>
                                                 <!-- end ngRepeat: sub in menu.subMenus -->

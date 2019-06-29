@@ -71,7 +71,7 @@
                                             <li class="sx3">{$v.order_sn}</li>
                                             <li class="sx1">
                                                 <p class="shop_name"><a
-                                                        href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">{$goodsList[$v[goods_id]]|getSubstr=0,25}</a>
+                                                        href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">{$goodsList[$v['goods_id']]|getSubstr=0,25}</a>
                                                 </p>
                                             </li>
                                             <li class="sx4">{$v.addtime|date="Y-m-d",###}</li>
@@ -79,7 +79,7 @@
                                             <li class="sx6">
                                                 {$state[$v[status]]}
                                             </li>
-                                            <li class="sx7"><a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v[id]))}">查看</a></li>
+                                            <li class="sx7"><a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v['id']))}">查看</a></li>
                                         </ul>
 									</volist>
 								</div>
@@ -107,10 +107,10 @@
 										<ul class="wipj">
 											<li>{$v.order_sn}</li>
 											<li>
-												<p class="shop_name"><a href="">{$goodsList[$v[goods_id]]|getSubstr=0,25}</a></p>
+												<p class="shop_name"><a href="">{$goodsList[$v['goods_id']]|getSubstr=0,25}</a></p>
 											</li>
 											<li>
-												<a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v[id]))}">查看 </a>
+												<a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v['id']))}">查看 </a>
 												&lt;!&ndash;<a class="co_blue" href="">取消</a>&ndash;&gt;
 											</li>
 										</ul>

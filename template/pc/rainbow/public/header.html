@@ -191,7 +191,7 @@
                                     <div class="cata-nav-name">
                                         <h3>
                                             <div class="contiw-cer"><span class="share-icon-{$k}"></span></div>
-                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v[id]))}" title="{$v[name]}">{$v[name]}</a>
+                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}" title="{$v['name']}">{$v['name']}</a>
                                         </h3>
                                     </div>
                                     <b>&gt;</b>
@@ -201,15 +201,15 @@
                                     <div class="cata-nav-left">
                                         <div class="subitems">
                                             <foreach name="v['tmenu']" key="k2" item='v2'>
-                                                <if condition="$v2[parent_id] eq $v['id']">
+                                                <if condition="$v2['parent_id'] eq $v['id']">
                                                 <dl><!-- 2级循环点-->
                                                     <dt>
-                                                        <a href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}" target="_blank">{$v2[name]}<i>&gt;</i></a>
+                                                        <a href="{:U('Home/Goods/goodsList',array('id'=>$v2['id']))}" target="_blank">{$v2['name']}<i>&gt;</i></a>
                                                     </dt>
                                                     <dd>
                                                         <foreach name="v2['sub_menu']" key="k3" item='v3'>
-                                                            <if condition="$v3[parent_id] eq $v2['id']">
-                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3[id]))}" target="_blank">{$v3[name]}</a></if>
+                                                            <if condition="$v3['parent_id'] eq $v2['id']">
+                                                            <a href="{:U('Home/Goods/goodsList',array('id'=>$v3['id']))}" target="_blank">{$v3['name']}</a></if>
                                                         </foreach>
                                                     </dd>
                                                 </dl>
@@ -220,8 +220,8 @@
                                                 <ul>                                                
                                                     <adv pid="14" item="v3" limit="1">
                                                         <li>
-                                                            <a href="{$v3[ad_link]}" <if condition="$v3['target'] eq 1">target="_blank"</if>>
-                                                                <img src="{$v3[ad_code]}" title="{$v3[title]}" style="{$v3[style]}" width="129" height="45"/>
+                                                            <a href="{$v3['ad_link']}" <if condition="$v3['target'] eq 1">target="_blank"</if>>
+                                                                <img src="{$v3['ad_code']}" title="{$v3['title']}" style="{$v3['style']}" width="129" height="45"/>
                                                             </a>
                                                         </li>
                                                     </adv>                                                
@@ -233,8 +233,8 @@
                                     <!--商品分类右侧广告-s-->
                                     <div class="cata-nav-rigth">
                                         <adv item="v" pid="51" limit="1">
-                                            <a href="{$v[ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
-                                                <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
+                                            <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
+                                                <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>
                                             </a>
                                         </adv>
                                     </div>
@@ -253,7 +253,7 @@
                             <a href="{:U('Index/index')}" class="selected">首页</a>
                         </li>
                         <tpshop sql="SELECT * FROM `__PREFIX__navigation` where is_show = 1 ORDER BY `sort` DESC" key="k" item='v'>
-                            <li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v[name]}</span></a></li>
+                            <li class="page"><a href="{$v[url]}" <if condition="$v[is_new] eq 1">target="_blank" </if><span>{$v['name']}</span></a></li>
                         </tpshop>
                     </ul>
                     <!-- <div class="wrap-line" style="width: 72px; left: 20px;">

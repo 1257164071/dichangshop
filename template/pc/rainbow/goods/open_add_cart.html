@@ -34,9 +34,9 @@
                     <ul class="fn-clear buy-list">
                     <tpshop sql="select * from `__PREFIX__goods` where  is_recommend = 1 limit 4" item="v" key="k">
                       <li>
-                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}" class="watch-img" target="_parent"><img src="{$v.goods_id|goods_thum_images=200,200}" /></a>
-                        <h4><a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}" target="_parent">{$v[goods_name]}</a></h4>
-                        <p><q class="fn-rmb">¥</q><strong class="fn-rmb-num">{$v[shop_price]}</strong></p>
+                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}" class="watch-img" target="_parent"><img src="{$v.goods_id|goods_thum_images=200,200}" /></a>
+                        <h4><a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}" target="_parent">{$v['goods_name']}</a></h4>
+                        <p><q class="fn-rmb">¥</q><strong class="fn-rmb-num">{$v['shop_price']}</strong></p>
                       </li>
                      </tpshop>  
                     </ul>

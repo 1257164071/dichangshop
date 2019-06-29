@@ -4,7 +4,7 @@
     <div class="banner" id="brandstr">
         <adv pid='400' limit='1' item='v'>
             <a href="{$v.ad_link}">
-                <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
+                <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>
             </a>
         </adv>
     </div>
@@ -19,8 +19,8 @@
                         <if condition="count($v) gt 0">
                             <li>
                                 <foreach name="$v" key="kk" item="good">
-                                <a href="{:U('Goods/goodsInfo',array('id'=>$good[goods_id]))}">
-                                    <img src="{$good[goods_id]|goods_thum_images=200,200}" alt="">
+                                <a href="{:U('Goods/goodsInfo',array('id'=>$good['goods_id']))}">
+                                    <img src="{$good['goods_id']|goods_thum_images=200,200}" alt="">
                                     <p class="red">￥{$good['shop_price']}</p>
                                     <p class="lineu">￥{$good['market_price']}</p>
                                 </a>
@@ -45,7 +45,7 @@
             <ul id="brandlist">
                 <foreach name="brand_list" item="list">
                     <li>
-                        <a href="{:U('Goods/search',array('brand_id'=>$list[id]))}"><img src="{$list[logo]}"/></a>
+                        <a href="{:U('Goods/search',array('brand_id'=>$list['id']))}"><img src="{$list[logo]}"/></a>
                     </li>
                 </foreach>
             </ul>

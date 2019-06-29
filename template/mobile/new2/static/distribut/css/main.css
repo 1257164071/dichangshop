@@ -56,7 +56,7 @@ a:hover {
 }
 
 /*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */
-abbr[title] {
+abbr['title'] {
   border-bottom: 1px dotted;
 }
 

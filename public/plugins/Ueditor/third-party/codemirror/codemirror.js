@@ -1747,7 +1747,7 @@ var CodeMirror = (function() {
     var modes = {}, mimeModes = {};
     CodeMirror.defineMode = function(name, mode) {
         if (!CodeMirror.defaults.mode && name != "null") CodeMirror.defaults.mode = name;
-        modes[name] = mode;
+        modes['name'] = mode;
     };
     CodeMirror.defineMIME = function(mime, spec) {
         mimeModes[mime] = spec;
@@ -1781,7 +1781,7 @@ var CodeMirror = (function() {
 
     var extensions = CodeMirror.extensions = {};
     CodeMirror.defineExtension = function(name, func) {
-        extensions[name] = func;
+        extensions['name'] = func;
     };
 
     var commands = CodeMirror.commands = {
@@ -1869,7 +1869,7 @@ var CodeMirror = (function() {
 
     function lookupKey(name, extraMap, map) {
         function lookup(name, map, ft) {
-            var found = map[name];
+            var found = map['name'];
             if (found != null) return found;
             if (ft == null) ft = map.fallthrough;
             if (ft == null) return map.catchall;

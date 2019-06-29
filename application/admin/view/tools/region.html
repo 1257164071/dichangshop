@@ -20,7 +20,7 @@
 				            <button type="submit" class="btn btn-primary">确定</button>
 				            <if condition="$parent[level] gt 0">
 				            <div class="form-group pull-right">
-					            <a href="{:U('Tools/region',array('parent_id'=>$parent[parent_id]))}" class="btn btn-primary pull-right"><i class="fa fa-reply"></i> 返回上一级</a>
+					            <a href="{:U('Tools/region',array('parent_id'=>$parent['parent_id']))}" class="btn btn-primary pull-right"><i class="fa fa-reply"></i> 返回上一级</a>
 				            </div>
 				            </if>		          
 				          </form>
@@ -40,10 +40,10 @@
       						<td>
       							<label class="margin">{$vo.name}</label>
       							<if condition="$vo[level] lt 4">
-      							<a href="{:U('Tools/region',array('parent_id'=>$vo[id]))}" class="btn btn-info" role="button">管理</a>
+      							<a href="{:U('Tools/region',array('parent_id'=>$vo['id']))}" class="btn btn-info" role="button">管理</a>
       							&nbsp;&nbsp;
       							</if>
-      							<a href="javascript:void(0);" data-url="{:U('Tools/regionHandle',array('id'=>$vo[id]))}" onclick="delRegion(this)" class="btn btn-default" role="button">删除</a>
+      							<a href="javascript:void(0);" data-url="{:U('Tools/regionHandle',array('id'=>$vo['id']))}" onclick="delRegion(this)" class="btn btn-default" role="button">删除</a>
       						</td>
 		                  </foreach>
 		                  </tr>

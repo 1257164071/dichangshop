@@ -575,11 +575,11 @@
                     switch (key) {
                         case 'padding':
                             !padding && (padding = {});
-                            padding[name] = val;
+                            padding['name'] = val;
                             return '';
                         case 'margin':
                             !margin && (margin = {});
-                            margin[name] = val;
+                            margin['name'] = val;
                             return '';
                         case 'border':
                             return val == 'initial' ? '' : str;
@@ -2111,7 +2111,7 @@
         setStyles: function (element, styles) {
             for (var name in styles) {
                 if (styles.hasOwnProperty(name)) {
-                    domUtils.setStyle(element, name, styles[name]);
+                    domUtils.setStyle(element, name, styles['name']);
                 }
             }
         },
@@ -6787,7 +6787,7 @@
             };
             for (var name in bgObj) {
                 if (bgObj.hasOwnProperty(name)) {
-                    html += name + ":" + bgObj[name] + ";";
+                    html += name + ":" + bgObj['name'] + ";";
                 }
             }
             html += '}</style> ';
@@ -10584,7 +10584,7 @@
         }
 
         function setListStyle(list, style) {
-            if (customStyle[style]) {
+            if (customStyle['style']) {
                 list.className = 'custom_' + style;
             }
             try {
@@ -17074,7 +17074,7 @@
                         return getObj(this, tagNames) ? 1 : 0;
                     }
                 };
-            })(style, basestyles[style]);
+            })(style, basestyles['style']);
         }
     };
 
@@ -18083,11 +18083,11 @@
                 return offset;
             },
             setGlobal: function (id, obj) {
-                root[id] = obj;
+                root['id'] = obj;
                 return magic + '["' + id + '"]';
             },
             unsetGlobal: function (id) {
-                delete root[id];
+                delete root['id'];
             },
             copyAttributes: function (tgt, src) {
                 var attributes = src.attributes;
@@ -21191,7 +21191,7 @@
                     },
                     _onImgEditButtonClick: function (name) {
                         this.hide();
-                        editor.ui._dialogs[name] && editor.ui._dialogs[name].open();
+                        editor.ui._dialogs['name'] && editor.ui._dialogs['name'].open();
 
                     },
                     _onImgSetFloat: function (value) {
@@ -21802,9 +21802,9 @@
          *
          */
         UE.getEditor = function (id, opt) {
-            var editor = instances[id];
+            var editor = instances['id'];
             if (!editor) {
-                editor = instances[id] = new UE.ui.Editor(opt);
+                editor = instances['id'] = new UE.ui.Editor(opt);
                 editor.render(id);
             }
             return editor;
@@ -21813,9 +21813,9 @@
 
         UE.delEditor = function (id) {
             var editor;
-            if (editor = instances[id]) {
+            if (editor = instances['id']) {
                 editor.key && editor.destroy();
-                delete instances[id]
+                delete instances['id']
             }
         }
     })();

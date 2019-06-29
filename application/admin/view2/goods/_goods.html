@@ -372,7 +372,7 @@
                     <label for="record_no">总库存</label>
                 </dt>
                 <dd class="opt">                
-                    <if condition="$goodsInfo[goods_id] gt 0">
+                    <if condition="$goodsInfo['goods_id'] gt 0">
                         <input type="text" value="{$goodsInfo.store_count}" class="t_mane" name="store_count" onKeyUp="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
                     <else />
                         <input type="text" value="{$tpshop_config[basic_default_storage]}" class="t_mane" name="store_count" onKeyUp="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />                                         
@@ -465,7 +465,7 @@
                                       <select name="goods_type" id="spec_type" class="form-control" style="width:250px;">
                                         <option value="0">选择商品模型</option>
                                         <foreach name="goodsType" item="vo" key="k" >
-                                            <option value="{$vo.id}"<if condition="$goodsInfo[goods_type] eq $vo[id]"> selected="selected" </if> >{$vo.name}</option>
+                                            <option value="{$vo.id}"<if condition="$goodsInfo[goods_type] eq $vo['id']"> selected="selected" </if> >{$vo.name}</option>
                                         </foreach>                                        
                                       </select>
                                     </td>
@@ -496,7 +496,7 @@
                                 <foreach name="plugin_shipping" item="shipping" key="kk">
                                     <tr>
                                         <td class="title left" style="padding-right:50px;">
-                                            <b>{$shipping[name]}：</b>
+                                            <b>{$shipping['name']}：</b>
                                             <label class="right"><input type="checkbox" value="1" cka="mod-{$kk}">全选</label>
                                         </td>
                                     </tr>

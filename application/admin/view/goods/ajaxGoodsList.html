@@ -54,7 +54,7 @@
                     <td class="text-right">{$list.goods_id}</td>
                     <td class="text-left">{$list.goods_name|getSubstr=0,33}</td>
                     <td class="text-left">{$list.goods_sn}</td>
-                    <td class="text-left">{$catList[$list[cat_id]][name]}</td>
+                    <td class="text-left">{$catList[$list[cat_id]]['name']}</td>
                     <td class="text-left">{$list.shop_price}</td>
                     <td class="text-left">
                     <input type="text" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')"  onchange="ajaxUpdateField(this);" name="store_count" size="4" data-table="goods" data-id="{$list.goods_id}" value="{$list.store_count}"/>   
@@ -77,9 +77,9 @@
                     <td class="text-right">
                         <a  target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list['goods_id']))}" class="btn btn-info" title="查看详情"><i class="fa fa-eye"></i></a>
                         <a href="{:U('Admin/Goods/addEditGoods',array('id'=>$list['goods_id']))}" class="btn btn-primary" title="编辑"><i class="fa fa-pencil"></i></a>
-                        <a href="javascript:void(0);" onclick="del('{$list[goods_id]}')" class="btn btn-danger" title="删除"><i class="fa fa-trash-o"></i></a>
-                        <!--<a href="javascript:void(0);" onclick="ClearGoodsHtml('{$list[goods_id]}')" class="btn btn-default" title="清除静态缓存页面"><i class="fa fa-fw fa-refresh"></i></a>-->
-                        <a href="javascript:void(0);" onclick="ClearGoodsThumb('{$list[goods_id]}')" class="btn btn-default" title="清除缩略图缓存"><i class="glyphicon glyphicon-picture"></i></a>
+                        <a href="javascript:void(0);" onclick="del('{$list['goods_id']}')" class="btn btn-danger" title="删除"><i class="fa fa-trash-o"></i></a>
+                        <!--<a href="javascript:void(0);" onclick="ClearGoodsHtml('{$list['goods_id']}')" class="btn btn-default" title="清除静态缓存页面"><i class="fa fa-fw fa-refresh"></i></a>-->
+                        <a href="javascript:void(0);" onclick="ClearGoodsThumb('{$list['goods_id']}')" class="btn btn-default" title="清除缩略图缓存"><i class="glyphicon glyphicon-picture"></i></a>
                     </td>                        
                 </tr>
             </volist>

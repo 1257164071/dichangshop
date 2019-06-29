@@ -2,8 +2,8 @@
 <script src="__PUBLIC__/js/global.js"></script>
 <script type="text/javascript">
 <if condition="ACTION_NAME eq 'goodsInfo'">
-   var ShareLink = "http://{$_SERVER[HTTP_HOST]}/index.php?m=Mobile&c=Goods&a=goodsInfo&id={$goods[goods_id]}"; //默认分享链接
-   var ShareImgUrl = "http://{$_SERVER[HTTP_HOST]}{$goods[goods_id]|goods_thum_images=400,400}"; // 分享图标
+   var ShareLink = "http://{$_SERVER[HTTP_HOST]}/index.php?m=Mobile&c=Goods&a=goodsInfo&id={$goods['goods_id']}"; //默认分享链接
+   var ShareImgUrl = "http://{$_SERVER[HTTP_HOST]}{$goods['goods_id']|goods_thum_images=400,400}"; // 分享图标
 <else />
    var ShareLink = "http://{$_SERVER[HTTP_HOST]}/index.php?m=Mobile&c=Index&a=index"; //默认分享链接
    var ShareImgUrl = "http://{$_SERVER[HTTP_HOST]}{$tpshop_config['shop_info_store_logo']}"; //分享图标

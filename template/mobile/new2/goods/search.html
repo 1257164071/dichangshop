@@ -64,7 +64,7 @@
             <foreach name="goods_list" item="vo" key="k">
                 <div class="orderlistshpop p"  >
                     <div class="maleri30">
-                        <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo[goods_id]))}" class="item">
+                        <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$vo['goods_id']))}" class="item">
                             <div class="sc_list se_sclist">
                                 <div class="shopimg fl">
                                     <img src="{$vo.goods_id|goods_thum_images=400,400}">
@@ -74,7 +74,7 @@
                                         <span class="similar-product-text fl">{$vo.goods_name|getSubstr=0,20}</span>
                                     </div>
                                     <div class="prices">
-                                        <p class="sc_pri fl"><span>￥</span><span>{$vo[shop_price]}元</span></p>
+                                        <p class="sc_pri fl"><span>￥</span><span>{$vo['shop_price']}元</span></p>
                                     </div>
                                     <p class="weight"><span>{$vo[comment_count]}</span><span>条评价</span></p>
                                 </div>
@@ -195,14 +195,14 @@
         <div class="list-se-all ma-to-20 two-related">
             <!--商品品牌筛选-s-->
             <foreach name="filter_brand" item="brand" key="brandk">
-                <div class="myorder p filter brnda" data-val='{$brand[id]}'>
+                <div class="myorder p filter brnda" data-val='{$brand['id']}'>
                     <div class="content30">
                         <div class="order">
                             <div class="fl">
-                                <span>{$brand[name]}</span>
+                                <span>{$brand['name']}</span>
                             </div>
                             <div class="fr">
-                                <i class=""><input type="checkbox" style="display: none;"  value="{$brand[id]}"/></i>
+                                <i class=""><input type="checkbox" style="display: none;"  value="{$brand['id']}"/></i>
                             </div>
                         </div>
                     </div>

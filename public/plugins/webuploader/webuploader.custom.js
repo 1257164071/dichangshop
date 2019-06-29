@@ -938,7 +938,7 @@
              * 解除事件绑定
              * @method off
              * @grammar off( [name[, callback[, context] ] ] ) => self
-             * @param  {String}   [name]     事件名
+             * @param  {String}   ['name']     事件名
              * @param  {Function} [callback] 事件处理器
              * @param  {Object}   [context]  事件处理器的上下文。
              * @return {self} 返回自身，方便链式

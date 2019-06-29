@@ -36,16 +36,16 @@
                 </td>
                 <td class="text-center">{$list.username}</td>
                 <td class="text-left">{$list.content}</td>
-                <td class="text-left"><a target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list[goods_id]))}">{$goods_list[$list[goods_id]]}</a></td>
+                <td class="text-left"><a target="_blank" href="{:U('Home/Goods/goodsInfo',array('id'=>$list['goods_id']))}">{$goods_list[$list['goods_id']]}</a></td>
                 <td class="text-center">
                     <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list[is_show] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('goods_consult','id','{$list.id}','is_show',this)"/>
                 </td>
                 <td class="text-center">{$consult_type[$list[consult_type]]}</td>
 				<td class="text-center">{$list.add_time|date='Y-m-d H:i:s',###}</td>
                 <td class="text-center">
-                    <a href="{:U('Comment/consult_info',array('id'=>$list[id]))}" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-eye"></i></a>
+                    <a href="{:U('Comment/consult_info',array('id'=>$list['id']))}" data-toggle="tooltip" title="" class="btn btn-primary" data-original-title="编辑"><i class="fa fa-eye"></i></a>
                     <!--
-                    <a href="javascript:void(0);" data-href="{:U('Comment/ask_handle',array('id'=>$list[id]))}" onclick="del('{$list[id]}',this)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>
+                    <a href="javascript:void(0);" data-href="{:U('Comment/ask_handle',array('id'=>$list['id']))}" onclick="del('{$list['id']}',this)" id="button-delete6" data-toggle="tooltip" title="" class="btn btn-danger" data-original-title="删除"><i class="fa fa-trash-o"></i></a>
                     -->
                 </td>
             </tr>

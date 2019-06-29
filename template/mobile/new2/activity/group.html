@@ -167,12 +167,12 @@
                     <!--商品推荐-->
                     <tpshop sql="SELECT * FROM __PREFIX__goods WHERE ( is_recommend=1 and is_on_sale=1 ) ORDER BY goods_id DESC LIMIT 0,4 " key="k" item='v'>
                         <li>
-                            <a href="{:U('Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                            <a href="{:U('Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                                 <div class="similer-product">
                                     <img src="{$v.goods_id|goods_thum_images=400,400}">
-                                    <span class="similar-product-text">{$v[goods_name]}</span>
+                                    <span class="similar-product-text">{$v['goods_name']}</span>
                                         <span class="similar-product-price">
-                                            ¥<span class="big-price">{$v[shop_price]}</span>
+                                            ¥<span class="big-price">{$v['shop_price']}</span>
                                         </span>
                                 </div>
                             </a>

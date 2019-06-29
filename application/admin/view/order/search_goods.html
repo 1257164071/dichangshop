@@ -18,7 +18,7 @@
                   <select name="brand_id" id="brand_id" class="form-control">
                     <option value="">所有品牌</option>
                         <foreach name="brandList" item="v" key="k" >
-                           <option value="{$v['id']}" <if condition="$v[id] eq $brand_id">selected</if> >{$v['name']}</option>
+                           <option value="{$v['id']}" <if condition="$v['id'] eq $brand_id">selected</if> >{$v['name']}</option>
 						</foreach>
                   </select>
                 </div>                         

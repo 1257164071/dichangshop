@@ -339,9 +339,9 @@
     }
 
     function deprecateSimple(name, msg) {
-        if (!deprecations[name]) {
+        if (!deprecations['name']) {
             printMsg(msg);
-            deprecations[name] = true;
+            deprecations['name'] = true;
         }
     }
 
@@ -825,7 +825,7 @@
 
     function loadLocale(name) {
         var oldLocale = null;
-        if (!locales[name] && hasModule) {
+        if (!locales['name'] && hasModule) {
             try {
                 oldLocale = moment.locale();
                 require('./locale/' + name);
@@ -833,7 +833,7 @@
                 moment.locale(oldLocale);
             } catch (e) { }
         }
-        return locales[name];
+        return locales['name'];
     }
 
     // Return a moment from input, that is local/utc/utcOffset equivalent to
@@ -2098,18 +2098,18 @@
     moment.defineLocale = function (name, values) {
         if (values !== null) {
             values.abbr = name;
-            if (!locales[name]) {
-                locales[name] = new Locale();
+            if (!locales['name']) {
+                locales['name'] = new Locale();
             }
-            locales[name].set(values);
+            locales['name'].set(values);
 
             // backwards compat for now: also set the locale
             moment.locale(name);
 
-            return locales[name];
+            return locales['name'];
         } else {
             // useful for testing
-            delete locales[name];
+            delete locales['name'];
             return null;
         }
     };
@@ -2947,8 +2947,8 @@
     moment.duration.fn.toString = moment.duration.fn.toISOString;
 
     function makeDurationGetter(name) {
-        moment.duration.fn[name] = function () {
-            return this._data[name];
+        moment.duration.fn['name'] = function () {
+            return this._data['name'];
         };
     }
 

@@ -32,7 +32,7 @@
                     </span>
                 </div>
                 <div class="shopimg fl">
-                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                     <!--商品图片-->
                         <img src="{$v.goods_id|goods_thum_images=200,200}">
                     </a>
@@ -41,7 +41,7 @@
                     <div class="deletes">
                         <!--商品名-->
                             <span class="similar-product-text fl">
-                                <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v[goods_id]))}">{$v[goods_name]}</a>
+                                <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v['goods_id']))}">{$v['goods_name']}</a>
                             </span>
                         <!--删除按钮-->
                         <a href="javascript:void(0);" onclick="del_cart_goods({$v.id})" class="delescj"><img src="__STATIC__/images/dele.png"/></a>

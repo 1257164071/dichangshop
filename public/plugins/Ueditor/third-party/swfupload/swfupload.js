@@ -378,7 +378,7 @@ SWFUpload.prototype.buildParamString = function () {
     if (typeof(postParams) === "object") {
         for (name in postParams) {
             if (postParams.hasOwnProperty(name)) {
-                paramStringPairs.push(encodeURIComponent(name.toString()) + "=" + encodeURIComponent(postParams[name].toString()));
+                paramStringPairs.push(encodeURIComponent(name.toString()) + "=" + encodeURIComponent(postParams['name'].toString()));
             }
         }
     }
@@ -504,16 +504,16 @@ SWFUpload.prototype.displayDebugInfo = function () {
 // Public: (Deprecated) addSetting adds a setting value. If the value given is undefined or null then the default_value is used.
 SWFUpload.prototype.addSetting = function (name, value, default_value) {
     if (value == undefined) {
-        return (this.settings[name] = default_value);
+        return (this.settings['name'] = default_value);
     } else {
-        return (this.settings[name] = value);
+        return (this.settings['name'] = value);
     }
 };
 
 // Public: (Deprecated) getSetting gets a setting. Returns an empty string if the setting was not found.
 SWFUpload.prototype.getSetting = function (name) {
-    if (this.settings[name] != undefined) {
-        return this.settings[name];
+    if (this.settings['name'] != undefined) {
+        return this.settings['name'];
     }
 
     return "";
@@ -679,13 +679,13 @@ SWFUpload.prototype.setPostParams = function (paramsObject) {
 
 // Public: addPostParam adds post name/value pair.  Each name can have only one value.
 SWFUpload.prototype.addPostParam = function (name, value) {
-    this.settings.post_params[name] = value;
+    this.settings.post_params['name'] = value;
     this.callFlash("SetPostParams", [this.settings.post_params]);
 };
 
 // Public: removePostParam deletes post name/value pair.
 SWFUpload.prototype.removePostParam = function (name) {
-    delete this.settings.post_params[name];
+    delete this.settings.post_params['name'];
     this.callFlash("SetPostParams", [this.settings.post_params]);
 };
 
@@ -946,7 +946,7 @@ SWFUpload.prototype.cleanUp = function () {
     window["__flash__removeCallback"] = function (instance, name) {
         try {
             if (instance) {
-                instance[name] = null;
+                instance['name'] = null;
             }
         } catch (flashEx) {
 

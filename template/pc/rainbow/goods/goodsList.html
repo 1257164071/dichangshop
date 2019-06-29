@@ -99,12 +99,12 @@
 			<!--如果当前分类是三级分类 则二级也要显示-->
 			<if condition="$goodsCate[level] eq 3">
 				<div class="havedox">
-					<div class="disenk"><span>{$goods_category[$goodsCate[parent_id]][name]}</span><i class="litt-xxd"></i></div>
+					<div class="disenk"><span>{$goods_category[$goodsCate['parent_id']]['name']}</span><i class="litt-xxd"></i></div>
 					<div class="hovshz">
 						<ul>
 							<foreach name="goods_category" item="v" key="k">
-								<if condition="($v[parent_id] eq $goods_category[$goodsCate[parent_id]][parent_id])">
-									<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+								<if condition="($v['parent_id'] eq $goods_category[$goodsCate['parent_id']]['parent_id'])">
+									<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
 								</if>
 							</foreach>
 						</ul>
@@ -119,8 +119,8 @@
 					<div class="hovshz">
 						<ul>
 							<foreach name="goods_category" item="v" key="k">
-								<if condition="($v[parent_id] eq $goodsCate[parent_id])">
-									<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+								<if condition="($v['parent_id'] eq $goodsCate['parent_id'])">
+									<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
 								</if>
 							</foreach>
 						</ul>
@@ -135,7 +135,7 @@
 					<div class="hovshz">
 						<ul>
 							<foreach name="cateArr" item="v" key="k">
-								<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+								<li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
 							</foreach>
 						</ul>
 					</div>
@@ -164,10 +164,10 @@
                             <div class="brand-box brand-list">
                                 <div class="clearfix p">
                                     <foreach name="filter_brand" item="v" key="k">
-                                        <a href="{$v[href]}" data-href="{$v[href]}"  data-key='brand' data-val='{$v[id]}'>
+                                        <a href="{$v[href]}" data-href="{$v[href]}"  data-key='brand' data-val='{$v['id']}'>
                                             <i class="litt-zd"></i>
                                             <img src="{$v[logo]}"/>
-                                            <span>品牌-{$v[name]}</span>
+                                            <span>品牌-{$v['name']}</span>
                                         </a>
                                     </foreach>
                                 </div>
@@ -357,7 +357,7 @@
                             <li>
                                 <div class="s_xsall">
                                     <div class="xs_img">
-                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                                             <img class="lazy-list" data-original="{$v.goods_id|goods_thum_images=236,236}"/>
                                         </a>
                                     </div>
@@ -365,7 +365,7 @@
                                         <div class="small-xs-shop">
                                             <ul>
                                                 <foreach name="goods_images" item="v2" key="k2">
-                                                    <if condition="$v2[goods_id] eq $v[goods_id]">
+                                                    <if condition="$v2['goods_id'] eq $v['goods_id']">
                                                         <li>
                                                             <a href="javascript:void(0);">
                                                                 <img class="lazy-list" data-original="{$v2[image_url]}"/>
@@ -377,12 +377,12 @@
                                         </div>
                                     </div>
                                     <div class="price-tag">
-                                        <span class="now"><em class="li_xfo">￥</em><em>{$v[shop_price]}</em></span>
+                                        <span class="now"><em class="li_xfo">￥</em><em>{$v['shop_price']}</em></span>
                                         <span class="old"><em>￥</em><em>{$v[market_price]}</em></span>
                                     </div>
                                     <div class="shop_name2">
-                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
-                                            {$v[goods_name]}
+                                        <a href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
+                                            {$v['goods_name']}
                                         </a>
                                     </div>
                                     <div class="shop_name2">
@@ -399,7 +399,7 @@
                                             </p>
                                         </div>
                                         <div class="p-btn">
-                                            <a href="javascript:void(0);" onclick="AjaxAddCart({$v[goods_id]},$('#number_'+{$v.goods_id}).val(),0);">加入购物车</a>
+                                            <a href="javascript:void(0);" onclick="AjaxAddCart({$v['goods_id']},$('#number_'+{$v.goods_id}).val(),0);">加入购物车</a>
                                         </div>
                                     </div>
                                 </div>
@@ -494,7 +494,7 @@
                         </li>
                         <tpshop sql="select * from `__PREFIX__article` where cat_id = $v[cat_id]  and is_open=1" key="k2" item='v2'>
                             <li>
-                                <a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2[title]}</a>
+                                <a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2['title']}</a>
                             </li>
                         </tpshop>
                     </ul>
@@ -514,7 +514,7 @@
         <div class="mod_copyright p">
             <div class="grid-top">
                 <tpshop sql="select * from `__PREFIX__article` where cat_id = 5 and is_open=1" key="k" item='v'>
-                    <a href="{:U('Home/Article/detail',array('article_id'=>$v[article_id]))}">{$v[title]}</a>
+                    <a href="{:U('Home/Article/detail',array('article_id'=>$v[article_id]))}">{$v['title']}</a>
                     <span>|</span>
                 </tpshop>
                 <a href="javascript:void (0);">客服热线:{$tpshop_config['shop_info_phone']}</a>

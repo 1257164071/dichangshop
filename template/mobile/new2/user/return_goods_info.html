@@ -17,10 +17,10 @@
                 </div>
                 <div class="fr_extra fr">
                     <if condition="$return_goods[status] eq 2 and $return_goods.type eq 1">
-                        <a class="tuid sueye" href="{:U('User/receiveConfirm',array('return_id'=>$return_goods[id]))}">确认收货</a>
+                        <a class="tuid sueye" href="{:U('User/receiveConfirm',array('return_id'=>$return_goods['id']))}">确认收货</a>
                     </if>
                     <if condition="$return_goods[status] neq -2 and $return_goods[status] lt 1">
-                        <a class="tuid sueye" href="{:U('User/return_goods_cancel',array('id'=>$return_goods[id]))}">取消服务</a>
+                        <a class="tuid sueye" href="{:U('User/return_goods_cancel',array('id'=>$return_goods['id']))}">取消服务</a>
                     </if>
                 </div>
             </div>
@@ -34,10 +34,10 @@
                     </div>
                     <div class="deleshow fr">
                         <div class="deletes">
-                            <span class="similar-product-text">{$goods[goods_name]}</span>
+                            <span class="similar-product-text">{$goods['goods_name']}</span>
                         </div>
                         <div class="prices">
-                            <p class="sc_pri">最新价格：<span>￥</span><span>{$goods[shop_price]}</span></p>
+                            <p class="sc_pri">最新价格：<span>￥</span><span>{$goods['shop_price']}</span></p>
                         </div>
                         <!--<div class="qxatten">
                             <p class="weight"><span>数量</span>&nbsp;<span>x{$goods[goods_num]}</span></p>

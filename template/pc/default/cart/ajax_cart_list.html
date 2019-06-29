@@ -25,13 +25,13 @@
             <input type="checkbox"  name="cart_select[{$v.id}]" <if condition="$v[selected] eq 1" >checked="checked"</if> value="1" onclick="ajax_cart_list();" />
         </td>
         <td style="border-left:0px;;border-right:0px" class="pa-to-20 pa-bo-20 bo-ri-0" width="80px" align="center" valign="top" valign="middle">
-            <a class="gwc-wp-list di-bl wi63 hi63" href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+            <a class="gwc-wp-list di-bl wi63 hi63" href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                 <img class="wi63 hi63" src="{$v.goods_id|goods_thum_images=78,78}">
             </a>
         </td>
         <td style="border-left:0px; border-right:0px"  class="pa-to-20 wi516"align="left"  valign="top" valign="middle">
             <p class="gwc-ys-pp">
-            	<a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}" style="vertical-align:middle">{$v.goods_name}</a>                
+            	<a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}" style="vertical-align:middle">{$v.goods_name}</a>
                 <!--团购--><if condition="$v[activity_type] eq 2"><img  width="80" height="60" src="/public/images/groupby2.jpg" style="vertical-align:middle"></if>
                 <!--抢购--><if condition="$v[activity_type] eq 1"><img  width="40" height="40" src="/public/images/qianggou2.jpg" style="vertical-align:middle"></if>                
             </p>

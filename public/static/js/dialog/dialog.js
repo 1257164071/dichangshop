@@ -4,10 +4,10 @@ __DIALOG_WRAPPER__ = {};
 DialogManager = {
     'create'        :function(id){
         var d = {};
-        if (!__DIALOG_WRAPPER__[id])
+        if (!__DIALOG_WRAPPER__['id'])
         {
             d = new Dialog(id);
-            __DIALOG_WRAPPER__[id] = d;
+            __DIALOG_WRAPPER__['id'] = d;
         }
         else
         {
@@ -16,15 +16,15 @@ DialogManager = {
         return d;
     },
     'get'           :function(id){
-        return __DIALOG_WRAPPER__[id];
+        return __DIALOG_WRAPPER__['id'];
     },
     'set'           :function(id, val){
-        __DIALOG_WRAPPER__[id] = val;
+        __DIALOG_WRAPPER__['id'] = val;
     },    
     'close'         :function(id){
-        if (__DIALOG_WRAPPER__[id].close())
+        if (__DIALOG_WRAPPER__['id'].close())
         {
-            __DIALOG_WRAPPER__[id] = null;
+            __DIALOG_WRAPPER__['id'] = null;
         }
 
     },

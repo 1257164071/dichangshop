@@ -167,10 +167,10 @@
                                         </if>
 									</div>
                                     <if condition="$return_goods[status] eq 2 and $return_goods.type eq 1">
-                                        <a class="cancellserv" href="{:U('User/receiveConfirm',array('return_id'=>$return_goods[id]))}">确认收货</a>
+                                        <a class="cancellserv" href="{:U('User/receiveConfirm',array('return_id'=>$return_goods['id']))}">确认收货</a>
                                     </if>
                                     <if condition="$return_goods[status] neq -2 and $return_goods[status] lt 1">
-                                        <a class="cancellserv" href="{:U('User/return_goods_cancel',array('id'=>$return_goods[id]))}">取消服务单</a>
+                                        <a class="cancellserv" href="{:U('User/return_goods_cancel',array('id'=>$return_goods['id']))}">取消服务单</a>
                                     </if>
 								</div>
                                 <!--进度说明-e-->

@@ -304,7 +304,7 @@ class GoodsLogic extends Model
      */
     public function getSpecInput($goods_id, $spec_arr)
     {
-        // <input name="item[2_4_7][price]" value="100" /><input name="item[2_4_7][name]" value="蓝色_S_长袖" />        
+        // <input name="item[2_4_7][price]" value="100" /><input name="item[2_4_7]['name']" value="蓝色_S_长袖" />
         /*$spec_arr = array(         
             20 => array('7','8','9'),
             10=>array('1','2'),
@@ -454,7 +454,7 @@ class GoodsLogic extends Model
 
             $name = getFirstCharter($v['name']) .'  --   '. $v['name']; // 前面加上拼音首字母
 
-            if(array_key_exists($v[id],$brandIdArr) && $v[cat_id]) // 如果有双重品牌的 则加上分类名称
+            if(array_key_exists($v['id'],$brandIdArr) && $v[cat_id]) // 如果有双重品牌的 则加上分类名称
                     $name .= ' ( '. $goodsCategoryArr[$v[cat_id]] . ' ) ';
 
              $nameList[] = $v['name'] = $name;

@@ -144,7 +144,7 @@
 															<div class="shop-difimg">
 																<img src="{$goods.goods_id|goods_thum_images=100,100}"/>
 															</div>
-															<div class="shop_name"><a href="{:U('Home/Goods/goodsInfo',array('id'=>$goods[goods_id]))}">{$goods.goods_name}</a></div>
+															<div class="shop_name"><a href="{:U('Home/Goods/goodsInfo',array('id'=>$goods['goods_id']))}">{$goods.goods_name}</a></div>
 														</div>
 													</td>
 													<td class="sx2"><span>￥</span><span>{$goods.member_goods_price}</span></td>
@@ -213,7 +213,7 @@
 					    					<ul>
 												<foreach name="collect_result" item="v">
 													<li>
-														<a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+														<a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
 															<img src="{$v.goods_id|goods_thum_images=80,80}"/>
 															<p><em>￥</em><em>{$v.shop_price}</em></p>
 														</a>

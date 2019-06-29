@@ -51,7 +51,7 @@
                 <adv pid ="2" limit="5" item="v">
                     <li><a href="#">
                     <!--<li><a href="{$v.ad_link}">-->
-                        <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}" alt="">
+                        <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}" alt="">
                     </a></li>
                 </adv>
             </ul>
@@ -136,9 +136,9 @@
                     <div style="text-align: center;">暂无抢购商品。。。。</div>
                 </if>
                 <foreach name="flash_sale_list" item="v">
-                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+                    <a href="{:U('Mobile/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                         <div class="timerBox shopnum">
-                            <img src="{$v[goods_id]|goods_thum_images=200,200}"/>
+                            <img src="{$v['goods_id']|goods_thum_images=200,200}"/>
                             <p>￥<span>{$v[price]}</span>元</p>
                         </div>
                     </a>
@@ -152,7 +152,7 @@
     <div class="banner ma-to-20">
         <adv limit="1" item="v" pid="400">
             <a href="{$v.ad_link}">
-            <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>
+            <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>
             </a>
         </adv>
     </div>
@@ -162,14 +162,14 @@
                 <adv  limit="1" item="v" pid="301">
                     <a href="{$v.ad_link}">
                         <div class="td">
-                            <img src="{$v[ad_code]}">
+                            <img src="{$v['ad_code']}">
                         </div>
                     </a>
                 </adv>
                 <adv  limit="1" item="v" pid="302">
                     <a href="{$v.ad_link}">
                         <div class="td">
-                            <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}">
+                            <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}">
                         </div>
                     </a>
                 </adv>
@@ -178,7 +178,7 @@
                 <adv  limit="1" item="v" pid="300">
                     <a href="{$v.ad_link}">
                         <div class="td">
-                            <img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}">
+                            <img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}">
                         </div>
                     </a>
                 </adv>
@@ -197,18 +197,18 @@
             <!--<div class="content">-->
                 <!--<div class="le re fl">-->
                     <!--<adv  limit="1" item="v" pid="303">-->
-                        <!--<a href="{$v[ad_link]}" >-->
+                        <!--<a href="{$v['ad_link']}" >-->
                             <!--<div class="td">-->
-                                <!--<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>-->
+                                <!--<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>-->
                             <!--</div>-->
                         <!--</a>-->
                     <!--</adv>-->
                 <!--</div>-->
                 <!--<div class="le lefhe fr">-->
                     <!--<adv  limit="2" item="v" pid="304">-->
-                        <!--<a href="{$v[ad_link]}" >-->
+                        <!--<a href="{$v['ad_link']}" >-->
                             <!--<div class="td">-->
-                                <!--<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>-->
+                                <!--<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>-->
                             <!--</div>-->
                         <!--</a>-->
                     <!--</adv>-->
@@ -227,18 +227,18 @@
             <!--<div class="bloc hottop">-->
                 <!--<adv  limit="1" item="v" pid="305">-->
                     <!--<div class="le fl">-->
-                        <!--<a href="{$v[ad_link]}" >-->
+                        <!--<a href="{$v['ad_link']}" >-->
                             <!--<div class="td">-->
-                                <!--<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>-->
+                                <!--<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>-->
                             <!--</div>-->
                         <!--</a>-->
                     <!--</div>-->
                 <!--</adv>-->
                 <!--<adv  limit="1" item="v" pid="306">-->
                     <!--<div class="le fr">-->
-                        <!--<a href="{$v[ad_link]}" >-->
+                        <!--<a href="{$v['ad_link']}" >-->
                             <!--<div class="td">-->
-                                <!--<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>-->
+                                <!--<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>-->
                             <!--</div>-->
                         <!--</a>-->
                     <!--</div>-->
@@ -247,8 +247,8 @@
             <!--<div class="bloc">-->
                 <!--<div class="le foura">-->
                     <!--<adv  limit="4" item="v" pid="307">-->
-                        <!--<a href="{$v[ad_link]}" >-->
-                            <!--<img src="{$v[ad_code]}" title="{$v[title]}" style="{$v[style]}"/>-->
+                        <!--<a href="{$v['ad_link']}" >-->
+                            <!--<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>-->
                         <!--</a>-->
                     <!--</adv>-->
                 <!--</div>-->

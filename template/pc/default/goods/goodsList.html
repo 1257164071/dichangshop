@@ -37,12 +37,12 @@
         
         <!--如果当前分类是三级分类 则二级也要显示-->
         <if condition="$goodsCate[level] eq 3">
-          <div class="u-nav-attr"> <a href="javascript:;">{$goods_category[$goodsCate[parent_id]][name]}<i></i></a>
+          <div class="u-nav-attr"> <a href="javascript:;">{$goods_category[$goodsCate['parent_id']]['name']}<i></i></a>
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
               <foreach name="goods_category" item="v" key="k">
-                <if condition="($v[parent_id] eq $goods_category[$goodsCate[parent_id]][parent_id])">
-                  <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+                <if condition="($v['parent_id'] eq $goods_category[$goodsCate['parent_id']]['parent_id'])">
+                  <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
                 </if>
               </foreach>
             </ul>
@@ -54,8 +54,8 @@
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
               <foreach name="goods_category" item="v" key="k">
-                <if condition="($v[parent_id] eq $goodsCate[parent_id])">
-                  <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+                <if condition="($v['parent_id'] eq $goodsCate['parent_id'])">
+                  <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
                 </if>
               </foreach>
             </ul>
@@ -67,7 +67,7 @@
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
               <foreach name="cateArr" item="v" key="k">
-                <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v[name]}</a></li>
+                <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
               </foreach>
             </ul>
           </div>
@@ -129,12 +129,12 @@
     <tpshop sql="select * from `__PREFIX__goods` where  is_recommend = 1 limit 5" item="v" key="k">
       <div class="hotitem">
         <div class="itemin">
-             <a class="proname"  href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">
+             <a class="proname"  href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">
                  <img src="{$v.goods_id|goods_thum_images=200,200}">
-                  <span>{$v[goods_name]}</span>
+                  <span>{$v['goods_name']}</span>
              </a>
           <p class="itemprice">
-            <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>{$v[shop_price]}</span>
+            <span class="new" rehot="90101748934_201480" style="display: block; float: left;"><i class="fn-rmb">¥</i>{$v['shop_price']}</span>
             <span class="old"><i class="fn-rmb">¥</i>{$v[market_price]}</span>
           </p>
         </div>
@@ -158,7 +158,7 @@
           <div class="g-list">
             <ul class="f-list h76 ">
               <foreach name="filter_brand" item="v" key="k">
-                <li> <a data-href="" href="{$v[href]}" data-key='brand' data-val='{$v[id]}'><i></i>{$v[name]}</a> </li>
+                <li> <a data-href="" href="{$v[href]}" data-key='brand' data-val='{$v['id']}'><i></i>{$v['name']}</a> </li>
               </foreach>
             </ul>
             <div class="f-ext">
@@ -295,7 +295,7 @@
         <div class="listbox clearfix"> 
           <!-- 圖片 -->
           <div class="listPic"> 
-          		<a rel="nofollow" target="_blank" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}" style="width:200px;height:200px;">
+          		<a rel="nofollow" target="_blank" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}" style="width:200px;height:200px;">
                 	<img width="200" height="200" style="display: block;" src="{$v.goods_id|goods_thum_images=200,200}" class="fn_img_lazy"> 
                 </a>             
           </div>
@@ -303,7 +303,7 @@
             <div class="list-scroll-warp J_hideBox">
               <dl class="J_mBox clearfix">            
               <foreach name="goods_images" item="v2" key="k2">
-                  <if condition="$v2[goods_id] eq $v[goods_id]">
+                  <if condition="$v2['goods_id'] eq $v['goods_id']">
                     <dd>
 	                    <a href="javascript:void(0);">
                         	<img width="30"  height="30" data-img="{$v2[image_url]}" src="{$v2[image_url]}" style="display: block;">
@@ -319,17 +319,17 @@
           <div class="discountPrice">
             <div class="price-cash">
               <span class="text13 colf22e01">¥</span>
-              <span class="text18 colf22e01 fontT">{$v[shop_price]}</span>
+              <span class="text18 colf22e01 fontT">{$v['shop_price']}</span>
               <del></del>
               <span class="text12" style="float: right;color: gray;position: relative;top:3px">{$v[sales_sum]}人付款</span>
             </div>
           </div>
           <!-- 价格 end--> 
           <!-- 品名 -->
-          <div class="listDescript"> <a target="_blank" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}" class="text13">{$v[goods_name]}</a> </div>
+          <div class="listDescript"> <a target="_blank" href="{:U('/Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}" class="text13">{$v['goods_name']}</a> </div>
           <!-- 價格及字樣 -->
           <div class="itemPrice" >
-            <div class="cart_wrapper" > <a style="cursor:pointer;" class="cartlimit" href="javascript:void(0);" onclick="javascript:AjaxAddCart({$v[goods_id]},1,0);" ></a></div>
+            <div class="cart_wrapper" > <a style="cursor:pointer;" class="cartlimit" href="javascript:void(0);" onclick="javascript:AjaxAddCart({$v['goods_id']},1,0);" ></a></div>
           </div>
         </div>
       </li>

@@ -17,14 +17,14 @@ window.boot = function () {
             var entries = rawAssets[mount];
             var realEntries = realRawAssets[mount] = {};
             for (var id in entries) {
-                var entry = entries[id];
+                var entry = entries['id'];
                 var type = entry[1];
                 // retrieve minified raw asset
                 if (typeof type === 'number') {
                     entry[1] = assetTypes[type];
                 }
                 // retrieve uuid
-                realEntries[uuids[id] || id] = entry;
+                realEntries[uuids['id'] || id] = entry;
             }
         }
 

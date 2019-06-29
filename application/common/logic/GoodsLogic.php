@@ -200,7 +200,7 @@ class GoodsLogic extends Model
 
             $name = getFirstCharter($v['name']) .'  --   '. $v['name']; // 前面加上拼音首字母
 
-            if(array_key_exists($v[id],$brandIdArr) && $v['cat_id']) { // 如果有双重品牌的 则加上分类名称
+            if(array_key_exists($v['id'],$brandIdArr) && $v['cat_id']) { // 如果有双重品牌的 则加上分类名称
                 $name .= ' ( '. $goodsCategoryArr[$v['cat_id']] . ' ) ';
             }
             $nameList[] = $v['name'] = $name;

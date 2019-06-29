@@ -11,8 +11,8 @@
 				var cb = function (json) {
 					eval("delete " + name),
 							callback(json),
-							$._jsonp.head.removeChild($._jsonp.scripts[name]),
-							delete $._jsonp.scripts[name]
+							$._jsonp.head.removeChild($._jsonp.scripts['name']),
+							delete $._jsonp.scripts['name']
 				};
 				return eval(name + " = cb"),
 						name

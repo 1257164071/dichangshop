@@ -17,11 +17,11 @@
                         <div class="sc_list se_sclist paycloseto">
                             <a <if condition="$list.receive_btn eq 1">href="{:U('/Mobile/User/order_detail',array('id'=>$list['order_id'],'waitreceive'=>1))}" <else/> href="{:U('/Mobile/User/order_detail',array('id'=>$list['order_id']))}"</if>>
                             <div class="shopimg fl">
-                                <img src="{$good[goods_id]|goods_thum_images=200,200}">
+                                <img src="{$good['goods_id']|goods_thum_images=200,200}">
                             </div>
                             <div class="deleshow fr">
                                 <div class="deletes">
-                                    <span class="similar-product-text">{$good[goods_name]|getSubstr=0,20}</span>
+                                    <span class="similar-product-text">{$good['goods_name']|getSubstr=0,20}</span>
                                 </div>
                                 <div class="prices  wiconfine">
                                     <p class="sc_pri"><span>￥</span><span>{$good[member_goods_price]}</span></p>

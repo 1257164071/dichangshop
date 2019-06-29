@@ -50,7 +50,7 @@ html, body {
                         <label >商品名称</label>
                     </dt>
                     <dd class="opt">
-                        <a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods[goods_id]))}" target="_blank">{$goods[goods_name]}</a>
+                        <a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods['goods_id']))}" target="_blank">{$goods['goods_name']}</a>
                     </dd>
                 </dl>
                 <dl class="row">
@@ -178,7 +178,7 @@ html, body {
                 <label >商品名称</label>
             </dt>
             <dd class="opt">
-                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods[goods_id]))}" target="_blank">{$goods[goods_name]}</a>
+                <a href="{:U('Home/Goods/goodsInfo',array('id'=>$return_goods['goods_id']))}" target="_blank">{$goods['goods_name']}</a>
             </dd>
         </dl>
         <dl class="row">
@@ -188,9 +188,9 @@ html, body {
             <dd class="opt">
                 <if condition="$return_goods['type'] lt 2 and $return_goods['status'] eq 1">
 	                <if condition="($order[pay_code] eq 'alipay') or ($order[pay_code] eq 'alipayMobile')  or ($order[pay_code] eq 'weixin')">
-	                    <a class="ncap-btn ncap-btn-green"  href="{:U('Admin/Order/refund_back',array('id'=>$return_goods[id]))}">支付原路退回</a>
+	                    <a class="ncap-btn ncap-btn-green"  href="{:U('Admin/Order/refund_back',array('id'=>$return_goods['id']))}">支付原路退回</a>
 	                <else/>
-	                	<a class="ncap-btn ncap-btn-green"  href="{:U('Admin/User/account_edit',array('user_id'=>$return_goods[user_id],'return_id'=>$return_goods[id],'desc'=>'退货退款到余额'))}">退款到用户余额</a>
+	                	<a class="ncap-btn ncap-btn-green"  href="{:U('Admin/User/account_edit',array('user_id'=>$return_goods[user_id],'return_id'=>$return_goods['id'],'desc'=>'退货退款到余额'))}">退款到用户余额</a>
 	                </if>
                 </if>
             </dd>

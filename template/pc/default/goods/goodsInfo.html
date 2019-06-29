@@ -49,7 +49,7 @@
                                     <!--<a href="javascript:void(0);">-->
                                         <!--<img src="{$v.goods_id|goods_thum_images=60,60}" data-img="{$v.goods_id|goods_thum_images=400,400}" data-big="{$v.goods_id|goods_thum_images=800,800}">-->
                                     <!--</a>-->
-                                    <a href="javascript:;"><img src="{$v|get_sub_images=$v[goods_id],60,60}" data-img="{$v|get_sub_images=$v[goods_id],400,400}" data-big="{$v|get_sub_images=$v[goods_id],800,800}"> <i></i></a>
+                                    <a href="javascript:;"><img src="{$v|get_sub_images=$v['goods_id'],60,60}" data-img="{$v|get_sub_images=$v['goods_id'],400,400}" data-big="{$v|get_sub_images=$v['goods_id'],800,800}"> <i></i></a>
                                     </li>
                                 </foreach>
                             </ul>
@@ -150,7 +150,7 @@
                                     <script>
                                         var jiathis_config = {
                                             url:"http://{$_SERVER[HTTP_HOST]}/index.php?m=Home&c=Goods&a=goodsInfo&id={$Request.param.id}",
-                                            pic:"http://{$_SERVER[HTTP_HOST]}{$goods[goods_id]|goods_thum_images=400,400}",
+                                            pic:"http://{$_SERVER[HTTP_HOST]}{$goods['goods_id']|goods_thum_images=400,400}",
                                         }
                                         var is_distribut = getCookie('is_distribut');
                                         var user_id = getCookie('user_id');
@@ -340,10 +340,10 @@
                         <li>
                             <div>
                                 <p class="p-img-comm fl">
-                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}"><img class="img-comm" src="{$v.goods_id|goods_thum_images=60,60}" alt=""></a>
+                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}"><img class="img-comm" src="{$v.goods_id|goods_thum_images=60,60}" alt=""></a>
                                 </p>
                                 <p class="p-name-comm">
-                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v[goods_id]))}">{$v.goods_name}</a>
+                                    <a href="{:U('Home/Goods/goodsInfo',array('id'=>$v['goods_id']))}">{$v.goods_name}</a>
                                 </p>
                                 <p class="p-price-comm">
                                     <b>¥{$v.shop_price}</b>

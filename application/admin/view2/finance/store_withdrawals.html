@@ -148,7 +148,7 @@
                                 <div style="text-align: center; width: 170px; max-width:170px;">
                                     <a href="{:U('editStoreWithdrawals',array('id'=>$vo['id']))}" class="btn blue"><i class="fa fa-pencil-square-o"></i>编辑</a>
                                     <if condition="in_array($vo[status],array(0,2))">
-                                        <a class="btn red"  href="javascript:void(0)" onclick="del('{$vo[id]}')"><i class="fa fa-trash-o"></i>删除</a>
+                                        <a class="btn red"  href="javascript:void(0)" onclick="del('{$vo['id']}')"><i class="fa fa-trash-o"></i>删除</a>
                                     </if>
                                 </div>
                             </td>
