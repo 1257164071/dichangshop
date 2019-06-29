@@ -134,11 +134,11 @@
                            <if condition="$v[level] eq 1">                       
                                 <li class="list-li">
                                     <div class="list_a">
-                                        <h3><a href="{:U('Home/Goods/goodsList',array('id'=>$v[id]))}"><span>{$v['name']}</span></a></h3>
-                                        <p> <!--$v[id][name] 数组中括号 里面的 id name 不能有 引号 sql 参数 必须双引号-->
+                                        <h3><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}"><span>{$v['name']}</span></a></h3>
+                                        <p> <!--$v['id'][name] 数组中括号 里面的 id name 不能有 引号 sql 参数 必须双引号-->
 	                                       <assign name="index" value="1" />
                                            <foreach name="v[tmenu]" item="v2" key="k2" >
-                                             <if condition="$v2[parent_id] eq $v[id]">
+                                             <if condition="$v2[parent_id] eq $v['id']">
                                                 <?php if($index++ > 3) break; ?>
                                            	 	<a href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}">{$v2['name']}</a>
                                              </if>                                            
@@ -149,7 +149,7 @@
                                         <div class="list_bigfl">
 	                                       <assign name="index" value="1" />                                        
                                            <foreach name="v[tmenu]" item="v2" key="k2" >
-                                               <if condition="$v2[parent_id] eq $v[id]">
+                                               <if condition="$v2[parent_id] eq $v['id']">
                                                 <?php if($index++ > 6) break; ?>
                                                     <a class="list_big_o ma-le-30" href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}">{$v2['name']}<i>＞</i></a>
                                                </if> 
@@ -157,7 +157,7 @@
                                         </div>
                                         <div class="subitems">                                        
                                            <foreach name="v[tmenu]" item="v2" key="k2" >
-                                               <if condition="$v2[parent_id] eq $v[id]">
+                                               <if condition="$v2[parent_id] eq $v['id']">
                                                     <dl class="ma-to-20 cl-bo">
                                                         <dt class="bigheader wh-sp"><a href="{:U('Home/Goods/goodsList',array('id'=>$v2[id]))}">{$v2['name']}</a><i>＞</i></dt>
                                                         <dd class="ma-le-100">

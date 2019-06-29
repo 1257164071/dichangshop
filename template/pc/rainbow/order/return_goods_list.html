@@ -79,7 +79,7 @@
                                             <li class="sx6">
                                                 {$state[$v[status]]}
                                             </li>
-                                            <li class="sx7"><a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v[id]))}">查看</a></li>
+                                            <li class="sx7"><a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v['id']))}">查看</a></li>
                                         </ul>
 									</volist>
 								</div>
@@ -110,7 +110,7 @@
 												<p class="shop_name"><a href="">{$goodsList[$v[goods_id]]|getSubstr=0,25}</a></p>
 											</li>
 											<li>
-												<a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v[id]))}">查看 </a>
+												<a class="co_blue" href="{:U('Home/User/return_goods_info',array('id'=>$v['id']))}">查看 </a>
 												&lt;!&ndash;<a class="co_blue" href="">取消</a>&ndash;&gt;
 											</li>
 										</ul>

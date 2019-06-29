@@ -19,7 +19,7 @@
                         <select name="cat_id" id="cat_id">
                             <option value="">所有分类</option>
                             <foreach name="categoryList" item="v" key="k" >
-                                <option value="{$v['id']}" <if condition="$v[id] eq $cat_id">selected</if>>{$v['name']}</option>
+                                <option value="{$v['id']}" <if condition="$v['id'] eq $cat_id">selected</if>>{$v['name']}</option>
                             </foreach>
                         </select>
                     </div>
@@ -27,7 +27,7 @@
                         <select name="brand_id" id="brand_id">
                             <option value="">所有品牌</option>
                             <foreach name="brandList" item="v" key="k" >
-                                <option value="{$v['id']}" <if condition="$v[id] eq $brand_id">selected</if>>{$v['name']}</option>
+                                <option value="{$v['id']}" <if condition="$v['id'] eq $brand_id">selected</if>>{$v['name']}</option>
                             </foreach>
                         </select>
                     </div>

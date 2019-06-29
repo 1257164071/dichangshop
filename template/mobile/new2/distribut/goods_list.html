@@ -251,7 +251,7 @@
 
         <!--所有品牌筛选-s-->
         <foreach name="brandList" item="v">
-            <div class="myorder p brind" data-id="{$v[id]}" >
+            <div class="myorder p brind" data-id="{$v['id']}" >
                 <div class="content30" >
                     <a href="{:U('Mobile/Distribut/goods_list',array('brind_id'=>$v['id']))}">
                         <div class="order">

@@ -193,7 +193,7 @@ $("#prom_type").on("change",function(){
 	      break;
 	    }
 	    case 3:{
-	      expression = '<td><b class="red">*</b>代金券：</td> <td><select name="expression"><tpshop sql="select * from __PREFIX__coupon where type=0" item="v"><option value="{$v.id}" <if condition="$v[id] eq $info[expression]">selected</if>>{$v.name}</option></tpshop></select></td>';
+	      expression = '<td><b class="red">*</b>代金券：</td> <td><select name="expression"><tpshop sql="select * from __PREFIX__coupon where type=0" item="v"><option value="{$v.id}" <if condition="$v['id'] eq $info[expression]">selected</if>>{$v.name}</option></tpshop></select></td>';
 	      break;
 	    }
 	    case 4:{
