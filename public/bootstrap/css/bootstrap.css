@@ -50,7 +50,7 @@ a:active,
 a:hover {
   outline: 0;
 }
-abbr[title] {
+abbr['title'] {
   border-bottom: 1px dotted;
 }
 b,
@@ -206,7 +206,7 @@ th {
   a[href]:after {
     content: " (" attr(href) ")";
   }
-  abbr[title]:after {
+  abbr['title']:after {
     content: " (" attr(title) ")";
   }
   a[href^="#"]:after,
@@ -1460,7 +1460,7 @@ dd {
     margin-left: 180px;
   }
 }
-abbr[title],
+abbr['title'],
 abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #777;

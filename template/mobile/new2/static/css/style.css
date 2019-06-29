@@ -26,7 +26,7 @@ body {
 
 a:active,a:hover {
     outline: 0
-}/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */abbr[title] {
+}/*! normalize.css v3.0.0 | Typography | MIT License | git.io/normalize */abbr['title'] {
                                                                               border-bottom: 1px dotted
                                                                           }
 

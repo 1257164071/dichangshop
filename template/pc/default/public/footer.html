@@ -14,7 +14,7 @@
                 <dd>
                     <ol>
                     	<tpshop sql="select * from `__PREFIX__article` where cat_id = $v[cat_id] and is_open=1" key="k2" item='v2'>
-                        <li><a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}" target="_blank">{$v2[title]}</a></li>
+                        <li><a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}" target="_blank">{$v2['title']}</a></li>
 					 	</tpshop>                        
                     </ol>
                 </dd>

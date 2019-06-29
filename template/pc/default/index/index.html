@@ -41,7 +41,7 @@ $(function() {
             <adv limit="5" item="v" pid="2">
                 <li>
                     <a href="{$v.ad_link}" <if condition="$v['target'] eq 1">target="_blank"</if>>                       
-                        <img src="{$v['ad_code']}" width="980" height="400"  title="{$v[title]}" style="{$v['style']}"/>
+                        <img src="{$v['ad_code']}" width="980" height="400"  title="{$v['title']}" style="{$v['style']}"/>
                     </a>
                 </li>
    			</adv>          
@@ -104,7 +104,7 @@ $(function() {
         	<div class="ris-adve"><!--公告上方广告位-->
                 <adv  limit="1" item="v" pid="7">
                     <a href="{$v['ad_link]}" <if condition="$v['target'] eq 1">target="_blank"</if>>
-	            		<img src="{$v['ad_code']}" title="{$v[title]}" style="{$v['style']}"/>
+	            		<img src="{$v['ad_code']}" title="{$v['title']}" style="{$v['style']}"/>
                     </a>
 				</adv>
             </div>
@@ -131,7 +131,7 @@ $(function() {
              <!--公告下方广告位-->
         	 <div class="ris-as"> 
                 <adv  limit="1" item="v" pid="8">
-                     <p><a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v['ad_code']}" width="278" height="132" title="{$v[title]}" style="{$v['style']}"></a></p>
+                     <p><a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if> ><img src="{$v['ad_code']}" width="278" height="132" title="{$v['title']}" style="{$v['style']}"></a></p>
                 </adv>
             </div>
         	</div>	
@@ -147,7 +147,7 @@ $(function() {
     	<div class="cen-banne">
             <adv  pid = "3" limit="1" item="v">            
     	        <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
-        	        <img src="{$v['ad_code']}" width="1200" height="160"  title="{$v[title]}" style="{$v['style']}"/>
+        	        <img src="{$v['ad_code']}" width="1200" height="160"  title="{$v['title']}" style="{$v['style']}"/>
 	            </a>    
              </adv>   
         </div>
@@ -233,7 +233,7 @@ $(function() {
     	<div class="cen-banne">
             <adv  pid = "4" limit="1" item="v">            
     	        <a href="{$v['ad_link']}" <if condition="$v['target'] eq 1">target="_blank"</if>>
-        	        <img src="{$v['ad_code']}" width="1200" height="160" title="{$v[title]}" style="{$v['style']}"/>
+        	        <img src="{$v['ad_code']}" width="1200" height="160" title="{$v['title']}" style="{$v['style']}"/>
 	            </a>    
              </adv>            
         </div>

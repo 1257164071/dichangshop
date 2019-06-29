@@ -29,7 +29,7 @@
                     <h2><a href="" target="_self">{$v[cat_name]}</a></h2>
                     <ul>
                         <tpshop sql="select * from `__PREFIX__article` where cat_id = $v[cat_id]" key="k2" item='v2'>
-                            <li><a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2[title]}</a></li>
+                            <li><a href="{:U('Home/Article/detail',array('article_id'=>$v2[article_id]))}">{$v2['title']}</a></li>
                         </tpshop>
                     </ul>
                 </div>
