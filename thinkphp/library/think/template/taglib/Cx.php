@@ -141,7 +141,7 @@ if($c > 0 && I("get.edit_ad"))
 }
 foreach($result as $'.$key.'=>$'.$item.'):       
     
-    $'.$item.'['."'position'".'] = $ad_position[$'.$item.'[pid]]; 
+    $'.$item.'[\'"position\'"] = $ad_position[$'.$item.'[pid]]; 
     if(I("get.edit_ad") && $'.$item.'[not_adv] == 0 )
     {
         $'.$item.'[style] = "filter:alpha(opacity=50); -moz-opacity:0.5; -khtml-opacity: 0.5; opacity: 0.5"; // 广告半透明的样式
