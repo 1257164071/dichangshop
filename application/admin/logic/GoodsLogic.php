@@ -481,7 +481,7 @@ class GoodsLogic extends Model
         foreach($categoryList as $k => $v)
         {
 
-            //$str_pad = str_pad('',($v[level] * 5),'-',STR_PAD_LEFT);
+            //$str_pad = str_pad('',($v['level'] * 5),'-',STR_PAD_LEFT);
             $name = getFirstCharter($v['name']) .' '. $v['name']; // 前面加上拼音首字母
             //$name = getFirstCharter($v['name']) .' '. $v['name'].' '.$v['level']; // 前面加上拼音首字母
             /*
