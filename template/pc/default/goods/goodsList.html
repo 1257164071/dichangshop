@@ -37,11 +37,11 @@
         
         <!--如果当前分类是三级分类 则二级也要显示-->
         <if condition="$goodsCate[level] eq 3">
-          <div class="u-nav-attr"> <a href="javascript:;">{$goods_category[$goodsCate[parent_id]][name]}<i></i></a>
+          <div class="u-nav-attr"> <a href="javascript:;">{$goods_category[$goodsCate['parent_id']][name]}<i></i></a>
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
               <foreach name="goods_category" item="v" key="k">
-                <if condition="($v[parent_id] eq $goods_category[$goodsCate[parent_id]][parent_id])">
+                <if condition="($v['parent_id'] eq $goods_category[$goodsCate['parent_id']]['parent_id'])">
                   <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
                 </if>
               </foreach>
@@ -54,7 +54,7 @@
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
               <foreach name="goods_category" item="v" key="k">
-                <if condition="($v[parent_id] eq $goodsCate[parent_id])">
+                <if condition="($v['parent_id'] eq $goodsCate['parent_id'])">
                   <li><a href="{:U('Home/Goods/goodsList',array('id'=>$v['id']))}">{$v['name']}</a></li>
                 </if>
               </foreach>

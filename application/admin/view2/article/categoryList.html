@@ -73,7 +73,7 @@
         <table class="flex-table autoht" cellpadding="0" cellspacing="0" border="0" id="article_cat_table">
           <tbody id="treet1">
           <foreach name="cat_list" item="vo" key="k" >
-            <tr nctype="0" <if condition="$vo[parent_id] gt 0"> style="display:none;"</if> class="parent_id_{$vo[parent_id]}" data-level="{$vo[level]}">
+            <tr nctype="0" <if condition="$vo['parent_id'] gt 0"> style="display:none;"</if> class="parent_id_{$vo['parent_id']}" data-level="{$vo[level]}">
               <td class="sign">
                 <div style="text-align: center; width: 24px;"> 
                 	<img src="/public/static/images/tv-expandable.gif" fieldid="2" status="open" nc_type="flex" onClick="treeClicked(this,{$vo[cat_id]})">                    
