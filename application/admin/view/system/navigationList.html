@@ -35,7 +35,7 @@
                                     <td class="text-left">{$list.name}</td> 
                                     <td class="text-left">{$list.url}</td>                                 
                                     <td class="text-center">
-                                        <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list['is_show'] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('navigation','id','{$list.id}','is_show',this)"/>
+                                        <img width="20" height="20" src="__PUBLIC__/images/<if condition="$list['is_show'] eq 1">yes.png<else />cancel.png</if>" onclick="changeTableVal('navigation','id','{$list.id}','is_show',this)"/>
                                     </td>
                                     <td class="text-center">                                    
                                         <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list[is_new] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('navigation','id','{$list.id}','is_new',this)"/>                                                      
