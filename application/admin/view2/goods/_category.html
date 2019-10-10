@@ -68,10 +68,10 @@
         </dt>
         <dd class="opt">
           <div class="onoff">
-            <label for="goods_category1" class="cb-enable <if condition="$goods_category_info[is_show] eq 1">selected</if>">是</label>
-            <label for="goods_category0" class="cb-disable <if condition="$goods_category_info[is_show] eq 0">selected</if>">否</label>
-            <input id="goods_category1" name="is_show" value="1" type="radio" <if condition="$goods_category_info[is_show] eq 1"> checked="checked"</if>>
-            <input id="goods_category0" name="is_show" value="0" type="radio" <if condition="$goods_category_info[is_show] eq 0"> checked="checked"</if>>
+            <label for="goods_category1" class="cb-enable <if condition="$goods_category_info['is_show'] eq 1">selected</if>">是</label>
+            <label for="goods_category0" class="cb-disable <if condition="$goods_category_info['is_show'] eq 0">selected</if>">否</label>
+            <input id="goods_category1" name="is_show" value="1" type="radio" <if condition="$goods_category_info['is_show'] eq 1"> checked="checked"</if>>
+            <input id="goods_category0" name="is_show" value="0" type="radio" <if condition="$goods_category_info['is_show'] eq 0"> checked="checked"</if>>
           </div>
           <p class="notic">是否在导航栏显示</p>
         </dd>        
