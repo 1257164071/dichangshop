@@ -50,7 +50,7 @@
                                     </td>
                                     <td class="text-left">{$cat_list[$list[parent_cat_id]]} {$cat_list[$list[cat_id]]}</td>                                   
                                     <td>
-                                         <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list[is_hot] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('brand','id','{$list.id}','is_hot',this)"/>			                             
+                                         <img width="20" height="20" src="__PUBLIC__/images/<if condition='$list['is_hot'] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('brand','id','{$list.id}','is_hot',this)"/>
 			            </td>
                                     <td class="text-left">                                         
                                         <input type="text" onchange="updateSort('brand','id','{$list.id}','sort',this)" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onpaste="this.value=this.value.replace(/[^\d]/g,'')"  size="4"   value="{$list.sort}" class="input-sm" />
