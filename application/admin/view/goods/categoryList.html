@@ -50,7 +50,7 @@
 			     		 </td>
                          <td><span>{$vo.mobile_name}</span></td>
                          <td>
-                             <img width="20" height="20" src="__PUBLIC__/images/<if condition='$vo['is_hot'] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('goods_category','id','{$vo.id}','is_hot',this)"/>
+                             <img width="20" height="20" src="__PUBLIC__/images/<if condition="$vo['is_hot'] eq 1">yes.png<else />cancel.png</if>" onclick="changeTableVal('goods_category','id','{$vo.id}','is_hot',this)"/>
                          </td>
 	                 <td>
                              <img width="20" height="20" src="__PUBLIC__/images/<if condition='$vo[is_show] eq 1'>yes.png<else />cancel.png</if>" onclick="changeTableVal('goods_category','id','{$vo.id}','is_show',this)"/>                             

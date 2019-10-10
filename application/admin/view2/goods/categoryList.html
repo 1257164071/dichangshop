@@ -101,7 +101,7 @@
               </td>
                 <td align="center" class="">
                   <div style="text-align: center; width: 80px;">
-                    <if condition='$vo['is_hot'] eq 1'>
+                    <if condition="$vo['is_hot'] eq 1">
                       <span class="yes" onClick="changeTableVal('goods_category','id','{$vo.id}','is_hot',this)" ><i class="fa fa-check-circle"></i>是</span>
                       <else />
                       <span class="no" onClick="changeTableVal('goods_category','id','{$vo.id}','is_hot',this)" ><i class="fa fa-ban"></i>否</span>
