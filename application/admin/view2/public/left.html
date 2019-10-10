@@ -12,12 +12,12 @@
     </div>
     <foreach name="menu" item="vo" key="mk">
     <div id="admincpNavTabs_{$mk}" class="nav-tabs">
-    	<foreach name="vo[child]" item="v2">
+    	<foreach name="vo['child']" item="v2">
 	    <dl>
 		    <dt><a href="javascript:void(0);"><span class="ico-{$mk}-{$key}"></span><h3>{$v2.name}</h3></a></dt>
 		    <dd class="sub-menu">
 			    <ul>
-			    	<foreach name="v2[child]" item="v3">
+			    	<foreach name="v2['child']" item="v3">
 				    	<li><a href="javascript:void(0);" data-param="{$v3.act}|{$v3.op}">{$v3.name}</a></li>
 				    </foreach>
 			    </ul>
