@@ -261,7 +261,7 @@
                                         <div class="item-brands">
                                             <ul>
                                                 <volist name="brand_list" id="v2" mod="2">
-                                                    <if condition="($v2[cat_id] eq $vo['id']) AND ($v2[is_hot] eq 1)">
+                                                    <if condition="($v2[cat_id] eq $vo['id']) AND ($v2['is_hot'] eq 1)">
                                                         <li>
                                                             <a href="{:U('Home/Goods/goodsList',array('brand_id'=>$v2['id']))}" target="_blank" title="{$v2.name}"> <img
                                                                     src="{$v2.logo}" width="91" height="40"></a>
