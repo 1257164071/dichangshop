@@ -97,7 +97,7 @@
 			</if>
 			<i class="litt-xyb"></i>
 			<!--如果当前分类是三级分类 则二级也要显示-->
-			<if condition="$goodsCate[level] eq 3">
+			<if condition="$goodsCate['level'] eq 3">
 				<div class="havedox">
 					<div class="disenk"><span>{$goods_category[$goodsCate['parent_id']]['name']}</span><i class="litt-xxd"></i></div>
 					<div class="hovshz">
@@ -113,7 +113,7 @@
 				<i class="litt-xyb"></i>
 			</if>
 			<!--如果当前分类是三级分类 则二级也要显示-->
-			<if condition="$goodsCate[level] eq 2">
+			<if condition="$goodsCate['level'] eq 2">
 				<div class="havedox">
 					<div class="disenk"><span>{$goodsCate.name}</span><i class="litt-xxd"></i></div>
 					<div class="hovshz">
@@ -129,7 +129,7 @@
 				<i class="litt-xyb"></i>
 			</if>
 			<!--当前分类-->
-			<if condition="$goodsCate[level] eq 1">
+			<if condition="$goodsCate['level'] eq 1">
 				<div class="havedox">
 					<div class="disenk"><span><a href="{:U('Home/Goods/goodsList',array('id'=>$goodsCate['id']))}">{$goodsCate.name}</a></span><i class="litt-xxd"></i></div>
 					<div class="hovshz">

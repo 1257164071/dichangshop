@@ -31,7 +31,7 @@
                 <div class="u-left-icon"><i class="z-arrow"></i></div>
 
                 <!--如果当前分类是三级分类 则二级也要显示-->
-                <if condition="$goodsCate[level] eq 3">
+                <if condition="$goodsCate['level'] eq 3">
                     <div class="u-nav-attr"><a href="javascript:;">{$goods_category[$goodsCate['parent_id']]['name']}<i></i></a>
                         <span class="z-blank-bar"></span>
                         <ul class="u-attr-list">

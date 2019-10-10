@@ -36,7 +36,7 @@
         <div class="u-left-icon"><i class="z-arrow"></i></div>
         
         <!--如果当前分类是三级分类 则二级也要显示-->
-        <if condition="$goodsCate[level] eq 3">
+        <if condition="$goodsCate['level'] eq 3">
           <div class="u-nav-attr"> <a href="javascript:;">{$goods_category[$goodsCate['parent_id']]['name']}<i></i></a>
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
@@ -49,7 +49,7 @@
           </div>
         </if>
         <!--当前分类-->
-        <if condition="$goodsCate[level] eq 2">
+        <if condition="$goodsCate['level'] eq 2">
           <div class="u-nav-attr"> <a href="{:U('Home/Goods/goodsList',array('id'=>$goodsCate['parent_id']))}">{$goodsCate.name}<i></i></a>
             <span class="z-blank-bar"></span>
             <ul class="u-attr-list">
@@ -61,7 +61,7 @@
             </ul>
           </div>
         </if>
-        <if condition="$goodsCate[level] eq 1">
+        <if condition="$goodsCate['level'] eq 1">
           <div class="u-nav-attr">
             <a href="{:U('Home/Goods/goodsList',array('id'=>$goodsCate['id']))}">{$goodsCate.name}<i></i></a>
             <span class="z-blank-bar"></span>

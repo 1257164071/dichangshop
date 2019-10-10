@@ -17099,7 +17099,7 @@
         }
         me.commands['elementpath'] = {
             execCommand: function (cmdName, level) {
-                var start = tagNames[level],
+                var start = tagNames['level'],
                     range = me.selection.getRange();
                 currentLevel = level * 1;
                 range.selectNode(start).select();

@@ -40,9 +40,9 @@
 	                 </thead>
 			<tbody>
 			<foreach name="cat_list" item="vo" key="k" >
-			  		<tr role="row" align="center" class="{$vo.level}" id="{$vo.level}_{$vo.id}" <if condition="$vo[level] gt 1">style="display:none"</if>>
+			  		<tr role="row" align="center" class="{$vo.level}" id="{$vo.level}_{$vo.id}" <if condition="$vo['level'] gt 1">style="display:none"</if>>
 			  			 <td>{$vo.id}</td>
-	                     <td align="left" style="padding-left:<?php echo ($vo[level] * 5); ?>em"> 
+	                     <td align="left" style="padding-left:<?php echo ($vo['level'] * 5); ?>em">
 	                      <if condition="$vo.have_son eq 1">
 		                   <span class="glyphicon glyphicon-plus btn-warning" style="padding:2px; font-size:12px;"  id="icon_{$vo.level}_{$vo.id}" aria-hidden="false" onclick="rowClicked(this)" ></span>&nbsp;				    
 					      </if>

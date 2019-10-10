@@ -26,7 +26,7 @@
 			<div class="w1224">
 				<ul>
                     <foreach name="goods_category_tree" item="vo" key="k">
-                        <if condition="$vo[level] eq 1">
+                        <if condition="$vo['level'] eq 1">
 					        <li><a href="{:U('/Home/Goods/goodsList',array('id'=>$vo['id']))}">{$vo['name']}</a></li>
                         </if>
                     </foreach>
