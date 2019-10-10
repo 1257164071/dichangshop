@@ -358,10 +358,10 @@
         </dt>
         <dd class="opt">
           <div class="onoff">
-            <label for="is_free_shipping1" class="cb-enable <if condition="$goodsInfo[is_free_shipping] eq 1">selected</if>">是</label>
-            <label for="is_free_shipping0" class="cb-disable <if condition="$goodsInfo[is_free_shipping] eq 0">selected</if>">否</label>
-            <input id="is_free_shipping1" name="is_free_shipping" value="1" type="radio" <if condition="$goodsInfo[is_free_shipping] eq 1"> checked="checked"</if>>
-            <input id="is_free_shipping0" name="is_free_shipping" value="0" type="radio" <if condition="$goodsInfo[is_free_shipping] eq 0"> checked="checked"</if>>
+            <label for="is_free_shipping1" class="cb-enable <if condition="$goodsInfo['is_free_shipping'] eq 1">selected</if>">是</label>
+            <label for="is_free_shipping0" class="cb-disable <if condition="$goodsInfo['is_free_shipping'] eq 0">selected</if>">否</label>
+            <input id="is_free_shipping1" name="is_free_shipping" value="1" type="radio" <if condition="$goodsInfo['is_free_shipping'] eq 1"> checked="checked"</if>>
+            <input id="is_free_shipping0" name="is_free_shipping" value="0" type="radio" <if condition="$goodsInfo['is_free_shipping'] eq 0"> checked="checked"</if>>
           </div>
           <p class="notic"></p>
         </dd>
