@@ -226,7 +226,7 @@ if (XRegExp) {
     // ]);
     XRegExp.matchChain = function (str, chain) {
         return function recurseChain (values, level) {
-            var item = chain[level].regex ? chain[level] : {regex: chain[level]},
+            var item = chain['level'].regex ? chain['level'] : {regex: chain['level']},
                 regex = clone(item.regex, "g"),
                 matches = [], i;
             for (i = 0; i < values.length; i++) {

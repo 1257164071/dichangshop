@@ -44,7 +44,7 @@
 					<tbody>
 					  <foreach name="cat_list" item="vo" key="k" >
 					  	<tr role="row" align="center" class="{$vo.level}" id="{$vo.level}_{$vo.cat_id}">
-	                     <td class="sorting_1" align="left" style="padding-left:<?php echo ($vo[level] * 4); ?>em"> 
+	                     <td class="sorting_1" align="left" style="padding-left:<?php echo ($vo['level'] * 4); ?>em">
 	                      <if condition="$vo.is_leaf neq 1">
 		                      <span class="glyphicon glyphicon-minus btn-warning"  id="icon_{$vo.level}_{$vo.id}" aria-hidden="true" onclick="rowClicked(this)" ></span>&nbsp;				    
 					      </if><span>{$vo.name}</span>

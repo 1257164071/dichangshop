@@ -17,7 +17,7 @@
                            <input type="checkbox" name="user_id[]" value="{$list.user_id}"/>
                       </td>
                       <td class="text-left">{$list.user_id}</td>
-                      <td class="text-left">{$user_level[$list[level]]}</td>
+                      <td class="text-left">{$user_level[$list['level']]}</td>
                       <td class="text-left">
                         <if condition=" $list[nickname] eq null">
                             <if condition=" $list[oauth] eq 'weixin'">微信用户</if>
