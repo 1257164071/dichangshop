@@ -317,7 +317,7 @@
                                         <if condition="$goodsInfo['goods_id'] gt 0">
                                             <input type="text" value="{$goodsInfo.store_count}" class="form-control" style="width:150px;" name="store_count" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
                                         <else />
-                                            <input type="text" value="{$tpshop_config[basic_default_storage]}" class="form-control" style="width:150px;" name="store_count" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />                                         
+                                            <input type="text" value="{$tpshop_config['basic_default_storage']}" class="form-control" style="width:150px;" name="store_count" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" />
                                         </if>
                                         
                                         <span id="err_store_count" style="color:#F00; display:none;"></span>					                                        
@@ -501,13 +501,13 @@
         
         var  last_div = $(".goods_xc:last").prop("outerHTML");	
         for (i=0;i<paths.length ;i++ )
-        {                    
+        {
             $(".goods_xc:eq(0)").before(last_div);	// 插入一个 新图片
                 $(".goods_xc:eq(0)").find('a:eq(0)').attr('href',paths[i]).attr('onclick','').attr('target', "_blank");// 修改他的链接地址
             $(".goods_xc:eq(0)").find('img').attr('src',paths[i]);// 修改他的图片路径
                 $(".goods_xc:eq(0)").find('a:eq(1)').attr('onclick',"ClearPicArr2(this,'"+paths[i]+"')").text('删除');
             $(".goods_xc:eq(0)").find('input').val(paths[i]); // 设置隐藏域 要提交的值
-        } 			   
+        }
     }
     /*
      * 上传之后删除组图input     
