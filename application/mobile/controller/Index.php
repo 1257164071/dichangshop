@@ -21,7 +21,6 @@ class Index extends MobileBase {
     {
         parent::__construct($request);
         $mobile_flag = M('users')->where(['user_id'=>session('user')['user_id']])->getField('mobile');
-
         if($mobile_flag == null){
             $this->redirect(U('Mobile/User/userinfo',array('action'=>'mobile')));
         }

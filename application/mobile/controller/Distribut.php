@@ -202,9 +202,10 @@ class Distribut extends MobileBase {
      * 个人推广二维码 （我的名片）
      */
     public function qr_code(){
+        
         $ShareLink = urlencode("http://{$_SERVER[HTTP_HOST]}/index.php?m=Mobile&c=Index&a=index&first_leader={$this->user_id}"); //默认分享链接
         if($this->user['is_distribut'] == 1)
-            $this->assign('ShareLink',$ShareLink);
+        $this->assign('ShareLink',$ShareLink);
         return $this->fetch();
     }
 

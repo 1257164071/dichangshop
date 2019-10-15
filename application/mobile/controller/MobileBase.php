@@ -37,7 +37,6 @@ class MobileBase extends Controller {
             cookie('is_mobile','0',3600);
         $wx_qr = M('wx_user')->cache(true)->value('qr'); //获取微信配置
         $this->assign('wx_qr',$wx_qr);
-
         //微信浏览器
         if(strstr($_SERVER['HTTP_USER_AGENT'],'MicroMessenger')){
 
@@ -58,8 +57,8 @@ class MobileBase extends Controller {
                 $this->weixin_config = M('wx_user')->find(); //获取微信配置
 
                 $this->assign('wechat_config', $this->weixin_config);
-
-
+                $this->weixin_config['appsecret'] = "6f1a6f3ab3dbe4543c73d9f167f5ff8e";
+//dump($this->weixin_config);die;
                 if(is_array($this->weixin_config) && $this->weixin_config['wait_access'] == 1){
 
                     $wxuser = $this->GetOpenid(); //授权获取openid以及微信用户信息
